@@ -6,30 +6,31 @@ import { notFound } from "next/navigation";
 import { NextIntlClientProvider } from "next-intl";
 import Providers from "@/components/Providers";
 
-const norsa = localFont({
+const handicrafts = localFont({
   src: [
     {
-      path: "../fonts/Norsa/alfont_com_Norsal-Regular.otf",
+      path: "../fonts/ArbFonts.com-(2)/ArbFONTS-TheYearofHandicrafts-Regular.otf",
       weight: "400",
       style: "normal",
     },
     {
-      path: "../fonts/Norsa/alfont_com_Norsal-Medium.otf",
-      weight: "500",
-      style: "normal",
-    },
-    {
-      path: "../fonts/Norsa/alfont_com_Norsal-SemiBold.otf",
-      weight: "600",
-      style: "normal",
-    },
-    {
-      path: "../fonts/Norsa/alfont_com_Norsal-Bold.otf",
+      path: "../fonts/ArbFonts.com-(2)/ArbFONTS-TheYearofHandicrafts-Bold.otf",
       weight: "700",
       style: "normal",
     },
   ],
-  variable: "--font-norsa",
+  variable: "--font-handicrafts",
+});
+
+const acumin = localFont({
+  src: [
+    {
+      path: "../fonts/AcuminVariableConcept.otf",
+      weight: "100 900", // Acumin Variable Concept is a variable font
+      style: "normal",
+    },
+  ],
+  variable: "--font-acumin",
 });
 
 export const metadata: Metadata = {
@@ -54,8 +55,10 @@ export default async function RootLayout({
     return notFound();
   }
   return (
-    <html lang={locale} dir={locale === "ar" ? "rtl" : "ltr"}>
-      <body className={`${norsa.variable} font-norsa antialiased`}>
+    <html suppressHydrationWarning lang={locale} dir={locale === "ar" ? "rtl" : "ltr"}>
+      <body
+        className={`${handicrafts.variable} ${acumin.variable} font-handicrafts antialiased`}
+      >
         <NextIntlClientProvider>
           <Providers>
             <MainLayout>{children}</MainLayout>
