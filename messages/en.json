@@ -20,7 +20,28 @@
     "ornamentalText": "Lost in the digital space"
   },
   "Loading": "Loading...",
-
+  "emptyState": {
+    "search": {
+      "title": "No search results",
+      "description": "We couldn't find any results matching your search. Try changing your search terms or filters."
+    },
+    "data": {
+      "title": "No data available",
+      "description": "No data was found to display at this time."
+    },
+    "error": {
+      "title": "An error occurred",
+      "description": "Sorry, an error occurred while loading the data. Please try again."
+    },
+    "general": {
+      "title": "No items",
+      "description": "No items to display at this time."
+    },
+    "loading": {
+      "title": "Loading",
+      "description": "Please wait while content loads."
+    }
+  },
   "auth": {
     "age": "Age",
     "age_placeholder": "Age",

@@ -2,61 +2,38 @@
 
 import { useRouter } from "next/navigation";
 import { useTranslations } from "next-intl";
-import { Button } from "@/components/ui/button";
+import { Link } from "@/i18n/routing";
+import Image from "next/image";
+import GridShape from "@/components/GridShape";
 
-export default function NotFound() {
+const NotFound = () => {
   const router = useRouter();
   const t = useTranslations("NotFound");
-
   return (
-    <div className="min-h-dvh -mt-5 flex items-center justify-center px-4">
-      <div className="max-w-2xl mx-auto text-center">
-        <div>
-          <h1 className="text-9xl font-bold text-zinc-200 dark:text-zinc-700">
-            404
-          </h1>
-        </div>
+    <div className="relative flex flex-col items-center justify-center min-h-[80svh] p-6 overflow-hidden z-1">
+      <GridShape />
+      <div className="mx-auto w-full max-w-[242px] text-center sm:max-w-[472px]">
+        <h1 className="mb-8 font-bold text-primary dark:text-white/90 xl:text-2xl">
+          {t('NotFound.title')}
+        </h1>
+        <Image src="/404.svg" alt="404" />
+        <p className="mt-10 mb-6 text-base text-zinc-700 dark:text-zinc-400 sm:text-lg">
+          {t('NotFound.description')}
+        </p>
 
-        <div>
-          <h2 className="text-3xl md:text-4xl font-bold text-zinc-800 dark:text-zinc-100 mt-8">
-            {t("title")}
-          </h2>
-          <p className="text-lg text-zinc-600 dark:text-zinc-300 mt-4">
-            {t("description")}
-          </p>
-        </div>
-
-        <div className="mt-8 flex items-center gap-3 justify-center">
-          <Button
-            size="lg"
-            variant="outline"
-            onClick={() => router.back()}
-            className="font-semibold"
-          >
-            {t("backButton")}
-          </Button>
-          <Button
-            size="lg"
-            onClick={() => router.push("/")}
-            className="font-semibold"
-          >
-            {t("homeButton")}
-          </Button>
-        </div>
-
-        <div className="mt-12">
-          <div className="relative">
-            <div className="absolute inset-0 flex items-center">
-              <div className="w-full border-t border-zinc-300 dark:border-zinc-600" />
-            </div>
-            <div className="relative flex justify-center text-sm">
-              <span className="px-2 bg-linear-to-b from-zinc-50 to-zinc-100 dark:from-zinc-900 dark:to-zinc-800 text-zinc-500 dark:text-zinc-400">
-                {t("ornamentalText")}
-              </span>
-            </div>
-          </div>
-        </div>
+        <Link
+          href="/"
+          className="inline-flex items-center justify-center rounded-lg border border-zinc-300 bg-white px-5 py-3.5 text-sm font-medium text-zinc-700 shadow-theme-xs hover:bg-zinc-50 hover:text-zinc-800 dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-400 dark:hover:bg-white/[0.03] dark:hover:text-zinc-200"
+        >
+          {t('NotFound.homeButton')}
+        </Link>
       </div>
+      {/* <!-- Footer --> */}
+      <p className="absolute text-sm text-center text-zinc-500 -translate-x-1/2 bottom-6 left-1/2 dark:text-zinc-400">
+        &copy; {new Date().getFullYear()} - Endebaty
+      </p>
     </div>
-  );
+  )
 }
+
+export default NotFound
