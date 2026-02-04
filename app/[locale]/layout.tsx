@@ -34,9 +34,9 @@ const acumin = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "إستاذي",
-  description: "تطبيق متخصص في تقديم خدمات إستاذي",
-};
+  title: "همة",
+  description: "",
+};  
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
@@ -57,13 +57,13 @@ export default async function RootLayout({
   return (
     <html suppressHydrationWarning lang={locale} dir={locale === "ar" ? "rtl" : "ltr"}>
       <body
-        className={`${handicrafts.variable} ${acumin.variable} font-handicrafts antialiased`}
+        className={`${handicrafts.variable} ${acumin.variable} font-acumin antialiased`}
       >
-        <NextIntlClientProvider>
+        {/* <NextIntlClientProvider> */}
           <Providers>
             <MainLayout>{children}</MainLayout>
           </Providers>
-        </NextIntlClientProvider>
+        {/* </NextIntlClientProvider> */}
       </body>
     </html>
   );
