@@ -31,7 +31,7 @@ const nextConfig: NextConfig = {
   },
 
   reactStrictMode: true,
-
+  reactCompiler: true,
   typescript: {
     ignoreBuildErrors: true,
   },
