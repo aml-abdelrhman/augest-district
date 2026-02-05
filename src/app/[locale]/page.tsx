@@ -1,18 +1,12 @@
 import React from "react";
 import { HomeHeroSection } from "@/components/pages/home/hero";
+import UnitesSection from "@/components/pages/home/unites-section";
 
 const HomePage = () => {
   return (
     <div>
       <HomeHeroSection />
-      <div className="h-[90svh] bg-main-50 relative">
-        <img src="/section-bg.svg" alt="" className="absolute top-0 start-0" />
-        <div className="container py-[17svh]">
-          <div className="flex items-center gap-3">
-            <img src="/section-logo.svg" alt="" />
-          </div>
-        </div>
-      </div>
+      <UnitesSection />
     </div>
   );
 };
