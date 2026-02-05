@@ -146,5 +146,8 @@
     "cannotRemoveMinFwd": "Cannot remove - minimum {min} FWD required",
     "otp_required": "OTP is required.",
     "otp_short": "OTP must be exactly 6 digits."
-  }
+  },
+  "Receive project file": "Receive project file",
+  "Phone call": "Phone call",
+  "Have an inquiry about a project": "Have an inquiry about a project?"
 }

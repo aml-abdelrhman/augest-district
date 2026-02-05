@@ -5,6 +5,7 @@ const HomePage = () => {
   return (
     <div>
       <HomeHeroSection />
+      <div className="h-[500px] bg-main-50"></div>
     </div>
   );
 };

@@ -15,7 +15,7 @@ const MainLayout = ({ children }: { children: React.ReactNode }) => {
       <div
         className={cn(
           "relative z-10 min-h-[70svh] transition-colors",
-          pathname !== "/" && "py-6 lg:py-9",
+          // pathname !== "/" && "py-6 lg:py-9",
         )}
       >
         {children}

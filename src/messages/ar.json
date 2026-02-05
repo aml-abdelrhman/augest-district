@@ -12,7 +12,6 @@
     "timeRemaining": "الوقت المتبقي: {time}",
     "understood": "مفهوم"
   },
-
   "NotFound": {
     "title": "الصفحة غير موجودة",
     "description": "عذراً، الصفحة التي تبحث عنها غير موجودة أو تم نقلها.",
@@ -83,7 +82,7 @@
     "signIn": "تسجيل الدخول",
     "termsRequired": "يجب الموافقة على الشروط والأحكام"
   },
- "emptyState": {
+  "emptyState": {
     "search": {
       "title": "لا توجد نتائج بحث",
       "description": "لم نتمكن من العثور على أي نتائج تطابق بحثك. جرب تغيير كلمات البحث أو المرشحات."
@@ -164,5 +163,8 @@
     "dark": "داكن",
     "system": "النظام",
     "toggle": "تبديل المظهر"
-  }
+  },
+  "Receive project file": "استلام ملف المشروع",
+  "Phone call": "مكالمة هاتفية",
+  "Have an inquiry about a project": "هل لديك استفسار حول مشروع؟"
 }

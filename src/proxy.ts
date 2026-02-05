@@ -90,6 +90,6 @@ export const config = {
         "/",
         "/(ar|en)/:path*",
         // Exclude API routes, static files, and Next.js internals
-        "/((?!api|_next/static|_next/image|favicon.ico|images|manifest.json).*)",
+       '/((?!api|_next/static|_next/image|favicon.ico|.*\\.svg$).*)',
     ],
 };
