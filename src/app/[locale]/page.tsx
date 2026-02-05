@@ -5,7 +5,9 @@ const HomePage = () => {
   return (
     <div>
       <HomeHeroSection />
-      <div className="h-[500px] bg-main-50"></div>
+      <div className="h-[90svh] bg-main-50 relative">
+        <img src="/section-bg.svg" alt="" className="absolute top-0 start-0" />
+      </div>
     </div>
   );
 };
