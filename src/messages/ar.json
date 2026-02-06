@@ -173,5 +173,8 @@
   "All": "الجميع",
   "Available": "متاح",
   "Sold": "مُباع",
-  "Reserved": "محجوز"
+  "Reserved": "محجوز",
+  "available": "متاح",
+  "sold": "مُباع",
+  "reserved": "محجوز"
 }

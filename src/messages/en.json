@@ -156,5 +156,8 @@
   "All": "All",
   "Available": "Available",
   "Sold": "Sold",
-  "Reserved": "Reserved"
+  "Reserved": "Reserved",
+  "available": "Available",
+  "sold": "Sold",
+  "reserved": "Reserved"
 }
