@@ -15,7 +15,7 @@ const Providers = ({ children }: { children: React.ReactNode }) => {
   moment.locale(locale);
   return (
     <QueryClientProvider client={queryClient}>
-      <DirectionProvider dir={locale === "ar" ? "rtl" : "ltr"}>
+      <DirectionProvider dir={locale === "ar" ? "rtl" : "ltr"} direction={locale === "ar" ? "rtl" : "ltr"}>
         <NextTopLoader
           color="#37003C"
           initialPosition={0.08}

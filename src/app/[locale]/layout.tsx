@@ -79,6 +79,7 @@ export default async function RootLayout({
           acumin.variable,
           geDinarTwo.variable,
         )}
+        dir={locale === "ar" ? "rtl" : "ltr"}
       >
         <NextIntlClientProvider locale={locale}>
           <Providers>

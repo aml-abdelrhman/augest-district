@@ -3,13 +3,15 @@ import { Navbar } from "@/components/common/navbar";
 import { cn } from "@/lib/utils";
 import { usePathname } from "next/navigation";
 import React from "react";
+import { useLocale } from "next-intl";
 
 const MainLayout = ({ children }: { children: React.ReactNode }) => {
   const pathname = usePathname();
+  const locale = useLocale();
   return (
-    <div
+    <section
       className="min-h-svh bg-white dark:bg-zinc-900 font-nunito max-w-screen transition-colors"
-      dir="auto"
+      dir={locale === "ar" ? "rtl" : "ltr"}
     >
       <Navbar />
       <div
@@ -21,7 +23,7 @@ const MainLayout = ({ children }: { children: React.ReactNode }) => {
         {children}
       </div>
       {/* <Footer /> */}
-    </div>
+    </section>
   );
 };
 

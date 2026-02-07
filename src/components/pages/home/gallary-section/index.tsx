@@ -9,11 +9,8 @@ import {
 
 const galleryImages = [
   "/gallary-section-img.png",
-  "/gallary-section-img.png",
-  "/gallary-section-img.png",
-  "/gallary-section-img.png",
-  "/gallary-section-img.png",
-  "/gallary-section-img.png",
+  "/gallary-section-img(2).png",
+  "/gallary-section-img(3).png",
 ];
 
 const GallarySection = () => {
@@ -26,18 +23,21 @@ const GallarySection = () => {
         alt="Section Background"
         className="absolute top-0 start-0 z-5"
       />
-      <div className="container py-[17svh] relative z-10  ">
+      <div className="py-[17svh] relative z-10">
         <Carousel
           opts={{
-            align: "start",
+            align: "center",
             loop: true,
             direction: locale === "ar" ? "rtl" : "ltr",
           }}
           className="w-full"
         >
-          <div className="flex items-center justify-between gap-5 flex-wrap mb-[7svh]">
+          <div className="container flex items-center justify-between gap-5 flex-wrap mb-[7svh]">
             <div className="flex items-center gap-3">
-              <img src="/section-logo.svg" alt="Section Logo" className="animate-pulse" />
+              <img
+                src="/section-logo.svg"
+                alt="Section Logo"
+              />
               <h2 className="section-title">{t("Photo Gallery")}</h2>
             </div>
             <div className="flex items-center gap-3">
@@ -45,24 +45,15 @@ const GallarySection = () => {
               <CarouselPrevious className="static translate-y-0" />
             </div>
           </div>
-          <CarouselContent className="-ms-4 h-[45svh]">
+          <CarouselContent className="h-[65svh]">
             {galleryImages.map((src, index) => (
-              <CarouselItem
-                key={index}
-                className="pe-4 lg:basis-[90%]"
-              >
-                <div className="group relative h-full overflow-hidden rounded-4xl border-4 border-white shadow-xl transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl">
+              <CarouselItem key={index} className="md:basis-[90%] lg:basis-[60%]">
+                <div className="group relative h-full overflow-hidden rounded-4xl">
                   <img
-                    src="/gallary-section-img.png"
+                    src={src}
                     alt={`Gallery Image`}
-                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    className="h-full w-full object-cover"
                   />
-                  <div className="absolute inset-0 bg-linear-to-t from-black/60 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-                  <div className="absolute bottom-6 left-6 translate-y-4 opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
-                    <p className="text-white font-medium text-lg">
-                      {t("View Modern Interior")}
-                    </p>
-                  </div>
                 </div>
               </CarouselItem>
             ))}
