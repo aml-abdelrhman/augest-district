@@ -16,7 +16,12 @@ const GallarySection = () => {
             <img src="/section-logo.svg" alt="" />
             <h2 className="section-title">{t("Photo Gallery")}</h2>
           </div>
-          <div className=""></div>
+          <div className="">
+            {/* carousel buttons here */}
+          </div>
+        </div>
+        <div className="">
+            {/* images here */}
         </div>
       </div>
     </div>
