@@ -1,3 +1,4 @@
+"use client";
 import { ChevronDownIcon, SearchIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
@@ -5,7 +6,7 @@ import Image from "next/image";
 import LangSelector from "./lang-selector";
 import { cn } from "@/lib/utils";
 import { useTranslations } from "next-intl";
-import { usePathname } from "next/navigation";
+import { usePathname } from "@/i18n/navigation";
 import { Link } from "@/i18n/routing";
 
 export const Navbar = () => {
@@ -38,8 +39,10 @@ export const Navbar = () => {
                 href={item.href}
                 key={index}
                 className={cn(
-                  "p-0 h-auto font-medium text-base relative",
-                  pathname === item.href ? "text-white" : "text-[#ffffffb2] hover:text-white",
+                  "font-medium relative",
+                  pathname === item.href
+                    ? "text-white"
+                    : "text-[#ffffffb2] hover:text-white!",
                 )}
               >
                 {item.label}
