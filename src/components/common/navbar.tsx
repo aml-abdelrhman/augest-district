@@ -38,8 +38,8 @@ export const Navbar = () => {
                 href={item.href}
                 key={index}
                 className={cn(
-                  `p-0 h-auto font-medium text-base relative`,
-                  pathname === item.href ? "text-white" : "text-[#ffffffb2]",
+                  "p-0 h-auto font-medium text-base relative",
+                  pathname === item.href ? "text-white" : "text-[#ffffffb2] hover:text-white",
                 )}
               >
                 {item.label}
