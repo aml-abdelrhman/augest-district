@@ -13,37 +13,37 @@ const projectDetails = [
   {
     label: "الغرف",
     value: "3 - 3",
-    icon: <HouseIcon />,
+    icon: HouseIcon ,
     hasBackground: true,
   },
   {
     label: "السعر من",
     value: "1,290,000",
-    icon: <Building2Icon />,
+    icon: Building2Icon,
     hasBackground: true,
   },
   {
     label: "أنواع الوحدات",
     value: "أدوار",
-    icon: <HouseIcon />,
+    icon: HouseIcon,
     hasBackground: true,
   },
   {
     label: "حالة المشروع",
     value: "متاح",
-    icon: <Building2Icon />,
+    icon: Building2Icon,
     hasBackground: true,
   },
   {
     label: "المدينة",
     value: "العارض, شمال الرياض",
-    icon: <MapPin />,
+    icon: MapPin,
     hasBackground: false,
   },
   {
     label: "المساحة",
     value: "215 - 215 م²",
-    icon: <HouseIcon />,
+    icon: HouseIcon,
     hasBackground: true,
   },
 ];
@@ -51,24 +51,20 @@ const projectDetails = [
 const FeatureCard = ({
   label,
   value,
-  icon,
+  Icon,
 }: {
   label: string;
   value: string;
-  icon: React.ReactNode;
+  Icon: React.ComponentType<{ className?: string }>;
 }) => {
   return (
-    <div className="flex items-center gap-3">
-      <div className="flex items-center gap-5">
-        <div className="size-11 max-md:w-full border border-white flex items-center justify-center glass-bg">
-          {icon}
-        </div>
-        <div className="space-y-1">
-          <p className="text-sm font-medium text-start">{label}</p>
-          <p className="text-xl md:text-2xl xl:text-3xl font-medium text-center">
-            {value}
-          </p>
-        </div>
+    <div className="flex items-center gap-3 w-full flex-1">
+      <Icon className="rounded-full p-1 size-8 md:size-10 lg:size-12 border border-white glass-bg" />
+      <div className="space-y-1">
+        <p className="text-sm font-medium text-start">{label}</p>
+        <p className="text-lg md:text-xl 2xl:text-2xl font-medium text-center">
+          {value}
+        </p>
       </div>
     </div>
   );
@@ -81,14 +77,16 @@ export const HomeHeroSection = () => {
       <div className="absolute top-0 left-0 w-full h-[15svh] bg-linear-to-b from-[#897E6F] to-transparent z-5" />
       <div className="h-[43svh]"></div>
       <div className="space-y-11 text-center text-white container z-10 relative py-[10svh]">
-        <h1 className="font-light text-5xl md:text-6xl lg:text-7xl 2xl:text-8xl">ادوار مشروع 21 – حي العارض</h1>
-        <div className="flex items-center justify-center gap-9 flex-wrap">
+        <h1 className="font-light text-5xl md:text-6xl lg:text-7xl 2xl:text-8xl">
+          ادوار مشروع 21 – حي العارض
+        </h1>
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-4 nd:gap-6 xl:gap-9 place-items-center">
           {projectDetails.map((projectDetail, index) => (
             <FeatureCard
               key={index}
               label={projectDetail.label}
               value={projectDetail.value}
-              icon={projectDetail.icon}
+              Icon={projectDetail.icon}
             />
           ))}
         </div>
