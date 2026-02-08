@@ -13,7 +13,7 @@ import Link from "next/link";
 const Footer = () => {
   const t = useTranslations();
   return (
-    <footer className="bg-main-600 py-[10svh] relative overflow-hidden font-cairo text-primary-foreground">
+    <footer className="bg-main-600 py-[35svh]  sm:py-[10svh] relative overflow-hidden font-cairo text-primary-foreground">
       <img
         src="/footer-bg.svg"
         alt="footer-img"
@@ -24,6 +24,7 @@ const Footer = () => {
         alt="footer-img"
         className="absolute top-0 start-0 z-5 pointer-events-none"
       />
+      <div className="absolute top-[28%] start-0 z-12 pointer-events-none w-full h-14 bg-linear-to-b from-transparent to-main-600" />
       <div className="container">
         <div className="relative z-10 grid md:grid-cols-2 gap-3">
           <div className=""></div>
