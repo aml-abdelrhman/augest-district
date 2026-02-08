@@ -43,7 +43,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="container absolute bottom-7 start-[7%] sm:start-[10%] w-full z-5 flex items-center justify-between text-sm flex-wrap max-sm:gap-5">
+      <div className="container absolute bottom-7 start-[1%] sm:start-[10%] w-full z-5 flex items-center justify-between text-sm flex-wrap max-sm:gap-5">
         <div className="flex items-center gap-3">
           <InstagramIcon className="size-7 text-transparent" />
           <XTwitterIcon className="size-7 text-transparent" />
