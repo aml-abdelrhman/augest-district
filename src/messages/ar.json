@@ -203,5 +203,17 @@
   "Department/Service Number": "رقم الدائرة / الخدمة",
   "Company location": "موقع الشركة",
   "Terms and Conditions": "الشروط والأحكام",
-  "Privacy Policy": "سياسة الخصوصية"
+  "Privacy Policy": "سياسة الخصوصية",
+  "Guarantees": "الضمانات",
+  "years": "{count, plural, =0 {0 سنة} one {سنة} two {سنتان} few {{count} سنوات} many {{count} سنة} other {{count} سنة}",
+  "Plugs and switches": "المقابس والمفاتيح",
+  "Structural structure": "الهيكل الإنشائي",
+  "Guarantee insulation": "ضمان العزل",
+  "Intercom and cameras": "انتركم وكاميرات",
+  "Elevator warranty": "ضمان المصعد",
+  "Electric elevators": "مصاعد كهربائية",
+  "Paint": "طلاء",
+  "Sanitary ware": "ادوات صحية",
+  "Green pipes": "الأنابيب الخضراء",
+  "Smart lighting": "الإضاءة الذكية"
 }

@@ -186,5 +186,17 @@
   "Department/Service Number": "Department/Service Number",
   "Company location": "Company location",
   "Terms and Conditions": "Terms and Conditions",
-  "Privacy Policy": "Privacy Policy"
+  "Privacy Policy": "Privacy Policy",
+  "Guarantees": "Guarantees",
+  "years": "{count, plural, one {{count} year} other {{count} years}}",
+  "Plugs and switches": "Plugs and switches",
+  "Structural structure": "Structural structure",
+  "Guarantee insulation": "Guarantee insulation",
+  "Intercom and cameras": "Intercom and cameras",
+  "Elevator warranty": "Elevator warranty",
+  "Electric elevators": "Electric elevators",
+  "Paint": "Paint",
+  "Sanitary ware": "Sanitary ware",
+  "Green pipes": "Green pipes",
+  "Smart lighting": "Smart lighting"
 }

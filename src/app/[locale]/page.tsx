@@ -3,6 +3,7 @@ import { HomeHeroSection } from "@/components/pages/home/hero";
 import UnitsSection from "@/components/pages/home/units-section";
 import GallarySection from "@/components/pages/home/gallary-section";
 import ProjectFeatures from "@/components/pages/home/project-features";
+import GuaranteesSection from "@/components/pages/home/guarantees-section";
 
 const HomePage = () => {
   return (
@@ -11,6 +12,7 @@ const HomePage = () => {
       <UnitsSection />
       <GallarySection />
       <ProjectFeatures />
+      <GuaranteesSection />
     </div>
   );
 };
