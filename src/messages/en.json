@@ -177,5 +177,9 @@
   "Elevator": "Elevator",
   "Elevators": "Elevators",
   "Storehouse": "Storehouse",
-  "Independent counter": "Independent counter"
+  "Independent counter": "Independent counter",
+  "footer": {
+    "description": "Hamma Real Estate excels in modern real estate marketing, benefiting from a broad customer database and a team of experts to promote projects effectively and attractively, and dedicated to meeting customer needs."
+  },
+  "Register your interest": "Register your interest"
 }

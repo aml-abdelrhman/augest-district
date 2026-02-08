@@ -33,12 +33,16 @@ const ProjectFeatures = () => {
       <img
         src="/section-bg-caramel.svg"
         alt="Section Background"
-        className="absolute top-0 start-0 z-5"
+        className="absolute top-0 start-0 z-5 pointer-events-none"
       />
       <div className="container py-[17svh] relative z-10  ">
         <div className="flex items-center justify-between gap-5 flex-wrap mb-[7svh]">
           <div className="flex items-center gap-3">
-            <img src="/section-logo.svg" alt="Section Logo" />
+            <img
+              src="/section-logo.svg"
+              alt="Section Logo"
+              className="pointer-events-none"
+            />
             <h2 className="section-title">{t("Project characteristics")}</h2>
           </div>
         </div>

@@ -194,5 +194,9 @@
   "Split air conditioning": "تكييف سبليت",
   "Elevators": "مصاعد",
   "Storehouse": "مخزن",
-  "Independent counter": "عداد مستقل"
+  "Independent counter": "عداد مستقل",
+  "footer": {
+    "description": "همه العقارية تتميز في التسويق الحديث للعقارات، مستفيدة من قاعدة بيانات واسعة للعملاء وفريق خبراء لترويج المشاريع بشكل فعال وجذاب، ومخصص لتلبية احتياجات العملاء."
+  },
+  "Register your interest": "سجل اهتمامك"
 }

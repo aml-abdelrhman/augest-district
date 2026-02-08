@@ -35,7 +35,7 @@ export const Navbar = () => {
                 {item.label}
                 {item.active && (
                   <img
-                    className="absolute right-0 top-9.5 w-[57px] h-[13px]"
+                    className="absolute right-0 top-9.5 w-[57px] h-[13px] pointer-events-none"
                     alt="Vector"
                     src="/vector-839.svg"
                   />

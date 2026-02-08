@@ -21,7 +21,7 @@ const GallarySection = () => {
       <img
         src="/section-bg-white.svg"
         alt="Section Background"
-        className="absolute top-0 start-0 z-5"
+        className="absolute top-0 start-0 z-5 pointer-events-none"
       />
       <div className="py-[17svh] relative z-10">
         <Carousel
@@ -37,6 +37,7 @@ const GallarySection = () => {
               <img
                 src="/section-logo.svg"
                 alt="Section Logo"
+                className="pointer-events-none"
               />
               <h2 className="section-title">{t("Photo Gallery")}</h2>
             </div>
@@ -47,7 +48,10 @@ const GallarySection = () => {
           </div>
           <CarouselContent className="h-[65svh]">
             {galleryImages.map((src, index) => (
-              <CarouselItem key={index} className="md:basis-[90%] lg:basis-[60%]">
+              <CarouselItem
+                key={index}
+                className="md:basis-[90%] lg:basis-[60%]"
+              >
                 <div className="group relative h-full overflow-hidden rounded-4xl">
                   <img
                     src={src}
