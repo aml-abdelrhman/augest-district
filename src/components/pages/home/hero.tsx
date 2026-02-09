@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { WhatsAppIcon } from "@/icons";
 import {
   Building2Icon,
   FileIcon,
@@ -13,7 +14,7 @@ const projectDetails = [
   {
     label: "الغرف",
     value: "3 - 3",
-    icon: HouseIcon ,
+    icon: HouseIcon,
     hasBackground: true,
   },
   {
@@ -93,26 +94,26 @@ export const HomeHeroSection = () => {
         <div className="flex items-center justify-center max-md:flex-wrap max-md:gap-5">
           <Button
             size="lg"
-            className="max-md:w-full z-5 hover:bg-white hover:text-primary hover:border-transparent"
+            className="max-md:w-full min-h-15 sm:min-h-17 sm:text-lg z-5 hover:bg-card hover:text-primary hover:border-transparent"
             variant="outline"
           >
             {t("Have an inquiry about a project")}
           </Button>
-          <div className="max-md:hidden h-5 w-2 bg-white -me-1 -ms-0.5 shrink-0 -z-1" />
+          <div className="max-md:hidden h-5 w-2 bg-card -me-1 -ms-0.5 shrink-0 -z-1" />
           <Button
             size="lg"
-            className="max-md:w-full hover:bg-white"
+            className="max-md:w-full min-h-15 sm:min-h-17 sm:text-lg hover:bg-card"
             variant="secondary"
-            endContent={<PhoneIcon />}
+            endContent={<PhoneIcon className="size-5" />}
           >
             {t("Phone call")}
           </Button>
-          <div className="max-md:hidden h-5 w-2 bg-white -mx-1 shrink-0" />
+          <div className="max-md:hidden h-5 w-2 bg-card -mx-1 shrink-0" />
           <Button
             size="lg"
-            className="max-md:w-full hover:bg-white"
+            className="max-md:w-full min-h-15 sm:min-h-17 sm:text-lg hover:bg-card"
             variant="secondary"
-            endContent={<FileIcon />}
+            endContent={<WhatsAppIcon className="size-6" />}
           >
             {t("Receive project file")}
           </Button>

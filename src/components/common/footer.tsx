@@ -24,7 +24,7 @@ const Footer = () => {
       <Image
         src="/footer-img.svg"
         alt="footer-img"
-        className="absolute top-0 start-0 z-5 pointer-events-none w-auto lg:block hidden"
+        className="absolute top-0 start-0 z-5 pointer-events-none w-auto h-full lg:block hidden"
         quality={100}
         width={688}
         height={387}
