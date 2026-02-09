@@ -87,7 +87,7 @@ export const Navbar = () => {
               <Button
                 variant="ghost"
                 size="icon"
-                className="size-6 p-0 hover:bg-transparent"
+                className="size-6 p-0 hover:bg-transparent xl:hidden"
               >
                 <MenuIcon className="size-6 text-white" />
               </Button>
@@ -109,7 +109,7 @@ export const Navbar = () => {
                 <Image
                   src="/section-bg-caramel.svg"
                   alt="section-bg-caramel"
-                  className="absolute bottom-0 end-0 z-5 w-full h-full rotate-90 pointer-events-none"
+                  className="absolute bottom-0 end-0 z-3 w-full h-full rotate-90 pointer-events-none"
                   width={799}
                   height={387}
                 />
@@ -118,7 +118,7 @@ export const Navbar = () => {
                     href={item.href}
                     key={index}
                     className={cn(
-                      "flex items-center gap-2 font-medium text-lg relative w-full hover:text-primary p-2",
+                      "flex items-center gap-2 font-medium text-lg w-full hover:text-primary p-2 relative z-10",
                       pathname === item.href
                         ? "text-white bg-primary rounded-xl"
                         : "",
