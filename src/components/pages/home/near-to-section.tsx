@@ -25,7 +25,7 @@ const NearToSection = () => {
   return (
     <section className="min-h-[90svh] bg-main-200 relative overflow-hidden">
       <div className="container py-[17svh] relative z-10">
-        <div className="flex items-center gap-3 max-sm:flex-col -mb-[7svh]">
+        <div className="flex items-center gap-3 max-sm:flex-col mb-[7svh] lg:-mb-[7svh]">
           <img
             src="/section-logo.svg"
             alt="Section Logo"
@@ -38,19 +38,19 @@ const NearToSection = () => {
           alt="Section Background"
           className="absolute top-0 start-0 z-5 pointer-events-none"
         />
-        <div className="grid lg:grid-cols-2 gap-5 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-5 place-self-end">
+        <div className="grid lg:grid-cols-2 gap-7 lg:gap-5 relative z-10">
+          <div className="grid lg:grid-cols-2 gap-3 lg:gap-5 place-self-end order-2 lg:order-1 w-full">
             {locations.map((location, index) => (
               <div
                 key={index}
                 className="flex items-center gap-5 min-w-fit w-full text-primary"
               >
-                <MapPinIcon className="rounded-full p-2.5 size-8 lg:size-10 border border-primary/20 min-w-fit" />
-                <div className="space-y-1 text-start">
-                  <p className="text-xs">{location.distance}</p>
-                  <p className="text-lg lg:text-xl font-medium">
+                <MapPinIcon className="rounded-full p-2.5 size-10 border border-primary/20 min-w-fit" />
+                <div className="space-y-0.5 text-start">
+                  <p className="text-xs font-thin">{location.distance}</p>
+                  <a href="#" className="text-lg lg:text-xl font-medium hover:underline">
                     {location.name}
-                  </p>
+                  </a>
                 </div>
               </div>
             ))}
@@ -60,7 +60,7 @@ const NearToSection = () => {
             alt="Near To"
             width={100}
             height={100}
-            className="block w-full h-auto"
+            className="block w-full h-auto order-1 lg:order-2"
           />
         </div>
       </div>
