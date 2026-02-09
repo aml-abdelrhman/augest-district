@@ -46,8 +46,8 @@ const LangSelector = ({ className }: { className?: string }) => {
           value={locale}
           onValueChange={handleLanguageChange}
         >
-          <DropdownMenuRadioItem value="en">English</DropdownMenuRadioItem>
-          <DropdownMenuRadioItem value="ar">العربية</DropdownMenuRadioItem>
+          <DropdownMenuRadioItem value="en" className="font-inter">English</DropdownMenuRadioItem>
+          <DropdownMenuRadioItem value="ar" className="font-ge-dinar-two">العربية</DropdownMenuRadioItem>
         </DropdownMenuRadioGroup>
       </DropdownMenuContent>
     </DropdownMenu>
