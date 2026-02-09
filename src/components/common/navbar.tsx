@@ -1,5 +1,15 @@
 "use client";
-import { MenuIcon, SearchIcon } from "lucide-react";
+import {
+  Building2Icon,
+  CalendarIcon,
+  HomeIcon,
+  LandmarkIcon,
+  MapIcon,
+  MenuIcon,
+  ProjectorIcon,
+  SearchIcon,
+  UsersIcon,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import LangSelector from "./lang-selector";
@@ -19,14 +29,14 @@ export const Navbar = () => {
   const t = useTranslations();
   const pathname = usePathname();
   const navigationItems = [
-    { label: t("Home"), href: "/" },
-    { label: t("Projects"), href: "/projects" },
-    { label: t("Buy on the map"), href: "/projects" },
-    { label: t("Land"), href: "/projects" },
-    { label: t("Events"), href: "/projects" },
-    { label: t("Developers"), href: "/projects" },
-    { label: t("Methodology"), href: "/projects" },
-    { label: t("Employment"), href: "/projects" },
+    { label: t("Home"), href: "/", Icon: HomeIcon },
+    { label: t("Projects"), href: "/projects", Icon: ProjectorIcon },
+    { label: t("Buy on the map"), href: "/buy-on-the-map", Icon: MapIcon },
+    { label: t("Land"), href: "/land", Icon: LandmarkIcon },
+    { label: t("Events"), href: "/events", Icon: CalendarIcon },
+    { label: t("Developers"), href: "/developers", Icon: Building2Icon },
+    { label: t("Methodology"), href: "/methodology", Icon: HomeIcon },
+    { label: t("Employment"), href: "/employment", Icon: UsersIcon },
   ];
   return (
     <nav className="flex w-[90%] xl:w-full container items-center justify-between px-4 absolute top-[5%]! left-0 right-0 z-50 glass-bg xl:bg-transparent! xl:backdrop-blur-none! h-20 xl:h-auto rounded-2xl">
@@ -82,7 +92,7 @@ export const Navbar = () => {
                 <MenuIcon className="size-6 text-white" />
               </Button>
             </SheetTrigger>
-            <SheetContent className="w-full">
+            <SheetContent className="w-full bg-main-50">
               <SheetHeader>
                 <SheetTitle className="bg-primary p-2 rounded-2xl mt-5">
                   <Image
@@ -95,34 +105,40 @@ export const Navbar = () => {
                   />
                 </SheetTitle>
               </SheetHeader>
-              <div className="flex flex-col gap-5 mt-10 container">
+              <div className="flex flex-col gap-3 mt-10 container relative z-10">
+                <Image
+                  src="/section-bg-caramel.svg"
+                  alt="section-bg-caramel"
+                  className="absolute bottom-0 end-0 z-5 w-full h-full rotate-90 pointer-events-none"
+                  width={799}
+                  height={387}
+                />
                 {navigationItems.map((item, index) => (
                   <Link
                     href={item.href}
                     key={index}
                     className={cn(
-                      "font-medium text-lg relative w-fit hover:text-primary",
+                      "flex items-center gap-2 font-medium text-lg relative w-full hover:text-primary p-2",
                       pathname === item.href
-                        ? "text-primary"
+                        ? "text-white bg-primary rounded-xl"
                         : "",
                     )}
                   >
+                    <item.Icon
+                      className={cn(
+                        "size-6 text-primary",
+                        pathname === item.href ? "text-white" : "",
+                      )}
+                    />
                     {item.label}
-                    {pathname === item.href && (
-                      <img
-                        className="absolute right-0 -bottom-2 w-10 h-2 pointer-events-none"
-                        alt="Vector"
-                        src="/vector-839.svg"
-                      />
-                    )}
                   </Link>
                 ))}
-                <div className="h-px w-full bg-white/20 mt-4" />
+                <div className="h-[2px] rounded-full w-full bg-main-900/20 mt-4" />
                 <div className="flex items-center justify-between">
-                  <span className="text-white/70 font-medium">
+                  <span className="text-primary font-medium">
                     {t("Language")}
                   </span>
-                  <LangSelector />
+                  <LangSelector className="text-primary!" />
                 </div>
               </div>
             </SheetContent>
