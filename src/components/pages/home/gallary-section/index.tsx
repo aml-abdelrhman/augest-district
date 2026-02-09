@@ -32,8 +32,8 @@ const GallarySection = () => {
           }}
           className="w-full max-md:px-3"
         >
-          <div className="container flex items-center justify-between gap-5 flex-wrap mb-[7svh]">
-            <div className="flex items-center gap-3">
+          <div className="flex items-center sm:justify-between gap-5 max-sm:flex-col flex-wrap mb-[7svh]">
+            <div className="flex items-center gap-3 max-sm:flex-col">
               <img
                 src="/section-logo.svg"
                 alt="Section Logo"
@@ -41,7 +41,7 @@ const GallarySection = () => {
               />
               <h2 className="section-title">{t("Photo Gallery")}</h2>
             </div>
-            <div className="flex items-center gap-3">
+            <div className="items-center gap-3 hidden md:flex">
               <CarouselNext className="static translate-y-0" />
               <CarouselPrevious className="static translate-y-0" />
             </div>
@@ -62,6 +62,10 @@ const GallarySection = () => {
               </CarouselItem>
             ))}
           </CarouselContent>
+          <div className="flex items-center gap-3 justify-center md:hidden mt-9">
+            <CarouselNext className="static translate-y-0" />
+            <CarouselPrevious className="static translate-y-0" />
+          </div>
         </Carousel>
       </div>
     </section>
