@@ -30,7 +30,7 @@ const GallarySection = () => {
             loop: true,
             direction: locale === "ar" ? "rtl" : "ltr",
           }}
-          className="w-full max-md:px-3"
+          className="w-full"
         >
           <div className="flex items-center sm:justify-between gap-5 max-sm:flex-col flex-wrap mb-[7svh]">
             <div className="flex items-center gap-3 max-sm:flex-col">
@@ -50,7 +50,7 @@ const GallarySection = () => {
             {galleryImages.map((src, index) => (
               <CarouselItem
                 key={index}
-                className="md:basis-[90%] lg:basis-[60%]"
+                className="basis-[85%] lg:basis-[60%]"
               >
                 <div className="group relative h-full overflow-hidden rounded-4xl">
                   <img
