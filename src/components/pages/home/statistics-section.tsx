@@ -17,7 +17,7 @@ const statistics = [
     description:
       "عبر بناء تجربة تسويقية متكاملة تُبرز جودة المنتج العقاري وتساعد العملاء على اتخاذ قرارات دقيقة وثابتة.",
     img: "/statistics-bg.svg",
-    units_sold: "173K",
+    units_sold: "173",
     projects_count: 300,
   },
 ];
@@ -80,8 +80,9 @@ const StatisticsSection = () => {
                       </div>
                       <div className="space-y-1">
                         <CountUp
-                          className="text-2xl lg:text-4xl font-bold font-urbanist"
+                          className="text-6xl font-bold font-urbanist"
                           end={statistic.projects_count}
+                          suffix="+"
                         />
                         <p className="text-sm">{t("Unique Projects")}</p>
                       </div>
@@ -92,8 +93,9 @@ const StatisticsSection = () => {
                       </div>
                       <div className="space-y-1">
                         <CountUp
-                          className="text-2xl lg:text-4xl font-bold font-urbanist"
+                          className="text-6xl font-bold font-urbanist"
                           end={Number(statistic.units_sold)}
+                          suffix="K"
                         />
                         <p className="text-sm">{t("sold units")}</p>
                       </div>
