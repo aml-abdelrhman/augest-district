@@ -6,44 +6,8 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import Link from "next/link";
-import { Badge } from "@/components/ui/badge";
-import { BedDoubleIcon, MapPinIcon } from "lucide-react";
-import { AreaIcon } from "@/icons";
-import { Progress } from "@/components/ui/progress";
 
-const projects = [
-  {
-    name: "أدوار مشروع تجريبي – النفل الرياض",
-    img: "/gallary-section-img.png",
-    sold_unites_percentage: 40,
-    location: "الرياض",
-    tags: ["أرض", "شقة", "فيلا"],
-    price: "1,759,000 - 2,099,000",
-    units_count: 100,
-    area: "3,300",
-  },
-  {
-    name: "أدوار مشروع تجريبي – النفل الرياض",
-    img: "/gallary-section-img(2).png",
-    sold_unites_percentage: 57,
-    location: "الرياض",
-    tags: ["أرض", "شقة", "فيلا"],
-    price: "1,759,000 - 2,099,000",
-    units_count: 100,
-    area: "3,300",
-  },
-  {
-    name: "أدوار مشروع تجريبي – النفل الرياض",
-    img: "/gallary-section-img(3).png",
-    sold_unites_percentage: 100,
-    location: "الرياض",
-    tags: ["أرض", "شقة", "فيلا"],
-    price: "1,759,000 - 2,099,000",
-    units_count: 100,
-    area: "3,300",
-  },
-];
+const closedProjects = ["/Link.svg", "/Link.svg", "/Link.svg", "/Link.svg", "/Link.svg"];
 
 const ClosedProjectsSection = () => {
   const t = useTranslations();
@@ -55,7 +19,7 @@ const ClosedProjectsSection = () => {
         alt="Section Background"
         className="absolute top-0 start-0 z-5 pointer-events-none"
       />
-      <div className="py-[17svh] relative z-10">
+      <div className="py-[17svh] relative z-10 container">
         <Carousel
           opts={{
             align: "center",
@@ -64,7 +28,7 @@ const ClosedProjectsSection = () => {
           }}
           className="w-full"
         >
-          <div className="flex items-center sm:justify-between gap-5 max-sm:flex-col flex-wrap mb-[7svh] container">
+          <div className="flex items-center sm:justify-between gap-5 max-sm:flex-col flex-wrap mb-[7svh]">
             <div className="flex items-center gap-3 max-sm:flex-col">
               <img
                 src="/section-logo.svg"
@@ -79,83 +43,15 @@ const ClosedProjectsSection = () => {
             </div>
           </div>
           <CarouselContent className="h-[65svh]">
-            {projects.map((project, index) => (
-              <CarouselItem
-                key={index}
-                className="basis-[85%] lg:basis-[60%] 2xl:basis-[50%] min-h-fit"
-              >
-                <Link
-                  href={`/projects/${project.name}`}
-                  className="group relative h-full block"
-                >
-                  <div className="flex items-center gap-3 absolute top-5 start-5 z-10">
-                    <Badge
-                      variant="secondary"
-                      className="text-sm font-medium text-primary/40 flex items-center gap-2"
-                    >
-                      <MapPinIcon className="size-4! text-primary" />
-                      {project.location}
-                    </Badge>
-                    {project.tags.map((tag, index) => (
-                      <Badge
-                        variant="secondary"
-                        key={index}
-                        className="text-sm font-medium text-primary/40"
-                      >
-                        {tag}
-                      </Badge>
-                    ))}
-                  </div>
+            {closedProjects.map((src, index) => (
+              <CarouselItem key={index} className="basis-1/2 md:basis-1/3 xl:basis-1/4 2xl:basis-1/5">
+                <div className="group relative h-full overflow-hidden rounded-4xl">
                   <img
-                    src={project.img}
-                    alt={`Project Image`}
-                    className="h-[80%] w-full object-cover rounded-4xl"
+                    src={src}
+                    alt={`Gallery Image`}
+                    className="h-full w-full object-cover"
                   />
-                  <div className="grid lg:grid-cols-2 gap-5 mt-5 text-primary/50 z-10 text-start">
-                    <div className="space-y-3">
-                      <h3 className="text-2xl font-bold text-primary">
-                        {project.name}
-                      </h3>
-                      <div className="flex items-center gap-2">
-                        <p className="">
-                          <span className="text-primary font-inter font-semibold">
-                            {project.sold_unites_percentage}%{" "}
-                          </span>{" "}
-                          <span className="text-sm">{t("sold units")}</span>
-                        </p>
-                        <Progress
-                          className="max-w-55"
-                          value={project.sold_unites_percentage}
-                        />
-                      </div>
-                    </div>
-                    <div className="space-y-1">
-                      <div className="flex items-center gap-1.5">
-                        <BedDoubleIcon className="size-4 text-primary" />
-                        <p className="text-sm">
-                          {t("units", { count: project.units_count })}
-                        </p>
-                      </div>
-                      <div className="flex items-center gap-1.5">
-                        <AreaIcon className="size-4 text-primary" />
-                        <p className="text-sm">
-                          {project.area}{" "}
-                          <span className="text-primary/40 inline-block ms-1">
-                            {" "}
-                            {t("m")}
-                          </span>
-                        </p>
-                      </div>
-                      <p className="text-sm text-primary">
-                        {project.price}{" "}
-                        <span className="text-primary/40 inline-block ms-1">
-                          {" "}
-                          {t("SAR")}
-                        </span>
-                      </p>
-                    </div>
-                  </div>
-                </Link>
+                </div>
               </CarouselItem>
             ))}
           </CarouselContent>
