@@ -27,12 +27,10 @@ const StatisticsSection = () => {
   const locale = useLocale();
   return (
     <section className="min-h-[90svh] bg-main-50 relative overflow-hidden">
-     
       <div className="py-[17svh] relative z-10 container">
         <Carousel
           opts={{
             align: "center",
-
             direction: locale === "ar" ? "rtl" : "ltr",
           }}
           className="w-full"
@@ -53,23 +51,21 @@ const StatisticsSection = () => {
           </div>
           <CarouselContent className="h-[75svh]">
             {statistics.map((statistic, index) => (
-              <CarouselItem key={index} className="basis-full text-white">
-                <p className="text-sm absolute top-5 start-5 z-5 ">
+              <CarouselItem
+                key={index}
+                className="basis-[95%] lg:basis-[97%] text-white bg-[url('/statistics-bg.svg')] bg-cover bg-center rounded-4xl p-5 2xl:p-7"
+              >
+                <p className="text-xs absolute top-5 start-5 z-5 ">
                   #{t("hemma_solgan")}
                 </p>
-                <img
-                  src={statistic.img}
-                  alt="Statistics"
-                  className="w-full h-full object-cover rounded-4xl"
-                />
-                <div className="grid lg:grid-cols-12 gap-5 text-start absolute bottom-5 z-5 start-10 w-[93%]">
+                <div className="grid lg:grid-cols-12 gap-5 text-start place-content-end h-full">
                   <div className="space-y-3 order-2 lg:order-1 lg:col-span-8">
                     <h2 className="text-2xl md:text-3xl xl:text-4xl 2xl:text-5xl leading-15">
                       {statistic.title}
                     </h2>
                     <p className="text-white/80">{statistic.description}</p>
                   </div>
-                  <div className="space-y-3 order-1 lg:order-2 lg:col-span-4 place-self-end">
+                  <div className="space-y-3 order-1 lg:order-2 lg:col-span-4 lg:place-self-end">
                     <div className="flex items-center gap-5 min-w-fit w-full">
                       <div className="rounded-full p-2 size-22 border border-white glass-bg min-w-fit flex items-center justify-center">
                         <Building2 className="size-7" />
@@ -80,7 +76,9 @@ const StatisticsSection = () => {
                           end={statistic.projects_count}
                           suffix="+"
                         />
-                        <p className="text-sm text-white/80">{t("Unique Projects")}</p>
+                        <p className="text-sm text-white/80">
+                          {t("Unique Projects")}
+                        </p>
                       </div>
                     </div>
                     <div className="flex items-center gap-5 min-w-fit w-full">
@@ -93,7 +91,9 @@ const StatisticsSection = () => {
                           end={Number(statistic.units_sold)}
                           suffix="K"
                         />
-                        <p className="text-sm text-white/80">{t("sold units")}</p>
+                        <p className="text-sm text-white/80">
+                          {t("sold units")}
+                        </p>
                       </div>
                     </div>
                   </div>
