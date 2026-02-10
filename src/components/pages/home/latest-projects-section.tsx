@@ -49,9 +49,9 @@ const LatestProjectsSection = () => {
   const t = useTranslations();
   const locale = useLocale();
   return (
-    <section className="min-h-[90svh] bg-background relative overflow-hidden">
+    <section className="min-h-[90svh] bg-main-50 relative overflow-hidden">
       <img
-        src="/section-bg-white.svg"
+        src="/section-bg-caramel.svg"
         alt="Section Background"
         className="absolute top-0 start-0 z-5 pointer-events-none"
       />
