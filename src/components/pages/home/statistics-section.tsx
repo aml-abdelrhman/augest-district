@@ -57,10 +57,7 @@ const StatisticsSection = () => {
           </div>
           <CarouselContent className="h-[75svh]">
             {statistics.map((statistic, index) => (
-              <CarouselItem
-                key={index}
-                className="basis-full text-white"
-              >
+              <CarouselItem key={index} className="basis-full text-white">
                 <p className="text-sm absolute top-5 start-5 z-5 ">
                   #{t("hemma_solgan")}
                 </p>
@@ -69,14 +66,14 @@ const StatisticsSection = () => {
                   alt="Statistics"
                   className="w-full h-full object-cover rounded-4xl"
                 />
-                <div className="grid lg:grid-cols-2 gap-5 text-start absolute bottom-5 z-5 start-10 w-full">
+                <div className="grid lg:grid-cols-2 gap-5 text-start absolute bottom-5 z-5 start-10 w-[93%]">
                   <div className="space-y-3 order-2 lg:order-1">
                     <h2 className="text-2xl md:text-3xl xl:text-4xl 2xl:text-5xl">
                       {statistic.title}
                     </h2>
                     <p className="text-white/80">{statistic.description}</p>
                   </div>
-                  <div className="space-y-3 order-1 lg:order-2">
+                  <div className="space-y-3 order-1 lg:order-2 place-self-end">
                     <div className="flex items-center gap-3 min-w-fit w-full">
                       <div className="rounded-full p-2 size-22 border border-white glass-bg min-w-fit flex items-center justify-center">
                         <Building2 className="size-7" />
