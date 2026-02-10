@@ -7,18 +7,19 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 
-const closedProjects = ["/Link.svg", "/Link.svg", "/Link.svg", "/Link.svg", "/Link.svg"];
+const closedProjects = [
+  "/Link.svg",
+  "/Link.svg",
+  "/Link.svg",
+  "/Link.svg",
+  "/Link.svg",
+];
 
 const ClosedProjectsSection = () => {
   const t = useTranslations();
   const locale = useLocale();
   return (
-    <section className="min-h-[90svh] bg-background relative overflow-hidden">
-      <img
-        src="/section-bg-white.svg"
-        alt="Section Background"
-        className="absolute top-0 start-0 z-5 pointer-events-none"
-      />
+    <section className="min-h-[90svh] bg-main-50 relative overflow-hidden">
       <div className="py-[17svh] relative z-10 container">
         <Carousel
           opts={{
@@ -44,7 +45,10 @@ const ClosedProjectsSection = () => {
           </div>
           <CarouselContent className="h-[65svh]">
             {closedProjects.map((src, index) => (
-              <CarouselItem key={index} className="basis-1/2 md:basis-1/3 xl:basis-1/4 2xl:basis-1/5">
+              <CarouselItem
+                key={index}
+                className="basis-1/2 md:basis-1/3 xl:basis-1/4 2xl:basis-1/5"
+              >
                 <div className="group relative h-full overflow-hidden rounded-4xl">
                   <img
                     src={src}

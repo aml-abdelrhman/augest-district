@@ -26,12 +26,8 @@ const StatisticsSection = () => {
   const t = useTranslations();
   const locale = useLocale();
   return (
-    <section className="min-h-[90svh] bg-background relative overflow-hidden">
-      <img
-        src="/section-bg-white.svg"
-        alt="Section Background"
-        className="absolute top-0 start-0 z-5 pointer-events-none"
-      />
+    <section className="min-h-[90svh] bg-main-50 relative overflow-hidden">
+     
       <div className="py-[17svh] relative z-10 container">
         <Carousel
           opts={{
