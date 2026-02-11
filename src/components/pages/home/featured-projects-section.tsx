@@ -70,7 +70,7 @@ useEffect(() => {
               direction: locale === "ar" ? "rtl" : "ltr",
             }}
             setApi={setApi}
-            className="gap-3 lg:gap-5 order-2 lg:order-1 w-full h-full"
+            className="gap-3 lg:gap-5 order-2 lg:order-1 w-full max-w-full h-full"
           >
             <div className="flex items-center justify-between mb-[7svh]">
               <div className="flex items-center gap-3 max-sm:flex-col">
