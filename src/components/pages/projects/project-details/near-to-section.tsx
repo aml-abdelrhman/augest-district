@@ -1,4 +1,3 @@
-import { Card, CardContent } from "@/components/ui/card";
 import { MapPinIcon } from "lucide-react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
