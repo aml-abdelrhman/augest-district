@@ -2,7 +2,7 @@
 import { CarouselApi } from "@/components/ui/carousel";
 import { useLocale, useTranslations } from "next-intl";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   Carousel,
   CarouselContent,
@@ -14,7 +14,8 @@ const FeaturedProjectsSection = () => {
   const t = useTranslations();
   const locale = useLocale();
   const [api, setApi] = useState<CarouselApi>();
-
+const [current, setCurrent] = useState(0); // Track current slide
+  const [count, setCount] = useState(0);
   const projects = [
     {
       title: "فلل للبيع في مشروع تجريبي – حي النرجس",
@@ -45,7 +46,16 @@ const FeaturedProjectsSection = () => {
       img_title: "همه العقارية تتميز في التسويق الحديث للعقارات، مستفيدة من ق",
     },
   ];
-  console.log(api);
+useEffect(() => {
+    if (!api) return;
+
+    setCount(api.scrollSnapList().length);
+    setCurrent(api.selectedScrollSnap() + 1);
+
+    api.on("select", () => {
+      setCurrent(api.selectedScrollSnap() + 1);
+    });
+  }, [api]);
   return (
     <section className="min-h-[80svh] bg-main-200 relative overflow-hidden">
       <div className="container py-[17svh] relative z-10 10 max-w-[1620px]">
@@ -72,9 +82,7 @@ const FeaturedProjectsSection = () => {
                 <h2 className="section-title">{t("Featured projects")}</h2>
               </div>
               <p className="text-primary/50 font-inter">
-                {api
-                  ? `${api?.selectedScrollSnap() + 1}/${api?.scrollSnapList().length}`
-                  : "0/0"}
+                {count > 0 ? `${current}/${count}` : "0/0"}
               </p>
             </div>
             <CarouselContent className="w-full">
