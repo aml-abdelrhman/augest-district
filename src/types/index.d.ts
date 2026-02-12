@@ -76,9 +76,9 @@ export type Project = {
   gallery: string[];
   near_to: {
     img: string;
-    locaations: {
+    locations: {
       name: LocaleText;
-      distance: string;
+      distance: number;
     }[];
   };
   guarantees: {
