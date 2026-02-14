@@ -1,38 +1,22 @@
+"use client";
 import { useTranslations } from "next-intl";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import UnitCard from "./unit-card";
-import { Unit } from "@/types";
+import { useParams } from "next/navigation";
+import { useSuspenseQuery } from "@tanstack/react-query";
+import { projectQueryOptions } from "@/queries";
 
 const UnitsSection = () => {
   const t = useTranslations();
-  const demoUnit: Unit = {
-    id: 1,
-    unit_number: "#B1",
-    title: "Unit 1",
-    description: "Description of unit 1",
-    image: "/unit.png",
-    status: "available",
-    price: "100000",
-    floor: "1",
-    area: "100",
-    rooms: 2,
-    created_at: "2022-01-01",
-    updated_at: "2022-01-01",
-  };
-  const reservedUnit: Unit = {
-    id: 1,
-    unit_number: "#B1",
-    title: "Unit 1",
-    description: "Description of unit 1",
-    image: "/unit.png",
-    status: "reserved",
-    price: "100000",
-    floor: "1",
-    area: "100",
-    rooms: 2,
-    created_at: "2022-01-01",
-    updated_at: "2022-01-01",
-  };
+  const { id } = useParams<{ id: string }>();
+  const { data: project } = useSuspenseQuery(projectQueryOptions(id));
+
+  const units = project?.units || [];
+
+  const availableUnits = units.filter((unit) => unit.status === "available");
+  const soldUnits = units.filter((unit) => unit.status === "sold");
+  const reservedUnits = units.filter((unit) => unit.status === "reserved");
+
   return (
     <section className="min-h-[90svh] bg-main-50 relative">
       <img
@@ -60,32 +44,29 @@ const UnitsSection = () => {
           </div>
           <TabsContent value="all">
             <div className="grid md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-5">
-              {Array.from({ length: 2 }).map((_, index) => (
-                <UnitCard key={index} unit={demoUnit} />
-              ))}
-              {Array.from({ length: 4 }).map((_, index) => (
-                <UnitCard key={index} unit={reservedUnit} />
+              {units.map((unit) => (
+                <UnitCard key={unit.id} unit={unit} />
               ))}
             </div>
           </TabsContent>
           <TabsContent value="available">
             <div className="grid md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-5">
-              {Array.from({ length: 6 }).map((_, index) => (
-                <UnitCard key={index} unit={reservedUnit} />
+              {availableUnits.map((unit) => (
+                <UnitCard key={unit.id} unit={unit} />
               ))}
             </div>
           </TabsContent>
           <TabsContent value="sold">
             <div className="grid md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-5">
-              {Array.from({ length: 6 }).map((_, index) => (
-                <UnitCard key={index} unit={reservedUnit} />
+              {soldUnits.map((unit) => (
+                <UnitCard key={unit.id} unit={unit} />
               ))}
             </div>
           </TabsContent>
           <TabsContent value="reserved">
             <div className="grid md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-5">
-              {Array.from({ length: 6 }).map((_, index) => (
-                <UnitCard key={index} unit={reservedUnit} />
+              {reservedUnits.map((unit) => (
+                <UnitCard key={unit.id} unit={unit} />
               ))}
             </div>
           </TabsContent>

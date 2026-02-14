@@ -41,17 +41,18 @@ export type ApiResponse<T> = {
 
 export type Unit = {
   id: number;
-  unit_number: string;
-  title: string;
-  description: string;
-  image: string;
+  project_id: number;
+  unit_number: string | null;
+  title: string | null;
+  description: string | null;
+  image: string | null;
   status: "available" | "sold" | "reserved";
-  price: string;
-  floor: string;
-  area: string;
-  rooms: number;
-  created_at: string;
-  updated_at: string;
+  price: string | null;
+  floor: string | null;
+  area: string | null;
+  rooms: number | null;
+  created_at?: string;
+  updated_at?: string;
 };
 
 export type LocaleText = {

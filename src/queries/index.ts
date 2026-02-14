@@ -1,9 +1,6 @@
-import {
-  queryOptions,
-  useMutation,
-} from "@tanstack/react-query";
+import { queryOptions, useMutation } from "@tanstack/react-query";
 
-import type { Project, ApiResponse, Meta } from "@/types";
+import type { Project, ApiResponse, Meta, Unit } from "@/types";
 import api from "@/lib/api";
 
 export interface GeneralPageParams {
@@ -57,7 +54,7 @@ const getProjects = async (
   params: GeneralPageParams,
 ): Promise<{ data: Project[]; meta?: Meta | undefined }> => {
   const response = await api.request.get<ApiResponse<Project[]>>(
-    `projects`,
+    "projects",
     params,
   );
   if (response.status !== "success") {
@@ -70,4 +67,33 @@ export const projectsQueryOptions = (params: GeneralPageParams) =>
   queryOptions({
     queryKey: ["projects", params],
     queryFn: () => getProjects(params),
+  });
+const getUnits = async (
+  params: GeneralPageParams,
+): Promise<{ data: Unit[]; meta?: Meta | undefined }> => {
+  const response = await api.request.get<ApiResponse<Unit[]>>("units", params);
+  if (response.status !== "success") {
+    throw new Error("Failed to fetch units");
+  }
+  return response?.result;
+};
+
+export const unitsQueryOptions = (params: GeneralPageParams) =>
+  queryOptions({
+    queryKey: ["units", params],
+    queryFn: () => getUnits(params),
+  });
+
+const getUnitById = async (id: string): Promise<Unit> => {
+  const response = await api.request.get<ApiResponse<Unit>>(`units/${id}`);
+  if (response.status !== "success") {
+    throw new Error("Failed to fetch unit");
+  }
+  return response?.result?.data;
+};
+
+export const unitQueryOptions = (id: string) =>
+  queryOptions({
+    queryKey: ["unit", id],
+    queryFn: () => getUnitById(id),
   });
