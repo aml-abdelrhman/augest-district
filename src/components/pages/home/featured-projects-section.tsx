@@ -10,43 +10,23 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import { useSuspenseQuery } from "@tanstack/react-query";
+import { projectsQueryOptions } from "@/queries";
+
 const FeaturedProjectsSection = () => {
   const t = useTranslations();
-  const locale = useLocale();
+  const locale = useLocale() as "ar" | "en";
   const [api, setApi] = useState<CarouselApi>();
-const [current, setCurrent] = useState(0); // Track current slide
+  const [current, setCurrent] = useState(0); // Track current slide
   const [count, setCount] = useState(0);
-  const projects = [
-    {
-      title: "فلل للبيع في مشروع تجريبي – حي النرجس",
-      description:
-        "همه العقارية تتميز في التسويق الحديث للعقارات، مستفيدة من قاعدة بيانات واسعة للعملاء وفريق خبراء لترويج المشاريع بش",
-      img: "/featured-projects.svg",
-      img_title: "همه العقارية تتميز في التسويق الحديث للعقارات، مستفيدة من ق",
-    },
-    {
-      title: "فلل للبيع في مشروع تجريبي – حي النرجس",
-      description:
-        "همه العقارية تتميز في التسويق الحديث للعقارات، مستفيدة من قاعدة بيانات واسعة للعملاء وفريق خبراء لترويج المشاريع بش",
-      img: "/featured-projects.svg",
-      img_title: "همه العقارية تتميز في التسويق الحديث للعقارات، مستفيدة من ق",
-    },
-    {
-      title: "فلل للبيع في مشروع تجريبي – حي النرجس",
-      description:
-        "همه العقارية تتميز في التسويق الحديث للعقارات، مستفيدة من قاعدة بيانات واسعة للعملاء وفريق خبراء لترويج المشاريع بش",
-      img: "/featured-projects.svg",
-      img_title: "همه العقارية تتميز في التسويق الحديث للعقارات، مستفيدة من ق",
-    },
-    {
-      title: "فلل للبيع في مشروع تجريبي – حي النرجس",
-      description:
-        "همه العقارية تتميز في التسويق الحديث للعقارات، مستفيدة من قاعدة بيانات واسعة للعملاء وفريق خبراء لترويج المشاريع بش",
-      img: "/featured-projects.svg",
-      img_title: "همه العقارية تتميز في التسويق الحديث للعقارات، مستفيدة من ق",
-    },
-  ];
-useEffect(() => {
+
+  const { data: projectsData } = useSuspenseQuery(
+    projectsQueryOptions({ featured: true }),
+  );
+
+  const projects = projectsData?.data || [];
+
+  useEffect(() => {
     if (!api) return;
 
     setCount(api.scrollSnapList().length);
@@ -86,24 +66,28 @@ useEffect(() => {
               </p>
             </div>
             <CarouselContent className="w-full">
-              {projects.map((project, index) => (
-                <CarouselItem key={index} className="basis-full">
+              {projects.map((project) => (
+                <CarouselItem key={project.id} className="basis-full">
                   <div className="grid lg:grid-cols-2 gap-3 lg:gap-5 xl:gap-10 w-full text-primary">
                     <div className="space-y-2">
                       <Image
-                        src={project.img}
-                        alt={project.img_title}
-                        width={100}
-                        height={100}
+                        src={project.gallery?.[0] || "/featured-projects.svg"}
+                        alt={project.title[locale]}
+                        width={500}
+                        height={500}
                         className="block w-full h-auto rounded-xl"
                       />
-                      <p className="text-lg font-thin">{project.img_title}</p>
+                      <p className="text-lg font-thin">
+                        {project.title[locale]}
+                      </p>
                     </div>
                     <div className="space-y-5">
                       <h3 className="text-3xl lg:text-4xl 2xl:text-5xl font-medium leading-13">
-                        {project.title}
+                        {project.title[locale]}
                       </h3>
-                      <p className="text-lg font-thin">{project.description}</p>
+                      <p className="text-lg font-thin">
+                        {project.description[locale]}
+                      </p>
                     </div>
                   </div>
                 </CarouselItem>
@@ -117,8 +101,8 @@ useEffect(() => {
           <Image
             src="/featured-projects-bg.svg"
             alt="Near To"
-            width={100}
-            height={100}
+            width={500}
+            height={500}
             className="block w-full h-auto order-1 lg:order-2 rounded-3xl"
           />
         </div>

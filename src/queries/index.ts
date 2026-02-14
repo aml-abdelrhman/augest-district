@@ -35,13 +35,11 @@ export interface GeneralPageParams {
 }
 
 const getProjectById = async (id: string): Promise<Project> => {
-  const response = await api.request.get<ApiResponse<Project>>(
-    `projects/${id}`,
-  );
-  if (response.status !== "success") {
+  const response = await api.request.get<Project>(`guest/projects/${id}`);
+  if (!response) {
     throw new Error("Failed to fetch project");
   }
-  return response?.result?.data;
+  return response;
 };
 
 export const projectQueryOptions = (id: string) =>
@@ -54,7 +52,7 @@ const getProjects = async (
   params: GeneralPageParams,
 ): Promise<{ data: Project[]; meta?: Meta | undefined }> => {
   const response = await api.request.get<ApiResponse<Project[]>>(
-    "projects",
+    "guest/projects",
     params,
   );
   if (response.status !== "success") {
@@ -71,7 +69,10 @@ export const projectsQueryOptions = (params: GeneralPageParams) =>
 const getUnits = async (
   params: GeneralPageParams,
 ): Promise<{ data: Unit[]; meta?: Meta | undefined }> => {
-  const response = await api.request.get<ApiResponse<Unit[]>>("units", params);
+  const response = await api.request.get<ApiResponse<Unit[]>>(
+    "guest/units",
+    params,
+  );
   if (response.status !== "success") {
     throw new Error("Failed to fetch units");
   }
@@ -85,7 +86,9 @@ export const unitsQueryOptions = (params: GeneralPageParams) =>
   });
 
 const getUnitById = async (id: string): Promise<Unit> => {
-  const response = await api.request.get<ApiResponse<Unit>>(`units/${id}`);
+  const response = await api.request.get<ApiResponse<Unit>>(
+    `guest/units/${id}`,
+  );
   if (response.status !== "success") {
     throw new Error("Failed to fetch unit");
   }

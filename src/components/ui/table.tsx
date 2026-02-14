@@ -1,8 +1,7 @@
 import * as React from 'react'
-
-import { useTranslation } from 'react-i18next'
 import { ScrollArea, ScrollBar } from './scroll-area'
 import { cn } from '@/lib/utils'
+import { useLocale } from 'next-intl'
 
 function Table({
   className,
@@ -13,14 +12,14 @@ function Table({
     wrapper?: string
   }
 }) {
-  const { i18n } = useTranslation()
+  const locale = useLocale();
   return (
     <ScrollArea
       className={cn(
         'bg-card p-3 sm:p-6 rounded-2xl border border-border overflow-hidden w-full max-md:max-w-[90svw] max-md:mx-auto whitespace-nowrap',
         classNames?.wrapper,
       )}
-      dir={i18n.dir()}
+      dir={locale === "ar" ? "rtl" : "ltr"}
     >
       <div className="relative overflow-auto rounded-t-2xl">
         <table

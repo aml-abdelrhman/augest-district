@@ -1,7 +1,6 @@
-import React from 'react'
-import { AlertTriangle } from 'lucide-react'
-import { useTranslation } from 'react-i18next'
-import type { ReactNode } from 'react'
+import React from "react";
+import { AlertTriangle } from "lucide-react";
+import type { ReactNode } from "react";
 import {
   AlertDialog,
   AlertDialogAction,
@@ -12,26 +11,28 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
   AlertDialogTrigger,
-} from '@/components/ui/alert-dialog'
+} from "@/components/ui/alert-dialog";
+import { useTranslations, useLocale } from "next-intl";
 
 interface ActionConfirmationDialogProps {
-  title?: string
-  description?: string
-  action: () => void
-  children: ReactNode
-  asChild?: boolean
-  className?: string
+  title?: string;
+  description?: string;
+  action: () => void;
+  children: ReactNode;
+  asChild?: boolean;
+  className?: string;
 }
 
 const ActionConfirmationDialog: React.FC<ActionConfirmationDialogProps> = ({
-  title = 'Are You sure',
-  description = 'This action can not be undone',
+  title = "Are You sure",
+  description = "This action can not be undone",
   action,
   children,
   asChild,
   className,
 }) => {
-  const { t, i18n } = useTranslation()
+  const t = useTranslations();
+  const locale = useLocale();
   return (
     <AlertDialog>
       <AlertDialogTrigger asChild={asChild} className={className}>
@@ -43,7 +44,7 @@ const ActionConfirmationDialog: React.FC<ActionConfirmationDialogProps> = ({
       >
         <AlertDialogHeader
           className="sm:ltr:text-left sm:rtl:text-right space-y-2"
-          dir={i18n.dir()}
+          dir={locale === "ar" ? "rtl" : "ltr"}
         >
           <div className="flex items-center gap-3">
             <span className="inline-flex items-center justify-center size-8 rounded-full bg-red-500/15 text-red-600 ring-1 ring-red-500/20">
@@ -64,18 +65,18 @@ const ActionConfirmationDialog: React.FC<ActionConfirmationDialogProps> = ({
         </AlertDialogHeader>
         <AlertDialogFooter className="sm:ltr:justify-end sm:rtl:justify-start gap-4">
           <AlertDialogCancel className="rounded-lg border bg-background text-brand-900 shadow-theme-xs transition-[background,transform,box-shadow] hover:bg-muted active:scale-[.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
-            {t('Cancel')}
+            {t("Cancel")}
           </AlertDialogCancel>
           <AlertDialogAction
             className="inline-flex items-center justify-center rounded-lg bg-red-600 text-white px-4 py-2 shadow-theme-xs transition-[background,transform,box-shadow] hover:bg-red-700 active:scale-[.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-600 disabled:opacity-70"
             onClick={action}
           >
-            {t('Confirm')}
+            {t("Confirm")}
           </AlertDialogAction>
         </AlertDialogFooter>
       </AlertDialogContent>
     </AlertDialog>
-  )
-}
+  );
+};
 
-export default ActionConfirmationDialog
+export default ActionConfirmationDialog;

@@ -1,8 +1,8 @@
 import React from 'react'
 import { AlertCircle, FileX, Inbox, Search } from 'lucide-react'
-import { useTranslation } from 'react-i18next'
 import { cn } from '@/lib/utils'
 import { Skeleton } from '@/components/ui/skeleton'
+import { useTranslations } from 'next-intl'
 
 interface EmptyStateProps {
   type?: 'search' | 'data' | 'error' | 'general' | 'loading'
@@ -31,7 +31,7 @@ const EmptyState: React.FC<EmptyStateProps> = ({
   variant = 'page',
   rows = 6,
 }) => {
-  const { t } = useTranslation()
+  const t = useTranslations()
 
   // Default content based on type
   const getDefaultContent = () => {
