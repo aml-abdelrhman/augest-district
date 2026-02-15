@@ -2,7 +2,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { CheckIcon } from "lucide-react";
 import { useTranslations, useLocale } from "next-intl";
-import React from "react";
 import { useParams } from "next/navigation";
 import { useQuery } from "@tanstack/react-query";
 import { projectQueryOptions } from "@/queries";

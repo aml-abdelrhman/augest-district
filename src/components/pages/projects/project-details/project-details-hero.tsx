@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import { Button } from "@/components/ui/button";
 import { AreaIcon, WhatsAppIcon } from "@/icons";
 import { Building2Icon, HouseIcon, MapPin, PhoneIcon } from "lucide-react";
@@ -42,37 +42,37 @@ const ProjectDetailsHeroSection = () => {
   const projectDetails = [
     {
       label: t("Rooms"),
-      value: project.rooms,
+      value: project?.rooms,
       icon: HouseIcon,
       hasBackground: true,
     },
     {
       label: t("Price from"),
-      value: project.price_from,
+      value: project?.price_from?.toLocaleString(),
       icon: Building2Icon,
       hasBackground: true,
     },
     {
       label: t("Unit types"),
-      value: project.unit_types[locale],
+      value: project?.unit_types?.[locale],
       icon: HouseIcon,
       hasBackground: true,
     },
     {
       label: t("Project status"),
-      value: t(project.status),
+      value: t(project?.status),
       icon: Building2Icon,
       hasBackground: true,
     },
     {
       label: t("City"),
-      value: project.city[locale],
+      value: project?.city?.[locale],
       icon: MapPin,
       hasBackground: false,
     },
     {
       label: t("Area"),
-      value: project.area,
+      value: project?.area,
       icon: AreaIcon,
       hasBackground: true,
     },
@@ -84,7 +84,7 @@ const ProjectDetailsHeroSection = () => {
       <div className="h-[43svh]"></div>
       <div className="space-y-11 text-center text-white container z-10 relative py-[10svh]">
         <h1 className="font-light text-5xl md:text-6xl lg:text-7xl 2xl:text-8xl">
-          {project.title[locale]}
+          {project?.title?.[locale]}
         </h1>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-4 nd:gap-6 xl:gap-9 place-items-center">
           {projectDetails.map((projectDetail, index) => (
@@ -103,7 +103,7 @@ const ProjectDetailsHeroSection = () => {
             variant="outline"
             asChild
           >
-            <Link href={project.project_questions_link} target="_blank">
+            <Link href={project?.project_questions_link} target="_blank">
               {t("Have an inquiry about a project")}
             </Link>
           </Button>
@@ -115,7 +115,7 @@ const ProjectDetailsHeroSection = () => {
             endContent={<PhoneIcon className="size-5" />}
             asChild
           >
-            <Link href={project.project_phone_link} target="_blank">
+            <Link href={project?.project_phone_link} target="_blank">
               {t("Phone call")}
             </Link>
           </Button>
@@ -127,7 +127,7 @@ const ProjectDetailsHeroSection = () => {
             endContent={<WhatsAppIcon className="size-6" />}
             asChild
           >
-            <Link href={project.project_file_link} target="_blank">
+            <Link href={project?.project_file_link} target="_blank">
               {t("Receive project file")}
             </Link>
           </Button>
