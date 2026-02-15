@@ -1,7 +1,9 @@
+'use client'
 import { Card, CardContent } from "@/components/ui/card";
-import { CheckIcon } from "lucide-react";
-import { useTranslations } from "next-intl";
-import React from "react";
+import { useTranslations, useLocale } from "next-intl";
+import { useParams } from "next/navigation";
+import { useQuery } from "@tanstack/react-query";
+import { projectQueryOptions } from "@/queries";
 
 const GuaranteesFeatureCard = ({
   title,
@@ -26,18 +28,12 @@ const GuaranteesFeatureCard = ({
 
 const GuaranteesSection = () => {
   const t = useTranslations();
-  const features = [
-    { title: t("Plugs and switches"), number: 25 },
-    { title: t("Structural structure"), number: 25 },
-    { title: t("Guarantee insulation"), number: 10 },
-    { title: t("Intercom and cameras"), number: 10 },
-    { title: t("Elevator warranty"), number: 25 },
-    { title: t("Electric elevators"), number: 7 },
-    { title: t("Paint"), number: 10 },
-    { title: t("Sanitary ware"), number: 10 },
-    { title: t("Green pipes"), number: 10 },
-    { title: t("Smart lighting"), number: 3 },
-  ];
+  const locale = useLocale() as "ar" | "en";
+  const { id } = useParams<{ id: string }>();
+  const { data: project } = useQuery(projectQueryOptions(id));
+
+  if (!project) return null;
+
   return (
     <section className="min-h-[90svh] bg-main-50 relative">
       <img
@@ -55,11 +51,11 @@ const GuaranteesSection = () => {
           <h2 className="section-title">{t("Guarantees")}</h2>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 gap-3 sm:gap-5">
-          {features.map((feature, index) => (
+          {project.guarantees.map((feature, index) => (
             <GuaranteesFeatureCard
               key={index}
-              title={feature.title}
-              number={feature.number}
+              title={feature.title[locale]}
+              number={feature.years}
             />
           ))}
         </div>

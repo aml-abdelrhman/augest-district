@@ -1,7 +1,11 @@
+'use client'
 import { Card, CardContent } from "@/components/ui/card";
 import { CheckIcon } from "lucide-react";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 import React from "react";
+import { useParams } from "next/navigation";
+import { useQuery } from "@tanstack/react-query";
+import { projectQueryOptions } from "@/queries";
 
 const ProjectFeatureCard = ({ title }: { title: string }) => {
   return (
@@ -16,18 +20,12 @@ const ProjectFeatureCard = ({ title }: { title: string }) => {
 
 const ProjectFeatures = () => {
   const t = useTranslations();
-  const features = [
-    t("Hydraulic doors"),
-    t("Split air conditioning"),
-    t("Outside setting"),
-    t("Roof"),
-    t("Independent counter"),
-    t("Maid Room"),
-    t("Laundry Room"),
-    t("Master Bedroom"),
-    t("Storehouse"),
-    t("Elevators"),
-  ];
+  const locale = useLocale() as "ar" | "en";
+  const { id } = useParams<{ id: string }>();
+  const { data: project } = useQuery(projectQueryOptions(id));
+
+  if (!project) return null;
+
   return (
     <section className="min-h-[90svh] bg-main-50 relative">
       <img
@@ -45,8 +43,8 @@ const ProjectFeatures = () => {
           <h2 className="section-title">{t("Project characteristics")}</h2>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 gap-3 sm:gap-5">
-          {features.map((feature, index) => (
-            <ProjectFeatureCard key={index} title={feature} />
+          {project.features.map((feature, index) => (
+            <ProjectFeatureCard key={index} title={feature[locale]} />
           ))}
         </div>
       </div>

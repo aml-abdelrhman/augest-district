@@ -1,3 +1,4 @@
+"use client"
 import { useLocale, useTranslations } from "next-intl";
 import {
   Carousel,
@@ -6,16 +7,18 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-
-const galleryImages = [
-  "/project-diagram.svg",
-  "/project-diagram.svg",
-  "/project-diagram.svg",
-];
+import { useParams } from "next/navigation";
+import { useQuery } from "@tanstack/react-query";
+import { projectQueryOptions } from "@/queries";
 
 const ProjectDiagrams = () => {
   const t = useTranslations();
   const locale = useLocale();
+  const { id } = useParams<{ id: string }>();
+  const { data: project } = useQuery(projectQueryOptions(id));
+
+  if (!project) return null;
+
   return (
     <section className="min-h-[90svh] bg-background relative overflow-hidden">
       <img
@@ -47,7 +50,7 @@ const ProjectDiagrams = () => {
             </div> */}
           </div>
           <CarouselContent className="h-[45svh]">
-            {galleryImages.map((src, index) => (
+            {project.diagrams.map((src, index) => (
               <CarouselItem
                 key={index}
                 className="basis-[90%] md:basis-1/2 xl:basis-1/3 2xl:basis-1/4"

@@ -1,3 +1,5 @@
+"use client";
+
 import { useLocale, useTranslations } from "next-intl";
 import {
   Carousel,
@@ -6,16 +8,18 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-
-const galleryImages = [
-  "/gallary-section-img.png",
-  "/gallary-section-img(2).png",
-  "/gallary-section-img(3).png",
-];
+import { useParams } from "next/navigation";
+import { useQuery } from "@tanstack/react-query";
+import { projectQueryOptions } from "@/queries";
 
 const GallarySection = () => {
   const t = useTranslations();
   const locale = useLocale();
+  const { id } = useParams<{ id: string }>();
+  const { data: project } = useQuery(projectQueryOptions(id));
+
+  if (!project) return null;
+
   return (
     <section className="min-h-[90svh] bg-background relative overflow-hidden">
       <img
@@ -47,7 +51,7 @@ const GallarySection = () => {
             </div>
           </div>
           <CarouselContent className="h-[65svh]">
-            {galleryImages.map((src, index) => (
+            {project.gallery.map((src, index) => (
               <CarouselItem key={index} className="basis-[85%] lg:basis-[60%]">
                 <div className="group relative h-full overflow-hidden rounded-4xl">
                   <img
@@ -59,7 +63,10 @@ const GallarySection = () => {
               </CarouselItem>
             ))}
           </CarouselContent>
-          <div className="flex items-center gap-3 justify-center md:hidden mt-9" dir="ltr">
+          <div
+            className="flex items-center gap-3 justify-center md:hidden mt-9"
+            dir="ltr"
+          >
             <CarouselPrevious className="static translate-y-0" />
             <CarouselNext className="static translate-y-0" />
           </div>

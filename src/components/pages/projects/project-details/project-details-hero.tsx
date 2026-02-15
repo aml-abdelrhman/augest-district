@@ -1,52 +1,13 @@
+'use client'
 import { Button } from "@/components/ui/button";
 import { AreaIcon, WhatsAppIcon } from "@/icons";
-import {
-  Building2Icon,
-  HouseIcon,
-  MapPin,
-  PhoneIcon,
-} from "lucide-react";
-import { useTranslations } from "next-intl";
+import { Building2Icon, HouseIcon, MapPin, PhoneIcon } from "lucide-react";
+import { useTranslations, useLocale } from "next-intl";
 import React from "react";
-
-const projectDetails = [
-  {
-    label: "الغرف",
-    value: "3 - 3",
-    icon: HouseIcon,
-    hasBackground: true,
-  },
-  {
-    label: "السعر من",
-    value: "1,290,000",
-    icon: Building2Icon,
-    hasBackground: true,
-  },
-  {
-    label: "أنواع الوحدات",
-    value: "أدوار",
-    icon: HouseIcon,
-    hasBackground: true,
-  },
-  {
-    label: "حالة المشروع",
-    value: "متاح",
-    icon: Building2Icon,
-    hasBackground: true,
-  },
-  {
-    label: "المدينة",
-    value: "العارض, شمال الرياض",
-    icon: MapPin,
-    hasBackground: false,
-  },
-  {
-    label: "المساحة",
-    value: "215 - 215 م²",
-    icon: AreaIcon,
-    hasBackground: true,
-  },
-];
+import { useParams } from "next/navigation";
+import { useQuery } from "@tanstack/react-query";
+import { projectQueryOptions } from "@/queries";
+import Link from "next/link";
 
 const FeatureCard = ({
   label,
@@ -72,13 +33,58 @@ const FeatureCard = ({
 
 const ProjectDetailsHeroSection = () => {
   const t = useTranslations();
+  const locale = useLocale() as "ar" | "en";
+  const { id } = useParams<{ id: string }>();
+  const { data: project } = useQuery(projectQueryOptions(id));
+
+  if (!project) return null;
+
+  const projectDetails = [
+    {
+      label: t("Rooms"),
+      value: project.rooms,
+      icon: HouseIcon,
+      hasBackground: true,
+    },
+    {
+      label: t("Price from"),
+      value: project.price_from,
+      icon: Building2Icon,
+      hasBackground: true,
+    },
+    {
+      label: t("Unit types"),
+      value: project.unit_types[locale],
+      icon: HouseIcon,
+      hasBackground: true,
+    },
+    {
+      label: t("Project status"),
+      value: t(project.status),
+      icon: Building2Icon,
+      hasBackground: true,
+    },
+    {
+      label: t("City"),
+      value: project.city[locale],
+      icon: MapPin,
+      hasBackground: false,
+    },
+    {
+      label: t("Area"),
+      value: project.area,
+      icon: AreaIcon,
+      hasBackground: true,
+    },
+  ];
+
   return (
     <section className="bg-[url('/hero-img.svg')] bg-top bg-cover bg-no-repeat min-h-svh w-full relative">
       <div className="absolute top-0 left-0 w-full h-[15svh] bg-linear-to-b from-[#897E6F] to-transparent z-5" />
       <div className="h-[43svh]"></div>
       <div className="space-y-11 text-center text-white container z-10 relative py-[10svh]">
         <h1 className="font-light text-5xl md:text-6xl lg:text-7xl 2xl:text-8xl">
-          ادوار مشروع 21 – حي العارض
+          {project.title[locale]}
         </h1>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-4 nd:gap-6 xl:gap-9 place-items-center">
           {projectDetails.map((projectDetail, index) => (
@@ -95,8 +101,11 @@ const ProjectDetailsHeroSection = () => {
             size="lg"
             className="max-md:w-full min-h-15 sm:min-h-17 sm:text-lg z-5 hover:bg-card hover:text-primary hover:border-transparent"
             variant="outline"
+            asChild
           >
-            {t("Have an inquiry about a project")}
+            <Link href={project.project_questions_link} target="_blank">
+              {t("Have an inquiry about a project")}
+            </Link>
           </Button>
           <div className="max-md:hidden h-5 sm:h-7 w-2 bg-card -me-1 -ms-0.5 shrink-0 -z-1" />
           <Button
@@ -104,8 +113,11 @@ const ProjectDetailsHeroSection = () => {
             className="max-md:w-full min-h-15 sm:min-h-17 sm:text-lg hover:bg-card overflow-hidden"
             variant="secondary"
             endContent={<PhoneIcon className="size-5" />}
+            asChild
           >
-            {t("Phone call")}
+            <Link href={project.project_phone_link} target="_blank">
+              {t("Phone call")}
+            </Link>
           </Button>
           <div className="max-md:hidden h-5 sm:h-7 w-2 bg-card -mx-1 shrink-0" />
           <Button
@@ -113,8 +125,11 @@ const ProjectDetailsHeroSection = () => {
             className="max-md:w-full min-h-15 sm:min-h-17 sm:text-lg hover:bg-card overflow-hidden"
             variant="secondary"
             endContent={<WhatsAppIcon className="size-6" />}
+            asChild
           >
-            {t("Receive project file")}
+            <Link href={project.project_file_link} target="_blank">
+              {t("Receive project file")}
+            </Link>
           </Button>
         </div>
       </div>
