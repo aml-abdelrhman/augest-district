@@ -14,6 +14,7 @@ import { AreaIcon } from "@/icons";
 import { Progress } from "@/components/ui/progress";
 import { useSuspenseQuery } from "@tanstack/react-query";
 import { projectsQueryOptions } from "@/queries";
+import { formatNumber } from "@/lib/utils";
 
 const MostSoldProjectsSection = () => {
   const t = useTranslations();
@@ -115,7 +116,7 @@ const MostSoldProjectsSection = () => {
                       </div>
                       <p className="text-sm text-primary">
                         <span className="font-inter">
-                          {project.price_from?.toLocaleString()}
+                          {formatNumber(Number(project.price_from))}
                         </span>{" "}
                         <span className="text-primary/40 inline-block ms-1">
                           {" "}

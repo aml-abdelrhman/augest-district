@@ -112,7 +112,7 @@ const LatestProjectsSection = () => {
                         </p>
                       </div>
                       <p className="text-sm text-primary">
-                        <span className="font-inter">
+                        <span className="font-inter!">
                           {formatNumber(Number(project.price_from))}
                         </span>{" "}
                         <span className="text-primary/40 inline-block ms-1">
