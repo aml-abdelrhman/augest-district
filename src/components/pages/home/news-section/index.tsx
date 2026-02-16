@@ -11,6 +11,7 @@ import {
 import NewsCard from "./news-card";
 import { useSuspenseQuery } from "@tanstack/react-query";
 import { newsQueryOptions } from "@/queries";
+import Image from "next/image";
 
 const NewsSection = () => {
   const t = useTranslations();
@@ -19,10 +20,12 @@ const NewsSection = () => {
 
   return (
     <section className="min-h-[90svh] bg-main-200 relative overflow-hidden">
-      <img
+      <Image
         src="/section-bg-dark-caramel.svg"
         alt="Section Background"
         className="absolute bottom-0 start-0 z-5 pointer-events-none"
+        width={898}
+        height={459}
       />
       <div className="py-[17svh] relative z-10 container">
         <Carousel
@@ -35,10 +38,12 @@ const NewsSection = () => {
         >
           <div className="flex items-center sm:justify-between gap-5 max-sm:flex-col flex-wrap mb-[7svh]">
             <div className="flex items-center gap-3 max-sm:flex-col">
-              <img
+              <Image
                 src="/section-logo.svg"
                 alt="Section Logo"
                 className="pointer-events-none"
+                width={60}
+                height={60}
               />
               <h2 className="section-title">{t("Hemma News")}</h2>
             </div>

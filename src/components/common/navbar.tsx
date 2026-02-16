@@ -67,10 +67,12 @@ export const Navbar = () => {
               >
                 {item.label}
                 {pathname === item.href && (
-                  <img
+                  <Image
                     className="absolute right-0 top-9.5 w-[57px] h-[13px] pointer-events-none"
                     alt="Vector"
                     src="/vector-839.svg"
+                    width={57}
+                    height={13}
                   />
                 )}
               </Link>

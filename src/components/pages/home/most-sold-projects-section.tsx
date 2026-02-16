@@ -41,10 +41,12 @@ const MostSoldProjectsSection = () => {
         >
           <div className="flex items-center sm:justify-between gap-5 max-sm:flex-col flex-wrap mb-[7svh] container">
             <div className="flex items-center gap-3 max-sm:flex-col">
-              <img
+              <Image
                 src="/section-logo.svg"
                 alt="Section Logo"
                 className="pointer-events-none"
+                width={60}
+                height={60}
               />
               <h2 className="section-title">{t("Most Sold Projects")}</h2>
             </div>

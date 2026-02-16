@@ -18,14 +18,16 @@ const NearToSection = () => {
     <section className="min-h-[90svh] bg-main-200 relative overflow-hidden">
       <div className="container py-[17svh] relative z-10">
         <div className="flex items-center gap-3 max-sm:flex-col mb-[7svh] lg:-mb-[7svh]">
-          <img
+          <Image
             src="/section-logo.svg"
             alt="Section Logo"
             className="pointer-events-none"
+            width={60}
+            height={60}
           />
           <h2 className="section-title">{t("Near to")}</h2>
         </div>
-        <img
+        <Image
           src="/section-bg-dark-caramel.svg"
           alt="Section Background"
           className="absolute top-0 start-0 w-fit z-5 pointer-events-none"

@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { useLocale, useTranslations } from "next-intl";
 import {
   Carousel,
@@ -40,10 +40,12 @@ const ProjectDiagrams = () => {
         >
           <div className="flex items-center sm:justify-between gap-5 max-sm:flex-col flex-wrap mb-[7svh]">
             <div className="flex items-center gap-3 max-sm:flex-col">
-              <img
+              <Image
                 src="/section-logo.svg"
                 alt="Section Logo"
                 className="pointer-events-none"
+                width={60}
+                height={60}
               />
               <h2 className="section-title">{t("Project Diagrams")}</h2>
             </div>
@@ -59,10 +61,12 @@ const ProjectDiagrams = () => {
                 className="basis-[90%] md:basis-1/2 xl:basis-1/3 2xl:basis-1/4"
               >
                 <div className="group relative h-full overflow-hidden rounded-sm border border-border">
-                  <img
+                  <Image
                     src={src}
                     alt={`Gallery Image`}
                     className="h-full w-full object-cover"
+                    width={298}
+                    height={298}
                   />
                 </div>
               </CarouselItem>

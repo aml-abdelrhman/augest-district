@@ -9,6 +9,7 @@ import {
 } from "@/components/ui/carousel";
 import { Building2, HomeIcon } from "lucide-react";
 import CountUp from "react-countup";
+import Image from "next/image";
 
 const statistics = [
   {
@@ -37,14 +38,16 @@ const StatisticsSection = () => {
         >
           <div className="flex items-center sm:justify-between gap-5 max-sm:flex-col flex-wrap mb-[7svh]">
             <div className="flex items-center gap-3 max-sm:flex-col">
-              <img
+              <Image
                 src="/section-logo.svg"
                 alt="Section Logo"
                 className="pointer-events-none"
+                width={60}
+                height={60}
               />
               <h2 className="section-title">{t("Statistics")}</h2>
             </div>
-             <div
+            <div
               className="items-center gap-3 hidden md:flex z-20 relative"
               dir="ltr"
             >
@@ -110,7 +113,10 @@ const StatisticsSection = () => {
               </CarouselItem>
             ))}
           </CarouselContent>
-          <div className="flex items-center gap-3 justify-center md:hidden mt-9" dir="ltr">
+          <div
+            className="flex items-center gap-3 justify-center md:hidden mt-9"
+            dir="ltr"
+          >
             <CarouselPrevious className="static translate-y-0" />
             <CarouselNext className="static translate-y-0" />
           </div>

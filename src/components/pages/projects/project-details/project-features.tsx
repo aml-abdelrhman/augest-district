@@ -37,10 +37,12 @@ const ProjectFeatures = () => {
       />
       <div className="container py-[17svh] relative z-10  ">
         <div className="flex items-center gap-3 max-sm:flex-col mb-[7svh]">
-          <img
+          <Image
             src="/section-logo.svg"
             alt="Section Logo"
             className="pointer-events-none"
+            width={60}
+            height={60}
           />
           <h2 className="section-title">{t("Project characteristics")}</h2>
         </div>

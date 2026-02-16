@@ -10,6 +10,7 @@ import {
 import { useSuspenseQuery } from "@tanstack/react-query";
 import { projectsQueryOptions } from "@/queries";
 import Link from "next/link";
+import Image from "next/image";
 
 const ClosedProjectsSection = () => {
   const t = useTranslations();
@@ -33,10 +34,12 @@ const ClosedProjectsSection = () => {
         >
           <div className="flex items-center sm:justify-between gap-5 max-sm:flex-col flex-wrap mb-[7svh]">
             <div className="flex items-center gap-3 max-sm:flex-col">
-              <img
+              <Image
                 src="/section-logo.svg"
                 alt="Section Logo"
                 className="pointer-events-none"
+                width={60}
+                height={60}
               />
               <h2 className="section-title">{t("We closed the door")}</h2>
             </div>
@@ -55,10 +58,12 @@ const ClosedProjectsSection = () => {
                   href={`/projects/${project.id}`}
                   className="group relative h-full overflow-hidden rounded-4xl block"
                 >
-                  <img
+                  <Image
                     src={project?.gallery?.[0] || "/Link.svg"}
                     alt={project.title[locale]}
                     className="h-full w-full object-cover"
+                    width={250}
+                    height={413}
                   />
                   <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                     <p className="text-white text-lg font-bold">

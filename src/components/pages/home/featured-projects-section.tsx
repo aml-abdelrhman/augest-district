@@ -39,10 +39,12 @@ const FeaturedProjectsSection = () => {
   return (
     <section className="min-h-[80svh] bg-main-200 relative overflow-hidden">
       <div className="container py-[17svh] relative z-10 10 max-w-[1620px]">
-        <img
+        <Image
           src="/section-bg-dark-caramel.svg"
           alt="Section Background"
           className="absolute bottom-0 start-0 z-5 pointer-events-none"
+          width={898}
+          height={459}
         />
         <div className="grid lg:grid-cols-2 gap-7 lg:gap-5 relative z-10">
           <Carousel
@@ -54,10 +56,12 @@ const FeaturedProjectsSection = () => {
           >
             <div className="flex items-center justify-between mb-[7svh]">
               <div className="flex items-center gap-3 max-sm:flex-col">
-                <img
+                <Image
                   src="/section-logo.svg"
                   alt="Section Logo"
                   className="pointer-events-none"
+                  width={60}
+                  height={60}
                 />
                 <h2 className="section-title">{t("Featured projects")}</h2>
               </div>
