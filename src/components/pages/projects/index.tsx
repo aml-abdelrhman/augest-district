@@ -28,7 +28,7 @@ const ProjectsList = () => {
   };
 
   return (
-    <section className="bg-white min-h-screen">
+    <section className="bg-main-50 min-h-screen">
       <div className="bg-main-200 py-[20svh] relative">
         <img
           src="/section-bg-dark-caramel.svg"
