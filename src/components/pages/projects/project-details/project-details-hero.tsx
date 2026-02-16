@@ -8,6 +8,7 @@ import { useParams } from "next/navigation";
 import { useQuery } from "@tanstack/react-query";
 import { projectQueryOptions } from "@/queries";
 import Link from "next/link";
+import { cn } from "@/lib/utils";
 
 const FeatureCard = ({
   label,
@@ -79,7 +80,15 @@ const ProjectDetailsHeroSection = () => {
   ];
 
   return (
-    <section className="bg-[url('/hero-img.svg')] bg-top bg-cover bg-no-repeat min-h-svh w-full relative">
+    <section
+      className={cn("bg-top bg-cover bg-no-repeat min-h-svh w-full relative")}
+      style={{
+        backgroundImage:
+          project && project?.gallery?.[0]
+            ? `url('${project?.gallery?.[0]}')`
+            : "url('/hero-img.svg')",
+      }}
+    >
       <div className="absolute top-0 left-0 w-full h-[15svh] bg-linear-to-b from-[#897E6F] to-transparent z-5" />
       <div className="h-[43svh]"></div>
       <div className="space-y-11 text-center text-white container z-10 relative py-[10svh]">
