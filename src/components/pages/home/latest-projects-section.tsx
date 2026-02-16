@@ -52,11 +52,11 @@ const LatestProjectsSection = () => {
               <CarouselNext className="static translate-y-0" />
             </div>
           </div>
-          <CarouselContent className="h-[65svh]">
+          <CarouselContent className="min-h-[65svh] px-3">
             {projects?.map((project) => (
               <CarouselItem
                 key={project.id}
-                className="basis-[85%] lg:basis-[60%] 2xl:basis-[50%] min-h-fit"
+                className="sm:basis-[85%] lg:basis-[60%] 2xl:basis-[50%] min-h-fit"
               >
                 <ProjectCard project={project} />
               </CarouselItem>

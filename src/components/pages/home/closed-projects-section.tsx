@@ -52,7 +52,7 @@ const ClosedProjectsSection = () => {
             {projects?.map((project) => (
               <CarouselItem
                 key={project.id}
-                className="basis-1/2 md:basis-1/3 xl:basis-1/4 2xl:basis-1/5"
+                className="sm:basis-1/2 md:basis-1/3 xl:basis-1/4 2xl:basis-1/5"
               >
                 <Link
                   href={`/projects/${project.id}`}
