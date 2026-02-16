@@ -53,7 +53,7 @@ const LatestProjectsSection = () => {
             </div>
           </div>
           <CarouselContent className="h-[65svh]">
-            {projects.map((project) => (
+            {projects?.map((project) => (
               <CarouselItem
                 key={project.id}
                 className="basis-[85%] lg:basis-[60%] 2xl:basis-[50%] min-h-fit"

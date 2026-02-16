@@ -46,7 +46,7 @@ const ClosedProjectsSection = () => {
             </div>
           </div>
           <CarouselContent className="h-[65svh]">
-            {projects.map((project) => (
+            {projects?.map((project) => (
               <CarouselItem
                 key={project.id}
                 className="basis-1/2 md:basis-1/3 xl:basis-1/4 2xl:basis-1/5"

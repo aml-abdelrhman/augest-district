@@ -66,7 +66,7 @@ const FeaturedProjectsSection = () => {
               </p>
             </div>
             <CarouselContent className="w-full">
-              {projects.map((project) => (
+              {projects?.map((project) => (
                 <CarouselItem key={project.id} className="basis-full">
                   <div className="grid lg:grid-cols-2 gap-3 lg:gap-5 xl:gap-10 w-full text-primary">
                     <div className="space-y-2">
