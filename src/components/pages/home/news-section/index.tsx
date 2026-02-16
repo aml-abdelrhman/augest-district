@@ -6,18 +6,8 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import Link from "next/link";
-import { Badge } from "@/components/ui/badge";
-import {
-  Card,
-  CardAction,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import moment from "moment";
+
+import NewsCard from "./news-card";
 const news = [
   {
     title: "أفضل العقارات المعروضة في حي الرمال بالرياض: وجهة...",
@@ -91,29 +81,7 @@ const NewsSection = () => {
                 key={index}
                 className="basis-[85%] lg:basis-1/2 2xl:basis-1/3 min-h-fit"
               >
-                <Link href={`/news/${item.title}`}>
-                  <Card className="h-full border-none p-0 text-cyan-950 bg-transparent">
-                    <CardHeader className="bg-[url('/statistics-bg.svg')] bg-cover bg-center rounded-2xl min-h-[30svh] relative">
-                      <Badge
-                        variant="secondary"
-                        className="text-cyan-950/40 absolute top-5 start-5"
-                      >
-                        {t("Articals")}
-                      </Badge>
-                    </CardHeader>
-                    <CardContent className="space-y-3">
-                      <p className="text-sm text-cyan-950/40">
-                        {moment(item.created_at).locale(locale).format("DD MMMM YYYY")}
-                      </p>
-                      <h3 className="text-xl xl:text-2xl font-medium leading-11">
-                        {item.title}
-                      </h3>
-                      <p className="text-sm text-cyan-950/40 line-clamp-3">
-                        {item.description}
-                      </p>
-                    </CardContent>
-                  </Card>
-                </Link>
+                <NewsCard item={item} />
               </CarouselItem>
             ))}
           </CarouselContent>

@@ -1,6 +1,6 @@
 import { queryOptions, useMutation } from "@tanstack/react-query";
 
-import type { Project, ApiResponse, Meta, Unit } from "@/types";
+import type { Project, ApiResponse, Meta, Unit, News } from "@/types";
 import api from "@/lib/api";
 
 export interface GeneralPageParams {
@@ -68,6 +68,7 @@ export const projectsQueryOptions = (params: GeneralPageParams) =>
     queryKey: ["projects", params],
     queryFn: () => getProjects(params),
   });
+
 const getUnits = async (
   params: GeneralPageParams,
 ): Promise<{ data: Unit[]; meta?: Meta | undefined }> => {
@@ -101,4 +102,37 @@ export const unitQueryOptions = (id: string) =>
   queryOptions({
     queryKey: ["unit", id],
     queryFn: () => getUnitById(id),
+  });
+
+const getNews = async (
+  params: GeneralPageParams,
+): Promise<{ data: News[]; meta?: Meta | undefined }> => {
+  const response = await api.request.get<ApiResponse<News[]>>(
+    "guest/news",
+    params,
+  );
+  if (response.status !== "success") {
+    throw new Error("Failed to fetch news");
+  }
+  return response?.result;
+};
+
+export const newsQueryOptions = (params: GeneralPageParams) =>
+  queryOptions({
+    queryKey: ["news", params],
+    queryFn: () => getNews(params),
+  });
+
+const getNewsById = async (id: string): Promise<News> => {
+  const response = await api.request.get<ApiResponse<News>>(`guest/news/${id}`);
+  if (response.status !== "success") {
+    throw new Error("Failed to fetch news");
+  }
+  return response?.result?.data;
+};
+
+export const newsByIdQueryOptions = (id: string) =>
+  queryOptions({
+    queryKey: ["news", id],
+    queryFn: () => getNewsById(id),
   });
