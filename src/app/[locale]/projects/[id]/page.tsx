@@ -23,7 +23,7 @@ const ProjectDetailsPage = async ({
 
   return (
     <HydrationBoundary state={dehydrate(queryClient)}>
-      <ProjectDetailsHeroSection />
+      {/* <ProjectDetailsHeroSection /> */}
       <UnitsSection />
       <GallarySection />
       <ProjectFeatures />

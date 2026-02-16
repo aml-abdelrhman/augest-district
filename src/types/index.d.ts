@@ -50,6 +50,9 @@ export type Unit = {
   price: string | null;
   floor: string | null;
   area: string | null;
+  private_area: string | null;
+  total_area: string | null;
+  view: string | null;
   rooms: number | null;
   created_at?: string;
   updated_at?: string;
@@ -91,4 +94,24 @@ export type Project = {
   units: Unit[];
   created_at: string;
   updated_at: string;
+};
+
+export type News = {
+  id: number;
+  title: LocaleText;
+  description: LocaleText;
+  content: string;
+  image: string;
+  created_at: string;
+  updated_at: string;
+};
+
+export type RegisterYourInterestPayload = {
+  full_name: string;
+  phone: string;
+  payment_method: "cash" | "supported_bank" | "un_supported_bank";
+  budget: string;
+  city_id: number;
+  property_type: "apartment" | "floors" | "penthouse" | "townhouse" | "villa";
+  connection_method: Array<"whatsapp" | "call">;
 };
