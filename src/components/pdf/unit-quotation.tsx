@@ -16,28 +16,28 @@ Font.register({
   family: "Alexandria",
   fonts: [
     {
-      src: "../../app/fonts/Alexandria/Alexandria-ExtraLight.ttf",
+      src: "/fonts/Alexandria/Alexandria-ExtraLight.ttf",
       fontWeight: 200,
     },
-    { src: "../../app/fonts/Alexandria/Alexandria-Light.ttf", fontWeight: 300 },
+    { src: "/fonts/Alexandria/Alexandria-Light.ttf", fontWeight: 300 },
     {
-      src: "../../app/fonts/Alexandria/Alexandria-Regular.ttf",
+      src: "/fonts/Alexandria/Alexandria-Regular.ttf",
       fontWeight: 400,
     },
     {
-      src: "../../app/fonts/Alexandria/Alexandria-Medium.ttf",
+      src: "/fonts/Alexandria/Alexandria-Medium.ttf",
       fontWeight: 500,
     },
     {
-      src: "../../app/fonts/Alexandria/Alexandria-SemiBold.ttf",
+      src: "/fonts/Alexandria/Alexandria-SemiBold.ttf",
       fontWeight: 600,
     },
-    { src: "../../app/fonts/Alexandria/Alexandria-Bold.ttf", fontWeight: 700 },
+    { src: "/fonts/Alexandria/Alexandria-Bold.ttf", fontWeight: 700 },
     {
-      src: "../../app/fonts/Alexandria/Alexandria-ExtraBold.ttf",
+      src: "/fonts/Alexandria/Alexandria-ExtraBold.ttf",
       fontWeight: 800,
     },
-    { src: "../../app/fonts/Alexandria/Alexandria-Black.ttf", fontWeight: 900 },
+    { src: "/fonts/Alexandria/Alexandria-Black.ttf", fontWeight: 900 },
   ],
 });
 
