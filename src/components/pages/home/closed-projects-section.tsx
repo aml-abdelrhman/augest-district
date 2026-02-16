@@ -56,7 +56,7 @@ const ClosedProjectsSection = () => {
                   className="group relative h-full overflow-hidden rounded-4xl block"
                 >
                   <img
-                    src={project.gallery?.[0] || "/Link.svg"}
+                    src={project?.gallery?.[0] || "/Link.svg"}
                     alt={project.title[locale]}
                     className="h-full w-full object-cover"
                   />
@@ -69,7 +69,10 @@ const ClosedProjectsSection = () => {
               </CarouselItem>
             ))}
           </CarouselContent>
-          <div className="flex items-center gap-3 justify-center md:hidden mt-9" dir="ltr">
+          <div
+            className="flex items-center gap-3 justify-center md:hidden mt-9"
+            dir="ltr"
+          >
             <CarouselPrevious className="static translate-y-0" />
             <CarouselNext className="static translate-y-0" />
           </div>

@@ -74,7 +74,7 @@ const MostSoldProjectsSection = () => {
                     </Badge>
                   </div>
                   <img
-                    src={project.gallery?.[0] || "/gallary-section-img.png"}
+                    src={project?.gallery?.[0] || "/gallary-section-img.png"}
                     alt={project.title[locale]}
                     className="h-[80%] w-full object-cover rounded-4xl"
                   />
@@ -90,7 +90,10 @@ const MostSoldProjectsSection = () => {
                           </span>{" "}
                           <span className="text-sm">{t("sold units")}</span>
                         </p>
-                        <Progress className="max-w-55" value={project?.sold_percentage || 0} />
+                        <Progress
+                          className="max-w-55"
+                          value={project?.sold_percentage || 0}
+                        />
                       </div>
                     </div>
                     <div className="space-y-1">
@@ -125,7 +128,10 @@ const MostSoldProjectsSection = () => {
               </CarouselItem>
             ))}
           </CarouselContent>
-          <div className="flex items-center gap-3 justify-center md:hidden mt-9" dir="ltr">
+          <div
+            className="flex items-center gap-3 justify-center md:hidden mt-9"
+            dir="ltr"
+          >
             <CarouselPrevious className="static translate-y-0" />
             <CarouselNext className="static translate-y-0" />
           </div>

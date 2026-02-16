@@ -71,7 +71,7 @@ const FeaturedProjectsSection = () => {
                   <div className="grid lg:grid-cols-2 gap-3 lg:gap-5 xl:gap-10 w-full text-primary">
                     <div className="space-y-2">
                       <Image
-                        src={project.gallery?.[0] || "/featured-projects.svg"}
+                        src={project?.gallery?.[0] || "/featured-projects.svg"}
                         alt={project.title[locale]}
                         width={500}
                         height={500}
@@ -93,7 +93,10 @@ const FeaturedProjectsSection = () => {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <div className="items-center gap-3 hidden md:flex justify-end" dir="ltr">
+            <div
+              className="items-center gap-3 hidden md:flex justify-end"
+              dir="ltr"
+            >
               <CarouselPrevious className="static size-15 translate-y-0" />
               <CarouselNext className="static size-15 translate-y-0" />
             </div>

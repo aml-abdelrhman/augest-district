@@ -35,11 +35,13 @@ export interface GeneralPageParams {
 }
 
 const getProjectById = async (id: string): Promise<Project> => {
-  const response = await api.request.get<Project>(`guest/projects/${id}`);
+  const response = await api.request.get<{ data: Project }>(
+    `guest/projects/${id}`,
+  );
   if (!response) {
     throw new Error("Failed to fetch project");
   }
-  return response;
+  return response?.data;
 };
 
 export const projectQueryOptions = (id: string) =>

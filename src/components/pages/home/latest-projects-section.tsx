@@ -71,7 +71,7 @@ const LatestProjectsSection = () => {
                     </Badge>
                   </div>
                   <img
-                    src={project.gallery?.[0] || "/gallary-section-img.png"}
+                    src={project?.gallery?.[0] || "/gallary-section-img.png"}
                     alt={project.title[locale]}
                     className="h-[80%] w-full object-cover rounded-4xl"
                   />

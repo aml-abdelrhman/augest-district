@@ -36,7 +36,7 @@ const ProjectDetailsHeroSection = () => {
   const locale = useLocale() as "ar" | "en";
   const { id } = useParams<{ id: string }>();
   const { data: project } = useQuery(projectQueryOptions(id));
-
+  console.log("project", project);
   if (!project) return null;
 
   const projectDetails = [
@@ -101,11 +101,10 @@ const ProjectDetailsHeroSection = () => {
             size="lg"
             className="max-md:w-full min-h-15 sm:min-h-17 sm:text-lg z-5 hover:bg-card hover:text-primary hover:border-transparent"
             variant="outline"
-            asChild
           >
-            <Link href={project?.project_questions_link} target="_blank">
+            <a href={project?.project_questions_link} target="_blank">
               {t("Have an inquiry about a project")}
-            </Link>
+            </a>
           </Button>
           <div className="max-md:hidden h-5 sm:h-7 w-2 bg-card -me-1 -ms-0.5 shrink-0 -z-1" />
           <Button
@@ -113,11 +112,10 @@ const ProjectDetailsHeroSection = () => {
             className="max-md:w-full min-h-15 sm:min-h-17 sm:text-lg hover:bg-card overflow-hidden"
             variant="secondary"
             endContent={<PhoneIcon className="size-5" />}
-            asChild
           >
-            <Link href={project?.project_phone_link} target="_blank">
+            <a href={project?.project_phone_link} target="_blank">
               {t("Phone call")}
-            </Link>
+            </a>
           </Button>
           <div className="max-md:hidden h-5 sm:h-7 w-2 bg-card -mx-1 shrink-0" />
           <Button
@@ -125,11 +123,10 @@ const ProjectDetailsHeroSection = () => {
             className="max-md:w-full min-h-15 sm:min-h-17 sm:text-lg hover:bg-card overflow-hidden"
             variant="secondary"
             endContent={<WhatsAppIcon className="size-6" />}
-            asChild
           >
-            <Link href={project?.project_file_link} target="_blank">
+            <a href={project?.project_file_link} target="_blank">
               {t("Receive project file")}
-            </Link>
+            </a>
           </Button>
         </div>
       </div>
