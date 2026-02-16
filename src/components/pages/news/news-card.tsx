@@ -10,28 +10,28 @@ const NewsCard = ({ item }: { item: News }) => {
   const locale = useLocale();
   return (
     <Link href={`/news/${item.id}`}>
-      <Card className="h-full border-none p-0 text-cyan-950 bg-transparent">
-        <CardHeader
-          className="bg-cover bg-center rounded-2xl min-h-[30svh] relative"
-          style={{
-            backgroundImage: `url(${item.image})`,
-          }}
-        >
+      <Card className="h-full border-none p-0 text-cyan-950 bg-transparent group overflow-hidden">
+        <CardHeader className="p-0 overflow-hidden rounded-2xl aspect-16/10 relative">
+          <img
+            src={item.image}
+            alt={item.title[locale as keyof typeof item.title]}
+            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+          />
           <Badge
             variant="secondary"
-            className="text-cyan-950/40 absolute top-5 start-5"
+            className="text-cyan-950/60 absolute top-5 start-5 backdrop-blur-md bg-white/50 border-none"
           >
             {t("Articles")}
           </Badge>
         </CardHeader>
-        <CardContent className="space-y-3">
+        <CardContent className="px-0 py-5 space-y-3">
           <p className="text-sm text-cyan-950/40">
             {moment(item.created_at).locale(locale).format("DD MMMM YYYY")}
           </p>
-          <h3 className="text-xl xl:text-2xl font-medium leading-11">
+          <h3 className="text-xl font-medium line-clamp-2 leading-8 group-hover:text-amber-700 transition-colors">
             {item.title[locale as keyof typeof item.title]}
           </h3>
-          <p className="text-sm text-cyan-950/40 line-clamp-3">
+          <p className="text-sm text-cyan-950/60 line-clamp-3">
             {item.description[locale as keyof typeof item.description]}
           </p>
         </CardContent>

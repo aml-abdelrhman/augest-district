@@ -3,7 +3,7 @@ import {
   HydrationBoundary,
   QueryClient,
 } from "@tanstack/react-query";
-import { projectsQueryOptions } from "@/queries";
+import { newsQueryOptions, projectsQueryOptions } from "@/queries";
 
 import ClosedProjectsSection from "@/components/pages/home/closed-projects-section";
 import HomeHeroSection from "@/components/pages/home/home-hero";
@@ -22,6 +22,7 @@ const HomePage = async () => {
     queryClient.prefetchQuery(projectsQueryOptions({ featured: true })),
     queryClient.prefetchQuery(projectsQueryOptions({ most_sold: true })),
     queryClient.prefetchQuery(projectsQueryOptions({ status: "sold" })),
+    queryClient.prefetchQuery(newsQueryOptions({ limit: 4 })),
   ]);
 
   return (

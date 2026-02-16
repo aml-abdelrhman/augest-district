@@ -247,7 +247,7 @@
   "Unique Projects": "مشاريع فريدة من نوعها",
   "hemma_solgan": "همه_محل_الثقة",
   "Hemma News": "أخبار همه",
-  "Articals": "المقالات",
+  "Articles": "المقالات",
   "Special Projects": "المشاريع الخاصة",
   "Featured projects": "مشاريع مميزة",
   "Price on request": "السعر عند الطلب",
@@ -267,5 +267,7 @@
   "Total Area": "المساحة الإجمالية",
   "Floor": "الطابق",
   "Back": "العودة",
-  "Unit Details": "تفاصيل الوحدة"
+  "Unit Details": "تفاصيل الوحدة",
+  "Discover the latest news and updates from Hemma Real Estate Development.": "اكتشف آخر الأخبار والتحديثات من شركة همة للتطوير العقاري.",
+  "No news found": "لم يتم العثور على أخبار"
 }

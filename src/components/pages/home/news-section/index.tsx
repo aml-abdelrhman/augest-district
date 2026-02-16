@@ -1,3 +1,4 @@
+"use client";
 import { useLocale, useTranslations } from "next-intl";
 import {
   Carousel,
@@ -8,40 +9,14 @@ import {
 } from "@/components/ui/carousel";
 
 import NewsCard from "./news-card";
-const news = [
-  {
-    title: "أفضل العقارات المعروضة في حي الرمال بالرياض: وجهة...",
-    img: "/gallary-section-img.png",
-    description:
-      "الجادة الأولى للتطوير العقاري هي أحد الشركات المتميزة في الاستثمار والتطوير العقاري، والتي يقع مقرها في الرياض. حققت الشركة نمو متسارعا لتصبح إحدى الشركات البارزة والرائدة في صناعة فرص الا...",
-    created_at: "2026-02-11",
-  },
-  {
-    title: "أفضل العقارات المعروضة في حي الرمال بالرياض: وجهة...",
-    img: "/gallary-section-img.png",
-    description:
-      "الجادة الأولى للتطوير العقاري هي أحد الشركات المتميزة في الاستثمار والتطوير العقاري، والتي يقع مقرها في الرياض. حققت الشركة نمو متسارعا لتصبح إحدى الشركات البارزة والرائدة في صناعة فرص الا...",
-    created_at: "2026-02-11",
-  },
-  {
-    title: "أفضل العقارات المعروضة في حي الرمال بالرياض: وجهة...",
-    img: "/gallary-section-img.png",
-    description:
-      "الجادة الأولى للتطوير العقاري هي أحد الشركات المتميزة في الاستثمار والتطوير العقاري، والتي يقع مقرها في الرياض. حققت الشركة نمو متسارعا لتصبح إحدى الشركات البارزة والرائدة في صناعة فرص الا...",
-    created_at: "2026-02-11",
-  },
-  {
-    title: "أفضل العقارات المعروضة في حي الرمال بالرياض: وجهة...",
-    img: "/gallary-section-img.png",
-    description:
-      "الجادة الأولى للتطوير العقاري هي أحد الشركات المتميزة في الاستثمار والتطوير العقاري، والتي يقع مقرها في الرياض. حققت الشركة نمو متسارعا لتصبح إحدى الشركات البارزة والرائدة في صناعة فرص الا...",
-    created_at: "2026-02-11",
-  },
-];
+import { useSuspenseQuery } from "@tanstack/react-query";
+import { newsQueryOptions } from "@/queries";
 
 const NewsSection = () => {
   const t = useTranslations();
   const locale = useLocale();
+  const { data } = useSuspenseQuery(newsQueryOptions({ limit: 4 }));
+
   return (
     <section className="min-h-[90svh] bg-main-200 relative overflow-hidden">
       <img
@@ -67,7 +42,7 @@ const NewsSection = () => {
               />
               <h2 className="section-title">{t("Hemma News")}</h2>
             </div>
-              <div
+            <div
               className="items-center gap-3 hidden md:flex z-20 relative"
               dir="ltr"
             >
@@ -75,8 +50,8 @@ const NewsSection = () => {
               <CarouselNext className="static text-black border-black size-15 translate-y-0" />
             </div>
           </div>
-          <CarouselContent className="h-[65svh]">
-            {news.map((item, index) => (
+          <CarouselContent className="h-fit lg:h-[65svh]">
+            {data?.data?.map((item, index) => (
               <CarouselItem
                 key={index}
                 className="basis-[85%] lg:basis-1/2 2xl:basis-1/3 min-h-fit"
@@ -85,7 +60,10 @@ const NewsSection = () => {
               </CarouselItem>
             ))}
           </CarouselContent>
-          <div className="flex items-center gap-3 justify-center md:hidden mt-9" dir="ltr">
+          <div
+            className="flex items-center gap-3 justify-center md:hidden mt-9"
+            dir="ltr"
+          >
             <CarouselPrevious className="static translate-y-0" />
             <CarouselNext className="static translate-y-0" />
           </div>
