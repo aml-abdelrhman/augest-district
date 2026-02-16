@@ -1,6 +1,5 @@
 "use client";
 
-import React from "react";
 import { Unit } from "@/types";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { Badge } from "@/components/ui/badge";
@@ -10,7 +9,6 @@ import { ChevronLeft, Download } from "lucide-react";
 import { PDFDownloadLink } from "@react-pdf/renderer";
 import { WhatsAppIcon } from "@/icons";
 import { formatNumber } from "@/lib/utils";
-import { pdf } from "@react-pdf/renderer";
 import UnitQuotationPDF from "@/components/pdf/unit-quotation";
 import { useLocale } from "next-intl";
 
@@ -47,27 +45,6 @@ const UnitDetailsModal = ({
   const t = useTranslations();
   const locale = useLocale();
 
-  const handleDownload = async () => {
-    try {
-      const blob = await pdf(
-        <UnitQuotationPDF
-          unit={unit}
-          locale={locale}
-          projectName={projectName}
-        />,
-      ).toBlob();
-      const url = URL.createObjectURL(blob);
-      const link = document.createElement("a");
-      link.href = url;
-      link.download = `unit-${unit.unit_number || unit.id}-quotation.pdf`;
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-    } catch (error) {
-      console.error("Failed to generate PDF:", error);
-    }
-  };
-
   return (
     <Dialog open={isOpen} onOpenChange={onOpenChange}>
       <DialogTitle className="sr-only">{t("Unit Details")}</DialogTitle>
@@ -92,7 +69,7 @@ const UnitDetailsModal = ({
                     projectName={projectName}
                   />
                 }
-                fileName={`unit-${unit.unit_number || unit.id}-quotation.pdf`}
+                fileName={`${projectName}-quotation.pdf`}
               >
                 {({ loading }) => (
                   <Button
@@ -102,7 +79,7 @@ const UnitDetailsModal = ({
                     isLoading={loading}
                   >
                     <p className="text-xs font-inter font-semibold">PDF</p>
-                    <Download className="size-5" />
+                    {!loading && <Download className="size-4" />}
                   </Button>
                 )}
               </PDFDownloadLink>

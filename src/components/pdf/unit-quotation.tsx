@@ -178,15 +178,15 @@ const UnitQuotationPDF = ({
   const translations = {
     en: {
       quotation: "Quotation",
-      generatedOn: "Generated on:",
+      generatedOn: "Generated on",
       validity:
         "Quotation is valid for 24 hours from its date, subject to unit availability.",
-      unitCode: "Unit Code:",
-      project: "Project:",
-      status: "Status:",
-      price: "Price:",
-      rooms: "Rooms:",
-      area: "Area:",
+      unitCode: "Unit Code",
+      project: "Project",
+      status: "Status",
+      price: "Price",
+      rooms: "Rooms",
+      area: "Area",
       disclaimer: "Disclaimer",
       disclaimerText:
         "The unit reservation amount must be transferred to the company account specified in the document, and the reservation receipt must be sent to the sales specialist, the bond received, and signed to confirm the unit reservation.\n\nIn the case of an exemption, no tax is imposed on the first residence up to an amount of one million riyals. In the absence of an exemption, a tax of 5% is imposed on the property value.\n\nAccount Number: SA8205000068202945964001",
@@ -197,17 +197,17 @@ const UnitQuotationPDF = ({
     },
     ar: {
       quotation: "عرض سعر",
-      generatedOn: "تم الإنشاء في:",
+      generatedOn: "تم الإنشاء في",
       validity: "هذا العرض صالح لمدة 24 ساعة من تاريخه، ويخضع لتوفر الوحدات.",
-      unitCode: "رمز الوحدة:",
-      project: "المشروع:",
-      status: "الحالة:",
-      price: "السعر:",
-      rooms: "الغرف:",
-      area: "المساحة:",
+      unitCode: "رمز الوحدة",
+      project: "المشروع",
+      status: "الحالة",
+      price: "السعر",
+      rooms: "الغرف",
+      area: "المساحة",
       disclaimer: "إخلاء مسؤولية",
       disclaimerText:
-        "يجب تحويل مبلغ حجز الوحدة إلى حساب الشركة المحدد في المستند، ويجب إرسال إيصال الحجز إلى أخصائي المبيعات، واستلام السند الموقع لتأكيد حجز الوحدة.\n\nفي حالة الإعفاء، لا تفرض ضريبة على المسكن الأول حتى مبلغ مليون ريال. وفي حالة عدم الإعفاء، تفرض ضريبة قدرها 5% على قيمة العقار.\n\nرقم الحساب: SA8205000068202945964001",
+        "يجب تحويل مبلغ حجز الوحدة إلى حساب الشركة المحدد في المستند، ويجب إرسال إيصال الحجز إلى أخصائي المبيعات، واستلام السند الموقع لتأكيد حجز الوحدة.\n\nفي حالة وجود إعفاء، لا تفرض ضضريبة على المسكن الأول حتى مبلغ مليون ريال. وفي حالة عدم الإعفاء، تفرض ضريبة قدرها 5% على قيمة العقار.\n\ SA8205000068202945964001: رقم الحساب",
       available: "متاح",
       sold: "مباع",
       reserved: "محجوز",
@@ -238,7 +238,12 @@ const UnitQuotationPDF = ({
   return (
     <Document>
       <Page size="A4" style={styles.page}>
-        <View style={styles.header}>
+        <View
+          style={{
+            ...styles.header,
+            flexDirection: isRtl ? "row-reverse" : "row",
+          }}
+        >
           <Text style={styles.headerText}>{t.quotation}</Text>
           <Image src="/logo.svg" style={styles.logo} />
         </View>
