@@ -57,7 +57,7 @@ const NearToSection = () => {
             alt="Near To"
             width={100}
             height={100}
-            className="block w-full h-auto order-1 lg:order-2"
+            className="block w-full h-auto order-1 lg:order-2 rounded-3xl"
           />
         </div>
       </div>

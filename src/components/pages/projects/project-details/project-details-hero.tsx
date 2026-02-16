@@ -8,7 +8,7 @@ import { useParams } from "next/navigation";
 import { useQuery } from "@tanstack/react-query";
 import { projectQueryOptions } from "@/queries";
 import Link from "next/link";
-import { cn } from "@/lib/utils";
+import { cn, formatNumber } from "@/lib/utils";
 
 const FeatureCard = ({
   label,
@@ -49,7 +49,7 @@ const ProjectDetailsHeroSection = () => {
     },
     {
       label: t("Price from"),
-      value: project?.price_from?.toLocaleString(),
+      value: formatNumber(Number(project?.price_from)),
       icon: Building2Icon,
       hasBackground: true,
     },

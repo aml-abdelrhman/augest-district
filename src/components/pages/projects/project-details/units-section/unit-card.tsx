@@ -12,6 +12,7 @@ import { useTranslations } from "next-intl";
 import { Button } from "@/components/ui/button";
 import { BedIcon, VectorSquareIcon } from "lucide-react";
 import { StarisUpIcon } from "@/icons";
+import { formatNumber } from "@/lib/utils";
 
 const FutureItemCard = ({
   Icon,
@@ -46,7 +47,7 @@ const UnitCard = ({ unit }: { unit: Unit }) => {
       </CardHeader>
       <CardContent className="border-y-2 border-border py-3 mx-2 lg:mx-4">
         <p className="text-2xl lg:text-3xl font-medium text-center">
-          {unit.price ? unit.price.toLocaleString() : t("Price on request")}
+          {unit.price ? formatNumber(Number(unit.price)) : t("Price on request")}
         </p>
       </CardContent>
       <CardFooter className="flex flex-col gap-2 items-center justify-center">
