@@ -59,7 +59,7 @@ const UnitDetailsModal = ({
           </button> */}
 
           <div className="bg-white rounded-xl border border-border/60 p-4 flex items-center justify-between">
-            <h3 className="text-2xl font-bold">#{unit.unit_number}</h3>
+            <h3 className="text-2xl font-bold font-inter">#{unit.unit_number}</h3>
             <div className="flex items-center gap-2">
               <PDFDownloadLink
                 document={
