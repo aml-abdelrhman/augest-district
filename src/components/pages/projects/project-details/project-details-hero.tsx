@@ -21,7 +21,9 @@ const FeatureCard = ({
 }) => {
   return (
     <div className="flex items-center gap-3 min-w-fit w-full">
-      <Icon className="rounded-full p-1.5 size-8 lg:size-10 border border-white glass-bg min-w-fit" />
+      <div className="rounded-full p-2 size-8 lg:size-10 border border-white glass-bg min-w-fit flex items-center justify-center">
+        <Icon className="size-6" />
+      </div>
       <div className="space-y-1">
         <p className="text-sm font-medium text-start">{label}</p>
         <p className="text-lg md:text-xl 2xl:text-2xl font-medium text-center">

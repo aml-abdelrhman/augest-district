@@ -5,6 +5,7 @@ import UnitCard from "./unit-card";
 import { useParams } from "next/navigation";
 import { useSuspenseQuery } from "@tanstack/react-query";
 import { projectQueryOptions } from "@/queries";
+import EmptyState from "@/components/EmptyState";
 
 const UnitsSection = () => {
   const t = useTranslations();
@@ -42,33 +43,50 @@ const UnitsSection = () => {
               <TabsTrigger value="reserved">{t("Reserved")}</TabsTrigger>
             </TabsList>
           </div>
+
           <TabsContent value="all">
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-5">
-              {units.map((unit) => (
-                <UnitCard key={unit.id} unit={unit} />
-              ))}
-            </div>
+            {units?.length > 0 ? (
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-5">
+                {units.map((unit) => (
+                  <UnitCard key={unit.id} unit={unit} />
+                ))}
+              </div>
+            ) : (
+              <EmptyState />
+            )}
           </TabsContent>
           <TabsContent value="available">
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-5">
-              {availableUnits.map((unit) => (
-                <UnitCard key={unit.id} unit={unit} />
-              ))}
-            </div>
+            {availableUnits?.length > 0 ? (
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-5">
+                {availableUnits.map((unit) => (
+                  <UnitCard key={unit.id} unit={unit} />
+                ))}
+              </div>
+            ) : (
+              <EmptyState />
+            )}
           </TabsContent>
           <TabsContent value="sold">
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-5">
-              {soldUnits.map((unit) => (
-                <UnitCard key={unit.id} unit={unit} />
-              ))}
-            </div>
+            {soldUnits?.length > 0 ? (
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-5">
+                {soldUnits.map((unit) => (
+                  <UnitCard key={unit.id} unit={unit} />
+                ))}
+              </div>
+            ) : (
+              <EmptyState />
+            )}
           </TabsContent>
           <TabsContent value="reserved">
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-5">
-              {reservedUnits.map((unit) => (
-                <UnitCard key={unit.id} unit={unit} />
-              ))}
-            </div>
+            {reservedUnits?.length > 0 ? (
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-5">
+                {reservedUnits.map((unit) => (
+                  <UnitCard key={unit.id} unit={unit} />
+                ))}
+              </div>
+            ) : (
+              <EmptyState />
+            )}
           </TabsContent>
         </Tabs>
       </div>
