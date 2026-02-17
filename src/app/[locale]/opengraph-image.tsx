@@ -14,9 +14,9 @@ export const contentType = 'image/png'
 // Image generation
 export default async function Image() {
   // Font loading, process.cwd() is Next.js project directory
-  const geDinarTwo = await readFile(
-    join(process.cwd(), '../fonts/ge-dinar-two/GE-Dinar-Two-Light.woff')
-  )
+//   const geDinarTwo = await readFile(
+//     join(process.cwd(), '../fonts/ge-dinar-two/GE-Dinar-Two-Light.woff')
+//   )
  
   return new ImageResponse(
     (
@@ -40,14 +40,14 @@ export default async function Image() {
       // For convenience, we can re-use the exported opengraph-image
       // size config to also set the ImageResponse's width and height.
       ...size,
-      fonts: [
-        {
-          name: 'geDinarTwo',
-          data: geDinarTwo,
-          style: 'normal',
-          weight: 400,
-        },
-      ],
+    //   fonts: [
+    //     {
+    //       name: 'geDinarTwo',
+    //       data: geDinarTwo,
+    //       style: 'normal',
+    //       weight: 400,
+    //     },
+    //   ],
     }
   )
 }
