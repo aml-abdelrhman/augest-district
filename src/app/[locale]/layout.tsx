@@ -102,7 +102,7 @@ export default async function RootLayout({
     >
       <body
         className={cn(
-          "antialiased font-ge-dinar-two",
+          "antialiased rtl:font-ge-dinar-two ltr:font-inter",
           handicrafts.variable,
           acumin.variable,
           geDinarTwo.variable,
