@@ -76,9 +76,9 @@ const RegisterInterestForm = () => {
   };
 
   return (
-    <Card className="max-w-2xl mx-auto border-none bg-main-200 relative overflow-hidden z-10">
+    <Card className="max-w-xl mx-auto bg-main-50 relative overflow-hidden z-10">
       <Image
-        src="/section-bg-dark-caramel.svg"
+        src="/section-bg-caramel.svg"
         alt="section-bg-caramel"
         className="absolute bottom-0 end-0 z-3 w-full h-full rotate-90 pointer-events-none"
         width={799}

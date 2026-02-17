@@ -47,7 +47,7 @@ const ProjectsList = () => {
             height={60}
           />
           <h1 className="section-title">{t("Projects")}</h1>
-          <p className="text-cyan-950/60 max-w-2xl mx-auto">
+          <p className="max-w-2xl mx-auto">
             {t(
               "Discover our latest real estate projects and find your dream home",
             )}

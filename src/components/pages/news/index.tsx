@@ -30,7 +30,7 @@ const NewsList = () => {
             height={60}
           />
           <h1 className="section-title">{t("Hemma News")}</h1>
-          <p className="text-cyan-950/60 max-w-2xl mx-auto">
+          <p className="max-w-2xl mx-auto">
             {t(
               "Discover the latest news and updates from Hemma Real Estate Development",
             )}

@@ -7,7 +7,7 @@ import React from "react";
 import { useParams } from "next/navigation";
 import { useQuery } from "@tanstack/react-query";
 import { projectQueryOptions } from "@/queries";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { cn, formatNumber } from "@/lib/utils";
 
 const FeatureCard = ({

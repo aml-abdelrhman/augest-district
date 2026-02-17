@@ -1,11 +1,11 @@
 import { Project } from "@/types";
-import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 import { BedDoubleIcon, MapPinIcon } from "lucide-react";
 import { AreaIcon } from "@/icons";
 import { Progress } from "@/components/ui/progress";
 import { formatNumber } from "@/lib/utils";
 import { useLocale, useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 
 const ProjectCard = ({ project }: { project: Project }) => {
   const locale = useLocale() as "ar" | "en";

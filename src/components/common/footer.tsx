@@ -8,7 +8,7 @@ import {
   XTwitterIcon,
   YoutubeIcon,
 } from "@/icons";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 
 const Footer = () => {
   const t = useTranslations();

@@ -41,7 +41,7 @@ const RegisterInterestPage = async () => {
         </div>
       </div>
 
-      <div className="container py-20">
+      <div className="container  pb-20 -mt-[9svh]">
         <HydrationBoundary state={dehydrate(queryClient)}>
           <RegisterInterestForm />
         </HydrationBoundary>

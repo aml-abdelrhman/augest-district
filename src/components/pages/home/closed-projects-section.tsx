@@ -9,7 +9,7 @@ import {
 } from "@/components/ui/carousel";
 import { useSuspenseQuery } from "@tanstack/react-query";
 import { projectsQueryOptions } from "@/queries";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import Image from "next/image";
 
 const ClosedProjectsSection = () => {
