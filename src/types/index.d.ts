@@ -100,7 +100,7 @@ export type News = {
   id: number;
   title: LocaleText;
   description: LocaleText;
-  content: string;
+  content: LocaleText;
   image: string;
   created_at: string;
   updated_at: string;

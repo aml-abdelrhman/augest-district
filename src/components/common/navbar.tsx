@@ -1,4 +1,5 @@
 "use client";
+import { useState } from "react";
 import {
   BrainIcon,
   Building2Icon,
@@ -30,6 +31,7 @@ import {
 export const Navbar = () => {
   const t = useTranslations();
   const pathname = usePathname();
+  const [isOpen, setIsOpen] = useState(false);
   const navigationItems = [
     { label: t("Home"), href: "/", Icon: HomeIcon },
     { label: t("Projects"), href: "/projects", Icon: ProjectorIcon },
@@ -87,7 +89,7 @@ export const Navbar = () => {
           >
             <SearchIcon className="size-6 text-white" />
           </Button>
-          <Sheet>
+          <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild>
               <Button
                 variant="ghost"
@@ -122,6 +124,7 @@ export const Navbar = () => {
                   <Link
                     href={item.href}
                     key={index}
+                    onClick={() => setIsOpen(false)}
                     className={cn(
                       "flex items-center gap-2 font-medium text-lg w-full p-2 relative z-10",
                       pathname === item.href

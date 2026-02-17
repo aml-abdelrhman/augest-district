@@ -75,7 +75,7 @@ const NewsDetail = () => {
 
         <div className="max-w-4xl mx-auto py-12 lg:py-20">
           <article className="article prose prose-cyan lg:prose-xl max-w-none leading-relaxed prose-img:rounded-lg! dark:prose-invert">
-            <div dangerouslySetInnerHTML={{ __html: item.content }} />
+            <div dangerouslySetInnerHTML={{ __html: item.content[locale as keyof typeof item.content] }} />
           </article>
         </div>
       </div>

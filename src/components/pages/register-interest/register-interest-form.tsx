@@ -35,16 +35,16 @@ import Image from "next/image";
 const RegisterInterestForm = () => {
   const t = useTranslations();
   const locale = useLocale();
-  // const { data: cities } = useSuspenseQuery(citiesQueryOptions());
-  const cities = [
-    {
-      id: 1,
-      name: {
-        ar: "القاهرة",
-        en: "Cairo",
-      },
-    },
-  ];
+  const { data: cities } = useSuspenseQuery(citiesQueryOptions());
+  // const cities = [
+  //   {
+  //     id: 1,
+  //     name: {
+  //       ar: "القاهرة",
+  //       en: "Cairo",
+  //     },
+  //   },
+  // ];
   const { mutateAsync: registerInterest, isPending } =
     useRegisterInterestMutation();
 
