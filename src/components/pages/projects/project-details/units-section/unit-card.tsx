@@ -23,9 +23,9 @@ const FutureItemCard = ({
   value: string;
 }) => {
   return (
-    <div className="flex items-center justify-between gap-2 bg-[#F9F9F9] rounded-lg px-2 py-3 flex-1">
-      <Icon className="size-4 text-primary" />
-      <p className="text-sm font-medium">{value}</p>
+    <div className="flex items-center justify-between gap-1 bg-[#F9F9F9] rounded-lg px-2 py-3 flex-1">
+      <Icon className="size-3.5 text-primary" />
+      <p className="text-xs font-medium">{value}</p>
     </div>
   );
 };
@@ -48,9 +48,9 @@ const UnitCard = ({
         )}
         <CardHeader className="flex flex-row items-center justify-between">
           <CardTitle className="font-inter">
-            {unit.unit_number || t("N/A")}
+            #{unit.unit_number || t("N/A")}
           </CardTitle>
-          <Badge variant={isReserved ? "info" : "success"}>
+          <Badge variant={isReserved ? "info" : unit.status === "sold" ? "default" : "success"}>
             {t(unit.status)}
           </Badge>
         </CardHeader>
