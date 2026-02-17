@@ -5,6 +5,30 @@ import {
 } from "@tanstack/react-query";
 import { newsByIdQueryOptions } from "@/queries";
 import NewsDetail from "@/components/pages/news/news-details";
+import { Metadata } from "next";
+import api from "@/lib/api";
+import { News } from "@/types";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ id: string; locale: string }>;
+}): Promise<Metadata> {
+  const { id, locale } = await params;
+
+  const response = await api.request.get<{ data: News }>(`guest/news/${id}`);
+  const item = response?.data;
+
+  if (!item) return {};
+
+  return {
+    title: item.title[locale as keyof typeof item.title],
+    description: item.description[locale as keyof typeof item.description],
+    openGraph: {
+      images: [item.image],
+    },
+  };
+}
 
 const NewsDetailsPage = async ({
   params,

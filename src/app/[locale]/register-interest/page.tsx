@@ -7,12 +7,24 @@ import { citiesQueryOptions } from "@/queries";
 import RegisterInterestForm from "@/components/pages/register-interest/register-interest-form";
 import { getTranslations } from "next-intl/server";
 import Image from "next/image";
+import { Metadata } from "next";
+
+export async function generateMetadata(): Promise<Metadata> {
+  const t = await getTranslations();
+
+  return {
+    title: t("Register your interest"),
+    description: t(
+      "Register your interest in our upcoming projects and be the first to know when they launch",
+    ),
+  };
+}
 
 const RegisterInterestPage = async () => {
   const t = await getTranslations();
   const queryClient = new QueryClient();
 
-  //   await queryClient.prefetchQuery(citiesQueryOptions());
+  await queryClient.prefetchQuery(citiesQueryOptions());
 
   return (
     <section className="bg-main-50 min-h-screen">

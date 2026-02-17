@@ -5,6 +5,17 @@ import {
 } from "@tanstack/react-query";
 import { projectsQueryOptions } from "@/queries";
 import ProjectsList from "@/components/pages/projects";
+import { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
+
+export async function generateMetadata(): Promise<Metadata> {
+  const t = await getTranslations();
+
+  return {
+    title: t("Projects"),
+    description: t("Hemma projects and developments"),
+  };
+}
 
 const ProjectsPage = async ({
   searchParams,

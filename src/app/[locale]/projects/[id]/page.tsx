@@ -12,6 +12,32 @@ import {
   QueryClient,
 } from "@tanstack/react-query";
 import { projectQueryOptions } from "@/queries";
+import { Metadata } from "next";
+import api from "@/lib/api";
+import { Project } from "@/types";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ id: string; locale: string }>;
+}): Promise<Metadata> {
+  const { id, locale } = await params;
+
+  const response = await api.request.get<{ data: Project }>(
+    `guest/projects/${id}`,
+  );
+  const item = response?.data;
+
+  if (!item) return {};
+
+  return {
+    title: item.title[locale as keyof typeof item.title],
+    description: item.description[locale as keyof typeof item.description],
+    openGraph: {
+      images: item.gallery?.[0],
+    },
+  };
+}
 const ProjectDetailsPage = async ({
   params,
 }: {
