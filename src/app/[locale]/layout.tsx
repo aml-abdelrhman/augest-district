@@ -6,7 +6,8 @@ import Providers from "@/components/Providers";
 import { NextIntlClientProvider } from "next-intl";
 import localFont from "next/font/local";
 import { cn } from "@/lib/utils";
-import { Cairo,Urbanist } from "next/font/google";
+import { Cairo, Urbanist } from "next/font/google";
+import { getTranslations } from "next-intl/server";
 
 const cairo = Cairo({
   subsets: ["arabic"],
@@ -72,11 +73,45 @@ const geDinarTwo = localFont({
   ],
   variable: "--font-ge-dinar-two",
 });
-
-export const metadata: Metadata = {
-  title: "همة",
-  description: "",
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const t = await getTranslations();
+  return {
+    title: t("Hemma"),
+    description: t("Hemma projects and developments"),
+    openGraph: {
+      images: [{ url: "/logo.svg" }],
+      title: t("Hemma"),
+      description: t("Hemma projects and developments"),
+      type: "website",
+      url: "https://hemma-front-fork.vercel.app",
+      siteName: "Hemma",
+      locale: "en",
+    },
+    twitter: {
+      images: [{ url: "/logo.svg" }],
+      title: t("Hemma"),
+      description: t("Hemma projects and developments"),
+      card: "summary_large_image",
+      site: "@Hemma",
+      creator: "@Hemma",
+    },
+    keywords: [
+      "Hemma",
+      "projects",
+      "developments",
+      "real estate",
+      "investments",
+      "real estate investments",
+      "real estate development",
+      "real estate agency",
+      "real estate company",
+      "real estate investments company",
+      "real estate development company",
+      "real estate agency company",
+      "real estate company company",
+    ],
+  };
+}
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
