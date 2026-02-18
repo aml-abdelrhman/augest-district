@@ -51,6 +51,7 @@ export default function ImagePreview({
                 alt={alt}
                 width={width * 2}
                 height={height * 2}
+                loading="eager"
                 className="object-contain w-full h-full rounded-2xl"
               />
             </div>
