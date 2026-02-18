@@ -23,7 +23,17 @@ const Providers = ({ children }: { children: React.ReactNode }) => {
         direction={locale === "ar" ? "rtl" : "ltr"}
       >
         <Suspense>
-          <Toaster closeButton richColors position="top-center" />
+          <Toaster
+            closeButton
+            richColors
+            position="top-center"
+            style={{
+              fontFamily:
+                locale === "ar"
+                  ? "var(--font-ge-dinar-two)"
+                  : "var(--font-inter)",
+            }}
+          />
         </Suspense>
         {children}
       </DirectionProvider>
