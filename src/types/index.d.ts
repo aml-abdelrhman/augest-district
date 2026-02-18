@@ -138,3 +138,10 @@ export type ClosedProject = {
   created_at: string;
   updated_at: string;
 };
+
+export type EmployeFormPayload = {
+  full_name: string;
+  phone: string;
+  experience: "beginner" | "intermidate" | "expert"; //Real Estate Experince
+  cv: File;
+};

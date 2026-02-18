@@ -1,6 +1,14 @@
 import { queryOptions, useMutation } from "@tanstack/react-query";
 
-import type { Project, ApiResponse, Meta, Unit, News, City } from "@/types";
+import type {
+  Project,
+  ApiResponse,
+  Meta,
+  Unit,
+  News,
+  City,
+  EmployeFormPayload,
+} from "@/types";
 import { RegisterYourInterestPayload } from "@/types";
 import api from "@/lib/api";
 
@@ -166,4 +174,31 @@ const registerInterest = async (
 export const useRegisterInterestMutation = () =>
   useMutation({
     mutationFn: registerInterest,
+  });
+
+const submitEmployment = async (payload: EmployeFormPayload): Promise<any> => {
+  const formData = new FormData();
+  formData.append("full_name", payload.full_name);
+  formData.append("phone", payload.phone);
+  formData.append("experience", payload.experience);
+  formData.append("cv", payload.cv);
+
+  const response = await api.request.post<ApiResponse<any>>(
+    "guest/employment",
+    formData,
+    {
+      headers: {
+        "Content-Type": "multipart/form-data",
+      },
+    },
+  );
+  if (response.status !== "success") {
+    throw new Error(response.message || "Failed to submit application");
+  }
+  return response?.result;
+};
+
+export const useEmploymentMutation = () =>
+  useMutation({
+    mutationFn: submitEmployment,
   });
