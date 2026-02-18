@@ -68,8 +68,8 @@ const ClosedProjectsSection = () => {
                     width={250}
                     height={413}
                   />
-                  <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
-                    <PlayIcon />
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <PlayIcon className="size-7" />
                   </div>
                 </Link>
               </CarouselItem>
