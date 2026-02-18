@@ -39,8 +39,8 @@ export const Navbar = () => {
     { label: t("Land"), href: "/land", Icon: LandmarkIcon },
     { label: t("Events"), href: "/events", Icon: CalendarIcon },
     { label: t("Developers"), href: "/developers", Icon: Building2Icon },
-    // { label: t("Methodology"), href: "/methodology", Icon: BrainIcon },
-    // { label: t("Employment"), href: "/employment", Icon: UsersIcon },
+    { label: t("Methodology"), href: "/methodology", Icon: BrainIcon },
+    { label: t("Employment"), href: "/employment", Icon: UsersIcon },
     { label: t("News"), href: "/news", Icon: NewspaperIcon },
   ];
   return (

@@ -2,10 +2,10 @@
 
 import { useQuery } from "@tanstack/react-query";
 import { newsQueryOptions } from "@/queries";
-import NewsCard from "./news-card";
 import { useTranslations } from "next-intl";
 import EmptyState from "@/components/EmptyState";
 import Image from "next/image";
+import NewsCard from "../home/news-section/news-card";
 
 const NewsList = () => {
   const t = useTranslations();

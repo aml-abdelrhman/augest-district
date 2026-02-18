@@ -9,7 +9,7 @@ const NewsCard = ({ item }: { item: News }) => {
   const t = useTranslations();
   const locale = useLocale();
   return (
-    <Link href={`/news/${item.id}`}>
+    <Link href={`/news/${item.id}`} className="group">
       <Card className="h-full border-none p-0 text-cyan-950 bg-transparent">
         <CardHeader
           className="bg-cover bg-center rounded-2xl min-h-[30svh] relative"
@@ -28,7 +28,7 @@ const NewsCard = ({ item }: { item: News }) => {
           <p className="text-sm text-cyan-950/40">
             {moment(item.created_at).locale(locale).format("DD MMMM YYYY")}
           </p>
-          <h3 className="text-xl xl:text-2xl font-medium leading-11">
+          <h3 className="text-xl xl:text-2xl font-medium leading-7 xl:leading-11 group-hover:text-amber-700 transition-colors">
             {item.title[locale as keyof typeof item.title]}
           </h3>
           <p className="text-sm text-cyan-950/40 line-clamp-3">

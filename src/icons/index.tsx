@@ -215,7 +215,7 @@ export const PlayIcon = ({ className }: { className?: string }) => (
     width="36"
     height="36"
     viewBox="0 0 36 36"
-    fill="currentColor"
+    fill="none"
     className={cn("size-5", className)}
     xmlns="http://www.w3.org/2000/svg"
   >

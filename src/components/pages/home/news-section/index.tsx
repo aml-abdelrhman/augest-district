@@ -12,6 +12,7 @@ import NewsCard from "./news-card";
 import { useQuery } from "@tanstack/react-query";
 import { newsQueryOptions } from "@/queries";
 import Image from "next/image";
+import { cn } from "@/lib/utils";
 
 const NewsSection = () => {
   const t = useTranslations();
@@ -61,7 +62,10 @@ const NewsSection = () => {
             {data?.data?.map((item, index) => (
               <CarouselItem
                 key={index}
-                className="basis-[85%] lg:basis-1/2 2xl:basis-1/3 min-h-fit"
+                className={cn(
+                  "lg:basis-1/2 2xl:basis-1/3 min-h-fit",
+                  data?.data?.length > 1 ? "basis-[85%]" : "basis-full",
+                )}
               >
                 <NewsCard item={item} />
               </CarouselItem>
