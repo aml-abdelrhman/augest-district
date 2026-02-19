@@ -12,6 +12,7 @@ import { projectsQueryOptions } from "@/queries";
 import { Link } from "@/i18n/navigation";
 import Image from "next/image";
 import { PlayIcon } from "@/icons";
+import VideoViewer from "@/components/ui/video-viewer";
 
 const ClosedProjectsSection = () => {
   const t = useTranslations();
@@ -57,10 +58,7 @@ const ClosedProjectsSection = () => {
                 key={project.id}
                 className="sm:basis-1/2 md:basis-1/3 xl:basis-1/4 2xl:basis-1/5"
               >
-                <Link
-                  href={`/projects/${project.id}`}
-                  className="group relative h-full overflow-hidden rounded-4xl block"
-                >
+                <VideoViewer src="https://www.youtube.com/watch?v=qN8qF7tYu4M&list=TLGGN4ba2_Dv7scxOTAyMjAyNg&t=1s" className="group relative h-full overflow-hidden rounded-4xl block">
                   <Image
                     src={project?.gallery?.[0] || "/Link.svg"}
                     alt={project.title[locale]}
@@ -68,10 +66,10 @@ const ClosedProjectsSection = () => {
                     width={250}
                     height={413}
                   />
-                  <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="absolute inset-0 flex items-center justify-center group-hover:scale-110 transition-all duration-300">
                     <PlayIcon className="size-10 sm:size-13" />
                   </div>
-                </Link>
+                </VideoViewer>
               </CarouselItem>
             ))}
           </CarouselContent>
