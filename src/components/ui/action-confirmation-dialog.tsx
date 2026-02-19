@@ -43,7 +43,7 @@ const ActionConfirmationDialog: React.FC<ActionConfirmationDialogProps> = ({
         aria-describedby="action-confirmation-description"
       >
         <AlertDialogHeader
-          className="sm:ltr:text-left sm:rtl:text-right space-y-2"
+          className="sm:text-start space-y-2"
           dir={locale === "ar" ? "rtl" : "ltr"}
         >
           <div className="flex items-center gap-3">

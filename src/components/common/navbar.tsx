@@ -124,7 +124,7 @@ export const Navbar = () => {
               </DialogHeader>
               <form onSubmit={handleSearch} className="flex flex-col gap-4">
                 <Input
-                  placeholder={t("Search for projects...")}
+                  placeholder={t("Search for projects")}
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
                   autoFocus

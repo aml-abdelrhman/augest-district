@@ -92,6 +92,7 @@ export type Project = {
   }[];
   diagrams: string[];
   units: Unit[];
+  is_featured: boolean;
   created_at: string;
   updated_at: string;
 };

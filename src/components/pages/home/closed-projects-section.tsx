@@ -9,7 +9,6 @@ import {
 } from "@/components/ui/carousel";
 import { useQuery } from "@tanstack/react-query";
 import { projectsQueryOptions } from "@/queries";
-import { Link } from "@/i18n/navigation";
 import Image from "next/image";
 import { PlayIcon } from "@/icons";
 import VideoViewer from "@/components/ui/video-viewer";
