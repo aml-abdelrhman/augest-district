@@ -39,7 +39,7 @@ const Developers = () => {
       </div>
 
       {isLoading ? (
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-6 container pb-20 -mt-[9svh]">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-6 container pb-20 -mt-[9svh] relative z-10">
           {[...Array(12)].map((_, i) => (
             <div
               key={i}
@@ -52,7 +52,7 @@ const Developers = () => {
           {t("No developers found")}
         </div>
       ) : (
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-6 container pb-20 -mt-[9svh]">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-6 container pb-20 -mt-[9svh] relative z-10">
           {partners.map((partner) => (
             <div
               key={partner.id}
@@ -65,11 +65,9 @@ const Developers = () => {
                 width={200}
                 height={200}
               />
-              <div className="absolute inset-x-0 bottom-0 p-3 bg-linear-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
-                <p className="text-white text-xs font-medium text-center truncate">
-                  {partner.name}
-                </p>
-              </div>
+              <h3 className="text-xs font-medium text-center truncate mt-7">
+                {partner.name}
+              </h3>
             </div>
           ))}
         </div>
