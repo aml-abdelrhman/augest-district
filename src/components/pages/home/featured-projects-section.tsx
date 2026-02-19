@@ -19,6 +19,10 @@ const FeaturedProjectsSection = () => {
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0); // Track current slide
   const [count, setCount] = useState(0);
+  const [displayedImage, setDisplayedImage] = useState(
+    "/featured-projects-bg.svg",
+  );
+  const [isVisible, setIsVisible] = useState(true);
 
   const { data: projectsData, isError } = useQuery(
     projectsQueryOptions({ is_featured: true }),
@@ -29,15 +33,41 @@ const FeaturedProjectsSection = () => {
   const projects = projectsData?.data || [];
 
   useEffect(() => {
-    if (!api) return;
+    if (!api || projects.length === 0) return;
 
     setCount(api.scrollSnapList().length);
     setCurrent(api.selectedScrollSnap() + 1);
 
-    api.on("select", () => {
-      setCurrent(api.selectedScrollSnap() + 1);
-    });
-  }, [api]);
+    const updateImage = () => {
+      const index = api.selectedScrollSnap();
+      const nextImage =
+        projects[index]?.gallery[1] ||
+        projects[index]?.gallery[0] ||
+        "/featured-projects-bg.svg";
+
+      setIsVisible(false);
+      setTimeout(() => {
+        setDisplayedImage(nextImage);
+        setIsVisible(true);
+      }, 300);
+
+      setCurrent(index + 1);
+    };
+
+    api.on("select", updateImage);
+
+    // Set initial image
+    const initialIndex = api.selectedScrollSnap();
+    const initialImage =
+      projects[initialIndex]?.gallery[1] ||
+      projects[initialIndex]?.gallery[0] ||
+      "/featured-projects-bg.svg";
+    setDisplayedImage(initialImage);
+
+    return () => {
+      api.off("select", updateImage);
+    };
+  }, [api, projects]);
   return (
     <section className="min-h-[80svh] bg-main-200 relative overflow-hidden">
       <div className="container py-[17svh] relative z-10 10 max-w-[1620px]">
@@ -97,13 +127,16 @@ const FeaturedProjectsSection = () => {
               <CarouselNext className="static size-15 translate-y-0 rtl:rotate-180" />
             </div>
           </Carousel>
-          <Image
-            src="/featured-projects-bg.svg"
-            alt="Near To"
-            width={500}
-            height={500}
-            className="block w-full h-auto order-1 lg:order-2 rounded-3xl"
-          />
+          <div className="relative w-full aspect-square order-1 lg:order-2">
+            <Image
+              src={displayedImage}
+              alt="Project Image"
+              fill
+              className={`object-cover rounded-3xl transition-opacity duration-300 ease-in-out ${
+                isVisible ? "opacity-100" : "opacity-0"
+              }`}
+            />
+          </div>
         </div>
       </div>
     </section>
