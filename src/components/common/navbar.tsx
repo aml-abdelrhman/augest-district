@@ -118,7 +118,7 @@ export const Navbar = () => {
                 <SearchIcon className="size-6 text-white" />
               </Button>
             </DialogTrigger>
-            <DialogContent className="sm:max-w-[425px]">
+            <DialogContent className="sm:max-w-[425px] bg-main-50">
               <DialogHeader>
                 <DialogTitle>{t("Search")}</DialogTitle>
               </DialogHeader>
@@ -129,7 +129,7 @@ export const Navbar = () => {
                   onChange={(e) => setSearchTerm(e.target.value)}
                   autoFocus
                 />
-                <Button type="submit" className="w-full">
+                <Button type="submit" className="w-full" size="lg">
                   {t("Search")}
                 </Button>
               </form>

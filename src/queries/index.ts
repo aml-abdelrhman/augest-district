@@ -66,7 +66,7 @@ const getProjects = async (
 ): Promise<{ data: Project[]; meta?: Meta | undefined }> => {
   const response = await api.request.get<ApiResponse<Project[]>>(
     "guest/projects",
-    params,
+    { params },
   );
   if (response.status !== "success") {
     throw new Error("Failed to fetch project");
@@ -99,10 +99,9 @@ export const closedProjectsQueryOptions = () =>
 const getUnits = async (
   params: GeneralPageParams,
 ): Promise<{ data: Unit[]; meta?: Meta | undefined }> => {
-  const response = await api.request.get<ApiResponse<Unit[]>>(
-    "guest/units",
+  const response = await api.request.get<ApiResponse<Unit[]>>("guest/units", {
     params,
-  );
+  });
   if (response.status !== "success") {
     throw new Error("Failed to fetch units");
   }
@@ -132,10 +131,9 @@ export const unitQueryOptions = (id: string) =>
 const getNews = async (
   params: GeneralPageParams,
 ): Promise<{ data: News[]; meta?: Meta | undefined }> => {
-  const response = await api.request.get<ApiResponse<News[]>>(
-    "guest/news",
+  const response = await api.request.get<ApiResponse<News[]>>("guest/news", {
     params,
-  );
+  });
   if (response.status !== "success") {
     throw new Error("Failed to fetch news");
   }

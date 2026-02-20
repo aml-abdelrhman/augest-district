@@ -12,6 +12,7 @@ import {
 } from "@/components/ui/carousel";
 import { useQuery } from "@tanstack/react-query";
 import { projectsQueryOptions } from "@/queries";
+import { cn } from "@/lib/utils";
 
 const FeaturedProjectsSection = () => {
   const t = useTranslations();
@@ -84,7 +85,7 @@ const FeaturedProjectsSection = () => {
               direction: locale === "ar" ? "rtl" : "ltr",
             }}
             setApi={setApi}
-            className="gap-3 lg:gap-5 order-2 lg:order-1 w-full max-w-full h-full"
+            className="order-2 lg:order-1 grid"
           >
             <div className="flex items-center justify-between mb-[7svh]">
               <div className="flex items-center gap-3 max-sm:flex-col">
@@ -111,7 +112,7 @@ const FeaturedProjectsSection = () => {
                         alt={project.title[locale]}
                         width={500}
                         height={500}
-                        className="block w-full h-[500px] object-cover object-top rounded-xl"
+                        className="block w-full h-[500px] object-cover object-top rounded-xl max-w-full"
                       />
                       <p className="text-lg font-thin">
                         {project.title[locale]}
@@ -139,9 +140,10 @@ const FeaturedProjectsSection = () => {
               src={displayedImage}
               alt="Project Image"
               fill
-              className={`object-cover rounded-3xl transition-opacity duration-300 ease-in-out ${
-                isVisible ? "opacity-100" : "opacity-0"
-              }`}
+              className={cn(
+                "object-cover rounded-3xl transition-opacity duration-300 ease-in-out max-w-full",
+                isVisible ? "opacity-100" : "opacity-0",
+              )}
             />
           </div>
         </div>

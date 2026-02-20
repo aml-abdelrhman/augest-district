@@ -27,7 +27,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
       <img
         src={project?.gallery?.[0] || "/gallary-section-img.png"}
         alt={project.title[locale]}
-        className="h-[80%] max-h-[500px] w-full object-cover rounded-4xl"
+        className="h-[450px] w-full object-cover rounded-4xl"
       />
       <div className="grid grid-cols-2 sm:gap-5 mt-5 text-primary/50 z-10 text-start">
         <div className="space-y-3">

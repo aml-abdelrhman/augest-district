@@ -4,12 +4,12 @@ import { useQuery } from "@tanstack/react-query";
 import { projectsQueryOptions } from "@/queries";
 import { useTranslations } from "next-intl";
 import EmptyState from "@/components/EmptyState";
-import ProjectCard from "./project-card";
+import ProjectCard from "../project-card";
 import Pagination from "@/components/Pagination";
 import { useSearchParams, useRouter, usePathname } from "next/navigation";
 import Image from "next/image";
 
-const ProjectsList = () => {
+const BuyOnMapProjectsList = () => {
   const t = useTranslations();
   const searchParams = useSearchParams();
   const router = useRouter();
@@ -18,7 +18,7 @@ const ProjectsList = () => {
   const page = Number(searchParams.get("page")) || 1;
   const term = searchParams.get("term") || undefined;
   const { data, isError } = useQuery(
-    projectsQueryOptions({ page, term: "test" }),
+    projectsQueryOptions({ page, term, is_ready_for_sale: false }),
   );
 
   const handlePageChange = (newPage: number) => {
@@ -56,7 +56,7 @@ const ProjectsList = () => {
                 <span className="text-primary">{term}</span>
               </>
             ) : (
-              t("Projects")
+              t("Buy on the map")
             )}
           </h1>
           <p className="max-w-2xl mx-auto">
@@ -79,14 +79,12 @@ const ProjectsList = () => {
             ))
           )}
         </div>
-
         {data?.data?.length === 0 &&
           (term ? (
             <EmptyState title={t("No projects found")} type="search" />
           ) : (
             <EmptyState title={t("No projects found")} />
           ))}
-
         {data?.meta && data.meta.last_page > 1 && (
           <div className="flex justify-center pt-8">
             <Pagination
@@ -101,4 +99,4 @@ const ProjectsList = () => {
   );
 };
 
-export default ProjectsList;
+export default BuyOnMapProjectsList;

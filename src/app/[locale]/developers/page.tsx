@@ -56,7 +56,7 @@ const Developers = () => {
           {partners.map((partner) => (
             <div
               key={partner.id}
-              className="group relative aspect-square overflow-hidden bg-white border border-border/50 rounded-xl p-6 transition-all hover:shadow-lg hover:border-primary/20 flex items-center justify-center"
+              className="group relative aspect-square overflow-hidden bg-white border border-border/50 rounded-xl p-6 transition-all hover:shadow-lg hover:border-primary/20"
             >
               <Image
                 src={partner.logo}
@@ -65,7 +65,7 @@ const Developers = () => {
                 width={200}
                 height={200}
               />
-              <h3 className="text-xs font-medium text-center truncate mt-7">
+              <h3 className="text-xs font-medium text-center truncate absolute bottom-3 left-1/2 -translate-x-1/2">
                 {partner.name}
               </h3>
             </div>
