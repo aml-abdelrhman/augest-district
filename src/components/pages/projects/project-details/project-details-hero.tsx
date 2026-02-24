@@ -84,7 +84,7 @@ const ProjectDetailsHeroSection = () => {
     },
     {
       label: t("Area"),
-      value: project?.area,
+      value: `${project?.area} ${t("m²")}`,
       icon: AreaIcon,
       hasBackground: true,
     },
