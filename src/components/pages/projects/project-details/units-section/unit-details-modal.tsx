@@ -18,6 +18,7 @@ interface UnitDetailsModalProps {
   isOpen: boolean;
   onOpenChange: (open: boolean) => void;
   projectName: string;
+  projectPhoneLink: string;
 }
 
 const DetailItem = ({
@@ -42,6 +43,7 @@ const UnitDetailsModal = ({
   isOpen,
   onOpenChange,
   projectName,
+  projectPhoneLink,
 }: UnitDetailsModalProps) => {
   const t = useTranslations();
   const locale = useLocale();
@@ -52,9 +54,7 @@ const UnitDetailsModal = ({
       <DialogContent className="max-w-2xl! p-0 overflow-hidden border-none gap-0 bg-[#FCFCFC]">
         <div className="p-4 md:p-6 lg:p-8 flex flex-col gap-6 max-h-[90vh] overflow-y-auto">
           <div className="bg-white rounded-xl border border-border/60 p-4 flex items-center justify-between">
-            <h3 className="text-2xl font-bold">
-              #{unit.unit_number}
-            </h3>
+            <h3 className="text-2xl font-bold">#{unit.unit_number}</h3>
             <div className="flex items-center gap-2">
               <PDFDownloadLink
                 document={
@@ -126,13 +126,15 @@ const UnitDetailsModal = ({
                 {t("Contact our sales representative over WhatsApp")}
               </span>
             </p>
-            <Button
-              startContent={<WhatsAppIcon className="size-8" />}
-              size="lg"
-              className="w-full rounded-2xl"
-            >
-              {t("Whatsapp")}
-            </Button>
+            <a href={projectPhoneLink}>
+              <Button
+                startContent={<WhatsAppIcon className="size-8" />}
+                size="lg"
+                className="w-full rounded-2xl"
+              >
+                {t("Whatsapp")}
+              </Button>
+            </a>
           </div>
 
           <div className="bg-white rounded-xl border border-border/60 p-6 lg:p-8 space-y-5">

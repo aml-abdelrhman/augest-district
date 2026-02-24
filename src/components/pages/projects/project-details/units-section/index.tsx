@@ -16,6 +16,7 @@ const UnitsSection = () => {
   const projectName =
     project?.title[locale as keyof typeof project.title] || "";
 
+  const projectPhoneLink = project?.project_phone_link;
   const units = project?.units || [];
 
   const availableUnits = units.filter((unit) => unit.status === "available");
@@ -60,6 +61,7 @@ const UnitsSection = () => {
                     key={unit.id}
                     unit={unit}
                     projectName={projectName}
+                    projectPhoneLink={projectPhoneLink}
                   />
                 ))}
               </div>
@@ -75,6 +77,7 @@ const UnitsSection = () => {
                     key={unit.id}
                     unit={unit}
                     projectName={projectName}
+                    projectPhoneLink={projectPhoneLink}
                   />
                 ))}
               </div>
@@ -90,6 +93,7 @@ const UnitsSection = () => {
                     key={unit.id}
                     unit={unit}
                     projectName={projectName}
+                    projectPhoneLink={projectPhoneLink}
                   />
                 ))}
               </div>
@@ -105,6 +109,7 @@ const UnitsSection = () => {
                     key={unit.id}
                     unit={unit}
                     projectName={projectName}
+                    projectPhoneLink={projectPhoneLink}
                   />
                 ))}
               </div>

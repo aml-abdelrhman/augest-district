@@ -33,9 +33,11 @@ const FutureItemCard = ({
 const UnitCard = ({
   unit,
   projectName,
+  projectPhoneLink,
 }: {
   unit: Unit;
   projectName: string;
+  projectPhoneLink: string;
 }) => {
   const t = useTranslations();
   const locale = useLocale() as "ar" | "en";
@@ -94,6 +96,7 @@ const UnitCard = ({
         isOpen={isDetailsOpen}
         onOpenChange={setIsDetailsOpen}
         projectName={projectName}
+        projectPhoneLink={projectPhoneLink}
       />
     </>
   );
