@@ -6,7 +6,7 @@ import {
 import { projectsQueryOptions } from "@/queries";
 import { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
-import BuyOnMapProjectsList from "@/components/pages/projects/buy-on-the-map";
+import ProjectsForRentList from "@/components/pages/projects/projects-for-rent";
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations();
@@ -17,7 +17,7 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-const BuyOnTheMap = async ({
+const ProjectsForRent = async ({
   searchParams,
 }: {
   searchParams: Promise<{ page?: string }>;
@@ -32,9 +32,9 @@ const BuyOnTheMap = async ({
 
   return (
     <HydrationBoundary state={dehydrate(queryClient)}>
-      <BuyOnMapProjectsList />
+      <ProjectsForRentList />
     </HydrationBoundary>
   );
 };
 
-export default BuyOnTheMap;
+export default ProjectsForRent;

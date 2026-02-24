@@ -75,14 +75,14 @@ const Footer = () => {
           <Link className="underline" href="/terms-and-conditions">
             {t("Terms and Conditions")}
           </Link>
-          <a
+        {/* <a
             className="underline"
             href="https://maps.app.goo.gl/H7U7MHWvyzTP9xmx8"
             target="_blank"
             rel="noopener noreferrer"
           >
             {t("Company location")}
-          </a>
+          </a> */}
         </div>
       </div>
     </footer>

@@ -57,8 +57,8 @@ export const Navbar = () => {
 
   const navigationItems = [
     { label: t("Home"), href: "/", Icon: HomeIcon },
-    { label: t("Projects"), href: "/projects", Icon: Building2Icon },
-    { label: t("Buy on the map"), href: "/buy-on-the-map", Icon: MapIcon },
+    { label: t("Projects for sale"), href: "/projects", Icon: Building2Icon },
+    { label: t("Projects for rent"), href: "/projects-for-rent", Icon: MapIcon },
     // { label: t("Land"), href: "/land", Icon: LandmarkIcon },
     // { label: t("Events"), href: "/events", Icon: CalendarIcon },
     { label: t("Developers"), href: "/developers", Icon: HandshakeIcon },

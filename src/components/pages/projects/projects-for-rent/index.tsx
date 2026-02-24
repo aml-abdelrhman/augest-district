@@ -9,7 +9,7 @@ import Pagination from "@/components/Pagination";
 import { useSearchParams, useRouter, usePathname } from "next/navigation";
 import Image from "next/image";
 
-const BuyOnMapProjectsList = () => {
+const ProjectsForRentList = () => {
   const t = useTranslations();
   const searchParams = useSearchParams();
   const router = useRouter();
@@ -56,7 +56,7 @@ const BuyOnMapProjectsList = () => {
                 <span className="text-primary">{term}</span>
               </>
             ) : (
-              t("Buy on the map")
+              t("Projects for rent")
             )}
           </h1>
           <p className="max-w-2xl mx-auto">
@@ -99,4 +99,4 @@ const BuyOnMapProjectsList = () => {
   );
 };
 
-export default BuyOnMapProjectsList;
+export default ProjectsForRentList;

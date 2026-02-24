@@ -56,7 +56,7 @@ const ProjectsList = () => {
                 <span className="text-primary">{term}</span>
               </>
             ) : (
-              t("Projects")
+              t("Projects for sale")
             )}
           </h1>
           <p className="max-w-2xl mx-auto">

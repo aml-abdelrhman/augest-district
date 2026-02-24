@@ -160,7 +160,7 @@
   "Unit types": "أنواع الوحدات",
   "Project status": "حالة المشروع",
   "City": "مدينة",
-  "Area": "منطقة",
+  "Area": "المساحة",
   "Whatsapp": "واتس اب",
   "Are you interested": "هل أنت مهتم؟",
   "Contact our sales representative over WhatsApp": "تواصل مع مندوب المبيعات لدينا عبر الواتساب.",
@@ -255,5 +255,8 @@
   "Hemma for real estate investments and developments": "همة للاستثمارات والتطوير العقاري",
   "m²": "م²",
   "Error fetching project": "حدث خطأ أثناء جلب المشروع",
-  "Units": "الوحدات"
+  "Units": "الوحدات",
+  "Number of units": "عدد الوحدات",
+  "Projects for sale": "مشاريع للبيع",
+  "Projects for rent": "مشاريع للإيجار"
 }

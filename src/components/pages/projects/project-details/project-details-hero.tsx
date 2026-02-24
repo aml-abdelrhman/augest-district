@@ -53,7 +53,7 @@ const ProjectDetailsHeroSection = () => {
 
   const projectDetails = [
     {
-      label: t("Units"),
+      label: t("Number of units"),
       value: project?.rooms,
       icon: HouseIcon,
       hasBackground: true,
