@@ -117,15 +117,15 @@ const ProjectDetailsHeroSection = () => {
           ))}
         </div>
         <div className="flex items-center justify-center max-md:flex-wrap -space-x-0.5 max-md:gap-5">
-          <Button
-            size="lg"
-            className="max-md:w-full min-h-15 sm:min-h-17 sm:text-lg z-5 hover:bg-card hover:text-primary hover:border-transparent"
-            variant="outline"
-          >
-            <a href={project?.project_questions_link} target="_blank">
+          <Link href="/register-interest">
+            <Button
+              size="lg"
+              className="max-md:w-full min-h-15 sm:min-h-17 sm:text-lg z-5 hover:bg-card hover:text-primary hover:border-transparent"
+              variant="outline"
+            >
               {t("Have an inquiry about a project")}
-            </a>
-          </Button>
+            </Button>
+          </Link>
           <div className="max-md:hidden h-5 sm:h-7 w-2 bg-card -me-1 -ms-0.5 shrink-0 -z-1" />
           <Button
             size="lg"
