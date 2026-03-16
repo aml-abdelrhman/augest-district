@@ -23,8 +23,8 @@ const MainLayout = ({ children }: { children: React.ReactNode }) => {
       >
         {children}
       </main>
-      <footer />
-      
+      <Footer />
+     
     </section>
   );
 };
