@@ -1,7 +1,10 @@
 @import "tailwindcss";
 @import "tw-animate-css";
-@plugin "@tailwindcss/typography";
-
+/* @plugin "@tailwindcss/typography"; */
+@font-face {
+  font-family: "Jozoor";
+  src: url("/fonts/AraJozoor-Regular.ttf") format("truetype");
+}
 @custom-variant dark (&:is(.dark *));
 
 body {
@@ -9,7 +12,6 @@ body {
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  scroll-behavior: smooth;
 }
 
 @theme {
@@ -20,9 +22,9 @@ body {
   --font-inherit: inherit;
   --font-mono: monospace;
   --font-inter: "Inter", sans-serif;
-  --font-ge-dinar-two: "geDinarTwo", "Inter", sans-serif;
+  --font-ge-dinar-two: "geDinarTwo", sans-serif;
   --font-cairo: "Cairo", "geDinarTwo", sans-serif;
-  --font-urbanist: "Urbanist", "Cairo", sans-serif;
+  --font-urbanist: "Urbanist","Cairo", sans-serif;
   --breakpoint-xs: 480px;
   --breakpoint-mid: 768px;
   --breakpoint-3xl: 1600px;
@@ -39,7 +41,7 @@ body {
   --color-main-200: #eadec6;
   --color-main-300: #e3c261;
   --color-main-400: #d9a936;
-  --color-main-500: #c9aa7b;
+  --color-main-500: #C9AA7B;
   --color-main-600: #ab957e;
   --color-main-700: #8b541d;
   --color-main-800: #74441f;
@@ -332,7 +334,7 @@ button {
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground rtl:font-ge-dinar-two ltr:font-inter;
+    @apply bg-background text-foreground;
   }
 }
 
@@ -341,7 +343,7 @@ button {
 }
 
 @utility glass-bg {
-  @apply bg-[#c0c1c166] backdrop-blur-xl backdrop-filter-[url(#liquid-distortion)];
+  @apply bg-[#c0c1c166] backdrop-blur-xl;
 }
 
 @utility section-title {

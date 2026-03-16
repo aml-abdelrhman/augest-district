@@ -1,92 +1,50 @@
-import { useTranslations } from "next-intl";
-import Image from "next/image";
-import { Button } from "../ui/button";
-import {
-  InstagramIcon,
-  SnapchatIcon,
-  TikTokIcon,
-  XTwitterIcon,
-  YoutubeIcon,
-} from "@/icons";
-import { Link } from "@/i18n/navigation";
+"use client";
 
-const Footer = () => {
-  const t = useTranslations();
+import Link from "next/link";
+import { usePathname, useParams } from "next/navigation";
+import { useTranslations } from "next-intl";
+
+export default function Footer() {
+  const pathname = usePathname();
+  const params = useParams();
+  const locale = params.locale || "en"; 
+  const t = useTranslations("Footer");
+
+  const links = [
+    { href: "/products", label: t("products") },
+    { href: "/About", label: t("aboutUs") },
+    { href: "/size-guide", label: t("sizeGuide") },
+    { href: "/sustainability", label: t("sustainability") },
+    { href: "/terms", label: t("termsAndConditions") },
+  ];
+
   return (
-    <footer className="bg-main-600 pt-[27svh] md:pt-[20svh] lg:pt-[10svh] relative overflow-hidden font-cairo text-primary-foreground">
-      <Image
-        src="/footer-bg.svg"
-        alt="footer-img"
-        className="absolute bottom-0 end-0 z-5 w-auto pointer-events-none"
-        width={799}
-        height={387}
-      />
-      <Image
-        src="/footer-img.svg"
-        alt="footer-img"
-        className="absolute top-0 start-0 z-5 pointer-events-none w-auto h-full lg:block hidden"
-        quality={100}
-        width={688}
-        height={387}
-      />
-      <Image
-        src="/mobile-footer-img.svg"
-        alt="footer-img"
-        className="absolute top-0 start-0 z-5 pointer-events-none w-full sm:w-auto lg:hidden"
-        quality={100}
-        width={688}
-        height={387}
-      />
-      {/* <div className="absolute top-[28%] start-0 z-12 pointer-events-none w-full h-14 bg-linear-to-b from-transparent to-main-600 lg:hidden" /> */}
-      <div className="container mb-[7svh]">
-        <div className="relative z-10 grid lg:grid-cols-2 gap-3">
-          <div className=""></div>
-          <div className="space-y-7">
-            <Image
-              src="/logo.svg"
-              alt="footer-logo"
-              width={120}
-              height={40}
-              className="w-full h-auto max-w-30"
-            />
-            <p className="text-lg">{t("footer.description")}</p>
-            <Link href="/register-interest">
-              <Button variant="link" size="lg" className="font-inter">
-                {t("Register your interest")}
-              </Button>
-            </Link>
-          </div>
-        </div>
+    <footer className="w-full mt-6 text-white py-8">
+      <div className="max-w-7xl mx-auto px-6 flex flex-wrap justify-center gap-8 text-sm">
+        {links.map((link) => {
+          const hrefWithLocale = `/${locale}/${link.href}`;
+          const isActive = pathname === hrefWithLocale;
+
+          return (
+            <div key={link.href} className="relative">
+              <Link
+                href={hrefWithLocale}
+                className={`hover:text-gray-400 transition-colors duration-200 py-1 mb-1 ${
+                  isActive ? "font-semibold" : "font-normal"
+                }`}
+              >
+                {link.label}
+              </Link>
+              <span
+                className={`absolute -bottom-2 left-0 h-1 w-full rounded-full transition-all duration-300 ${
+                  isActive ? "bg-[#59B1C2]" : "bg-transparent"
+                }`}
+              />
+            </div>
+          );
+        })}
       </div>
-      <div className="container w-full relative z-12 flex items-center justify-between text-sm flex-wrap gap-5 py-[2svh]">
-        <div className="flex items-center gap-3">
-          <InstagramIcon className="size-7 text-transparent" />
-          <XTwitterIcon className="size-7 text-transparent" />
-          <YoutubeIcon className="size-7 text-transparent" />
-          <SnapchatIcon className="size-7 text-transparent" />
-          <TikTokIcon className="size-7 text-transparent" />
-        </div>
-        <p>{t("footer.copyright")}</p>
-        <div className="flex items-center gap-3 flex-wrap">
-          <p>{t("Department/Service Number")}: 920014659</p>
-          <Link className="underline" href="/privacy-policy">
-            {t("Privacy Policy")}
-          </Link>
-          <Link className="underline" href="/terms-and-conditions">
-            {t("Terms and Conditions")}
-          </Link>
-        {/* <a
-            className="underline"
-            href="https://maps.app.goo.gl/H7U7MHWvyzTP9xmx8"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {t("Company location")}
-          </a> */}
-        </div>
-      </div>
+
     </footer>
   );
-};
-
-export default Footer;
+}

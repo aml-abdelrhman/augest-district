@@ -108,7 +108,7 @@ function Button({
       )}
       {!isLoading && startContent && (
         <span
-          className={cn("size-5 flex items-center me-3", classNames?.startContent)}
+          className={cn("size-5 flex items-center", classNames?.startContent)}
         >
           {startContent}
         </span>
@@ -116,7 +116,7 @@ function Button({
       {children}
       {!isLoading && endContent && (
         <span
-          className={cn("size-5 flex items-center ms-3", classNames?.endContent)}
+          className={cn("size-5 flex items-center", classNames?.endContent)}
         >
           {endContent}
         </span>

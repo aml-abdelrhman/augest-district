@@ -1,255 +1,368 @@
 {
-  "error": {
-    "title": "Oops! Something went wrong",
-    "description": "We encountered an unexpected issue",
-    "tryAgain": "Try Again",
-    "goHome": "Go Home"
+  "wishlist": {
+    "Your Wishlist is Empty 💔": "Your Wishlist is Empty 💔",
+    "Browse Products": "Browse Products",
+    "My Profile": "My Profile",
+    "Productname": "Product Name",
+    "Unit price": "Unit Price",
+    "Stock": "Stock",
+    "Cart": "Cart",
+    "In Stock": "In Stock",
+    "Out of Stock": "Out of Stock",
+    "Add to Cart": "Add to Cart"
   },
-  "rateLimit": {
-    "title": "Too Many Requests",
-    "description": "You've made too many requests. Please wait before trying again.",
-    "retryAfter": "Please wait {seconds} seconds before trying again",
-    "timeRemaining": "Time remaining: {time}",
-    "understood": "Understood"
+  "login": {
+    "loginTitle": "Log In",
+    "emailPlaceholder": "example@xyz.com",
+    "passwordLabel": "Password:",
+    "passwordPlaceholder": "Enter your Password",
+    "rememberMe": "Remember Me",
+    "forgotPassword": "Forget Password?",
+    "loginButton": "Log In",
+    "loggingIn": "Logging in...",
+    "orSeparator": "OR",
+    "loginWithGoogle": "Log in with Google",
+    "dontHaveAccount": "Don't have an account?",
+    "createAccount": "Create Account",
+    "invalidEmail": "Invalid email address",
+    "passwordMinLength": "Password must be at least 6 characters",
+    "networkError": "Network error — try again"
   },
-  "NotFound": {
-    "title": "Page Not Found",
-    "description": "Sorry, the page you are looking for does not exist or has been moved.",
-    "backButton": "Go Back",
-    "homeButton": "Go Home",
-    "ornamentalText": "Lost in the digital space"
+  "cart": {
+    "cartTitle": "Your Cart",
+    "emptyCart": "Your Cart is Empty 💔",
+    "emptyCartMsg": "When you add products, they will appear here.",
+    "image": "Image",
+    "product": "Product",
+    "quantity": "Qty",
+    "price": "Price",
+    "orderSummary": "Order Summary",
+    "subtotal": "Subtotal",
+    "shipping": "Shipping",
+    "discount": "Discount",
+    "total": "Total",
+    "clearCart": "Clear Cart",
+    "checkout": "Proceed to Checkout",
+    "clearCartConfirm": "Are you sure you want to clear the cart?"
   },
-  "Search": "Search",
-  "Search results for": "Search results for",
-  "Search for projects": "Search for projects...",
-  "Loading": "Loading...",
-  "emptyState": {
-    "search": {
-      "title": "No search results",
-      "description": "We couldn't find any results matching your search. Try changing your search terms or filters."
+  "shopByCategory": {
+    "shopByCategory": "Shop By Category",
+    "shopNow": "Shop Now",
+    "hoodiesJackets": "Hoodies & Jackets",
+    "tShirts": "T-Shirts",
+    "pantsShorts": "Pants & Shorts",
+    "accessories": "Accessories",
+    "sweatpants": "Sweatpants"
+  },
+  "Home": {
+    "shopHere": "Shop Here"
+  },
+  "Footer": {
+    "products": "Products",
+    "aboutUs": "About Us",
+    "sizeGuide": "Size Guide",
+    "sustainability": "Sustainability",
+    "termsAndConditions": "Terms & Conditions"
+  },
+  "SizeGuide": {
+    "hoodiesAndJackets": "Hoodies & Jackets",
+    "tShirts": "T-Shirts",
+    "pantsAndShorts": "Pants & Shorts",
+    "sweatpants": "Sweatpants",
+    "sizes": "SIZES",
+    "cm": "CM",
+    "inches": "INCHES",
+    "aLengthFromHPS": "A LENGTH FROM HPS",
+    "bHalfUnderarmChest": "B 1/2 UNDERARM CHEST",
+    "cHalfHem": "C 1/2 HEM",
+    "dSleeveLength": "D SLEEVE LENGTH"
+  },
+  "productsPage": {
+    "categories": "Categories",
+    "all": "All",
+    "other": "Other",
+    "showingResults": "Showing {shown} of {total} Results",
+    "defaultSort": "Default Sorting",
+    "priceLow": "Price: Low to High",
+    "priceHigh": "Price: High to Low",
+    "addToCart": "Add To Cart",
+    "inCart": "In Cart ({quantity})",
+    "wishlist": "Wishlist",
+    "emptyCategory": "No products found in this category"
+  },
+  "productDetails": {
+    "size": "Size",
+    "color": "Color",
+    "quantity": "Quantity",
+    "addToCart": "Add To Cart",
+    "inCart": "In Cart ({quantity})",
+    "buyNow": "Buy Now",
+    "sizeGuide": "Size guide",
+    "policies": "Policies",
+    "viewSizeGuide": "view size guide",
+    "dealingpolicies": "Dealing policies",
+    "productNotFound": "Product not found",
+    "exclusiveOfVAT": "exclusive of VAT",
+    "discount": "-10%"
+  },
+  "checkout": {
+    "billingDetails": "Billing details",
+    "firstName": "First name",
+    "lastName": "Last name",
+    "companyName": "Company name",
+    "countryRegion": "Country / Region",
+    "townCity": "Town / City",
+    "streetName": "Street name",
+    "state": "State",
+    "houseNumber": "House number",
+    "zipCode": "Zip Code",
+    "phone": "Phone",
+    "email": "Email",
+    "terms": "I have read and agree to all the Terms & Conditions.",
+    "placeOrder": "Place Order",
+    "backToCart": "Back to cart",
+    "yourOrder": "Your order",
+    "subtotal": "Subtotal",
+    "shipping": "Shipping",
+    "discount": "Discount",
+    "total": "Total",
+    "coupon": "Coupon",
+    "paymentMethod": "Payment Method",
+    "creditCard": "Credit or Debit Card",
+    "tamara": "Tamara",
+    "tabby": "Tabby",
+    "apply": "Apply"
+  },
+  "footer": {
+    "products": "Products",
+    "aboutUs": "About Us",
+    "sizeGuide": "Size Guide",
+    "sustainability": "Sustainability",
+    "termsAndConditions": "Terms & Conditions",
+    "checkout": "Checkout"
+  },
+  "about": {
+    "brandName": "August District",
+    "brandDescription": "We are a modern streetwear brand focused on premium Clothes that blend comfort,",
+    "highlight1": "quality",
+    "highlight2": "bold design",
+    "sections": {
+      "foundation": {
+        "title": "Foundation Establishment (2021)",
+        "points": [
+          "In 2021, we started the August District Foundation with the idea of having full control and transparency over how the money we raise for various causes is used.",
+          "Instead of donating money to other charitable organizations, we created our own foundation.",
+          "This ensured that funds and resources could be easily monitored and sent directly to the source."
+        ]
+      },
+      "challenges": {
+        "title": "Challenges Of Registration & Approval",
+        "points": [
+          "Establishing a charitable foundation is extremely challenging due to high standards.",
+          "Our application was rejected four times before approval.",
+          "The online process took around 1.5 years to complete."
+        ]
+      },
+      "charityStatus": {
+        "title": "Official UK Charity Status (2023)",
+        "points": [
+          "In July 2023, we were officially admitted to the UK directory of charities.",
+          "We were assigned charity number: 1202851.",
+          "This milestone enabled us to carry out our first mission in April 2024."
+        ]
+      },
+      "mission": {
+        "title": "Our Mission & Future Goals",
+        "points": [
+          "Our goal is to carry out one or two missions each year to support vulnerable communities.",
+          "We have built a dedicated volunteer team to plan these missions effectively.",
+          "For transparency, we will physically attend and document each mission."
+        ]
+      }
     },
-    "data": {
-      "title": "No data available",
-      "description": "No data was found to display at this time."
-    },
-    "error": {
-      "title": "An error occurred",
-      "description": "Sorry, an error occurred while loading the data. Please try again."
-    },
-    "general": {
-      "title": "No items",
-      "description": "No items to display at this time."
-    },
-    "loading": {
-      "title": "Loading",
-      "description": "Please wait while content loads."
+    "contactUs": {
+      "title": "Contact Us",
+      "email": "Email",
+      "emailValue": "info@emax.com",
+      "phone": "Phone Number",
+      "phoneValue": "+20 111 111 111 11",
+      "location": "Location",
+      "locationValue": "New Cairo, Egypt"
     }
   },
-  "validation": {
-    "message_required": "This field is required",
-    "message_min": "Field must be at least 10 characters",
-    "message_max": "Field must not exceed 1000 characters",
-    "valid_email": "Please enter a valid email.",
-    "field_req": "This field is required",
-    "name_required": "Name is required.",
-    "email_required": "Email is required.",
-    "email_invalid": "Invalid email format.",
-    "password_required": "Password is required.",
-    "password_invalid": "Password must include at least one uppercase letter, one lowercase letter, and a number.",
-    "password_max": "Password cannot exceed 15 characters.",
-    "password_confirm_required": "Password confirmation is required.",
-    "passwords_must_match": "Passwords must match.",
-    "phone_required": "Phone number is required.",
-    "phone_invalid": "Invalid phone number",
-    "phone_min": "Phone number must be at least 8 digits long.",
-    "phone_country_code_required": "Phone country code is required.",
-    "name_min": "Name must be at least 3 characters",
-    "payment_method_required": "Please select a payment method",
-    "budget_required": "Budget is required",
-    "city_required": "Please select a city",
-    "property_type_required": "Please select a property type",
-    "connection_method_required": "Please select at least one connection method",
-    "experience_required": "Please select your experience level",
-    "cv_required": "Please upload your CV"
+  "sustainability": {
+    "title": "Sustainability",
+    "sections": {
+      "sustainability": {
+        "title": "Sustainability",
+        "description": "We believe in sustainability, which is more than just a word for us. We strive to be more conscious of our products and services, making decisions that help reduce our environmental footprint and ensure a better future for generations to come."
+      },
+      "philosophy": {
+        "title": "Our Philosophy",
+        "description": "People who are passionate about our products, their community, and our company are our most important assets. Their dedication is what makes us different.",
+        "points": [
+          "Designing products that reflect our values",
+          "Reducing our environmental impact with every step",
+          "Build and maintain solid trust"
+        ]
+      },
+      "fashion": {
+        "title": "Fashion & Responsibility",
+        "description": "Fashion can be a force for good. By choosing high-quality, sustainable fabrics and working with factories that share our values, we can create a positive impact on both people and the planet.",
+        "points": [
+          "Using luxury, recycled materials",
+          "Ethical and safe working conditions",
+          "Reducing waste and our carbon footprint in production"
+        ]
+      }
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "faqQuestion0": "Will the items include a collection of the most frequently asked?",
+      "faqAnswer0": "Sustainability is at the heart of our design process, ensuring every piece lasts.",
+      "faqQuestion1": "The section includes a collection of the most frequently asked questions about our brand.",
+      "faqAnswer1": "We source materials ethically and focus on reducing our carbon footprint.",
+      "faqQuestion2": "The sustainability section includes the most frequently asked questions.",
+      "faqAnswer2": "Our goal is to create a circular economy through durable and recyclable products.",
+      "faqQuestion3": "Does this section include the most frequently asked questions?",
+      "faqAnswer3": "We source materials ethically and focus on reducing our carbon footprint.",
+      "faqHighlightTitle": "This section includes a collection of frequently asked questions",
+      "faqHighlightDescription": "This section includes a collection of the most frequently asked questions about sugarcane-sourced clothing, helping you better understand our brand."
+    }
   },
-  "Receive project file": "Receive project file",
-  "Phone call": "Phone call",
-  "Have an inquiry about a project": "Have an inquiry about a project?",
-  "Unites table": "Unites table",
-  "Unit Schedule": "Unit Schedule",
-  "Units Schedule": "Units Schedule",
-  "All": "All",
-  "Available": "Available",
-  "Sold": "Sold",
-  "Reserved": "Reserved",
-  "available": "Available",
-  "sold": "Sold",
-  "reserved": "Reserved",
-  "View details": "View details",
-  "Gallery": "Gallery",
-  "Photo Gallery": "Photo Gallery",
-  "View Modern Interior": "View Modern Interior",
-  "Project Features": "Project Features",
-  "Project characteristics": "Project characteristics",
-  "footer": {
-    "description": "Hamma Real Estate excels in modern real estate marketing, benefiting from a broad customer database and a team of experts to promote projects effectively and attractively, and dedicated to meeting customer needs.",
-    "copyright": "All rights reserved © 2018 - 2026 Hemma Real Estate"
+  "termsPage": {
+    "breadcrumbHome": "Home Page",
+    "breadcrumbCurrent": "Terms & Conditions",
+    "sections": {
+      "terms": {
+        "title": "Terms & Conditions",
+        "description": "By visiting our website and/or purchasing from us, you agree to be bound by the following terms and conditions, including all policies referenced herein and/or available by hyperlink. These Terms apply to all users of the site, including without limitation users who are browsers, vendors, customers, and contributors of content.",
+        "points": [
+          "Governed by August District Ltd.",
+          "Applies to all visitors, customers, and contributors.",
+          "Continued use means acceptance of changes.",
+          "Terms may be updated at any time."
+        ]
+      },
+      "returns": {
+        "title": "Returns",
+        "description": "We accept returns within 14 days of receiving your items, provided the item is in its original condition and with the original packaging.",
+        "points": [
+          "Items must be in original packaging with tags.",
+          "Excludes certain items like hygiene products.",
+          "Return shipping cost will be deducted from refund.",
+          "Shipping fees are non-refundable."
+        ]
+      },
+      "customs": {
+        "title": "Customs Charges",
+        "description": "The customer is responsible for any customs and import duties that may be applied at the destination by local authorities."
+      },
+      "onlineStore": {
+        "title": "Online Store Terms",
+        "description": "By agreeing to these Terms, you confirm that you are at least the age of majority in your state or province of residence.",
+        "points": [
+          "No illegal or unauthorized use.",
+          "Breach will lead to termination of services.",
+          "Always use the services in a legal way.",
+          "Violations may result in termination of services."
+        ]
+      },
+      "general": {
+        "title": "General Conditions",
+        "description": "We reserve the right to refuse service to anyone for any reason at any time. Your content (excluding credit card info) may be transferred unencrypted.",
+        "points": [
+          "Credit card information is always encrypted.",
+          "Must not reproduce, duplicate or sell our services.",
+          "Section headings are for convenience only."
+        ]
+      },
+      "accuracy": {
+        "title": "Accuracy Of Information",
+        "description": "We are not responsible if information made available on this site is not accurate, complete or current. The material is provided for general information only.",
+        "points": [
+          "Reliance on the material is at your own risk.",
+          "Historical data is provided for reference only."
+        ]
+      },
+      "products": {
+        "title": "Products & Services",
+        "description": "Certain products or services may be available exclusively online and may have limited quantities.",
+        "points": [
+          "Subject to our Return Policy for returns.",
+          "Customs may vary depending on your shipping country.",
+          "Returns follow our Returns Policy only."
+        ]
+      },
+      "billing": {
+        "title": "Billing & Account Information",
+        "description": "We reserve the right to refuse any order you place with us. We may limit or cancel quantities purchased per person or per order.",
+        "points": [
+          "Must provide accurate account and contact details.",
+          "Maintain information so we can complete transactions."
+        ]
+      },
+      "thirdParty": {
+        "title": "Third-Party Tools & Links",
+        "description": "We may provide you access to third-party tools which we neither monitor nor have any control over.",
+        "points": [
+          "We are not responsible for third-party links or content.",
+          "Review third-party rules carefully."
+        ]
+      },
+      "userComments": {
+        "title": "User Comments & Submissions",
+        "description": "Any feedback or submissions you provide may be used by us at any time, without restriction.",
+        "points": [
+          "We have no obligation to keep comments secret.",
+          "User stays solely responsible for comments."
+        ]
+      },
+      "personalInfo": {
+        "title": "Personal Information",
+        "description": "Your submission of personal information through the store is governed by our Privacy Policy."
+      },
+      "prohibited": {
+        "title": "Prohibited Uses",
+        "description": "The site must not be used for any unlawful purpose, harassing others, or committing harmful activities."
+      },
+      "liability": {
+        "title": "Disclaimer & Limitation Of Liability",
+        "description": "We do not guarantee that our service will be uninterrupted or error-free. We will not be liable for any direct or indirect damages.",
+        "points": [
+          "Service is provided on an 'as is' basis.",
+          "Not liable for consequential damages."
+        ]
+      },
+      "termination": {
+        "title": "Termination",
+        "description": "These Terms are effective unless and until terminated by either you or us."
+      },
+      "governingLaw": {
+        "title": "Governing Law",
+        "description": "These Terms are governed by and construed in accordance with the laws of the United Kingdom."
+      },
+      "changes": {
+        "title": "Changes To Terms",
+        "description": "We may update these Terms at any time. It is your responsibility to check for changes regularly."
+      },
+      "contact": {
+        "title": "Contact Us",
+        "description": "For questions regarding these Terms, please contact us:"
+      }
+    }
   },
-  "Register your interest": "Register your interest",
-  "Department/Service Number": "Department/Service Number",
-  "Company location": "Company location",
-  "Terms and Conditions": "Terms and Conditions",
-  "Privacy Policy": "Privacy Policy",
-  "Guarantees": "Guarantees",
-  "years": "{count, plural, one {year} other {years}}",
-  "minutes": "{count, plural, one {# minute} other {# minutes}}",
-  "units": "{count, plural, one {# unit} other {# units}}",
-  "Plugs and switches": "Plugs and switches",
-  "Structural structure": "Structural structure",
-  "Guarantee insulation": "Guarantee insulation",
-  "Intercom and cameras": "Intercom and cameras",
-  "Elevator warranty": "Elevator warranty",
-  "Electric elevators": "Electric elevators",
-  "Paint": "Paint",
-  "Sanitary ware": "Sanitary ware",
-  "Green pipes": "Green pipes",
-  "Smart lighting": "Smart lighting",
-  "Projects": "Projects",
-  "Home": "Home",
-  "Buy on the map": "Buy on the map",
-  "Land": "Land",
-  "Events": "Events",
-  "Developers": "Developers",
-  "Methodology": "Methodology",
-  "Employment": "Employment",
-  "Near to": "Near to",
-  "Language": "Language",
-  "Abu Bakr Al Siddiq Road": "Abu Bakr Al Siddiq Road",
-  "Princess Nourah bint Abdulrahman University": "Princess Nourah bint Abdulrahman University",
-  "King Khalid International Airport": "King Khalid International Airport",
-  "Imam Abdulaziz Road": "Imam Abdulaziz Road",
-  "King Salman Road": "King Salman Road",
-  "King Saud Road": "King Saud Road",
-  "Project Plans": "Project Plans",
-  "Project Diagrams": "Project Diagrams",
-  "Latest Projects": "Latest Projects",
-  "sold units": "sold units",
-  "SAR": "SAR",
-  "m": "m²",
-  "Most Sold Projects": "Most Sold Projects",
-  "We closed the door": "We closed the door",
-  "Success Partners": "Success Partners",
-  "Statistics": "Statistics",
-  "Unique Projects": "Unique Projects",
-  "hemma_solgan": "hame_mahal_altheqa",
-  "Hemma News": "HEMMA News",
-  "Articles": "Articles",
-  "Special Projects": "Special Projects",
-  "Featured projects": "Featured projects",
-  "Price on request": "Price on request",
-  "N/A": "N/A",
-  "Rooms": "Rooms",
-  "Price from": "Price from",
-  "Unit types": "Unit types",
-  "Project status": "Project status",
-  "City": "City",
-  "Area": "Area",
-  "Whatsapp": "Whatsapp",
-  "Are you interested": "Are you interested?",
-  "Contact our sales representative over WhatsApp": "Contact our sales representative over WhatsApp.",
-  "Price": "Price",
-  "View": "View",
-  "Private": "Private",
-  "Total Area": "Total Area",
-  "Floor": "Floor",
-  "Back": "Back",
-  "Unit Details": "Unit Details",
-  "Discover the latest news and updates from Hemma Real Estate Development@": "Discover the latest news and updates from Hemma Real Estate Development.",
-  "No news found": "No news found",
-  "News": "Hemma News",
-  "Published on": "Published on",
-  "Discover our latest real estate projects and find your dream home": "Discover our latest real estate projects and find your dream home",
-  "No projects found": "No projects found",
-  "Join our team and be part of Hemma Real Estate excellence": "Join our team and be part of Hemma Real Estate excellence",
-  "Register your interest in our upcoming projects and be the first to know when they launch": "Register your interest in our upcoming projects and be the first to know when they launch",
-  "register_interest": {
-    "full_name": "Full Name",
-    "phone": "Phone Number",
-    "payment_method": "Payment Method",
-    "budget": "Budget",
-    "city": "City",
-    "property_type": "Property Type",
-    "connection_method": "Connection Method",
-    "submit": "Submit Interest",
-    "success_title": "Successfully Sent",
-    "success_description": "Thank you for your interest. We will contact you soon.",
-    "error_title": "Submission Failed",
-    "error_description": "An error occurred while sending your data. Please try again."
-  },
-  "payment_methods": {
-    "cash": "Cash",
-    "supported_bank": "Supported Bank",
-    "un_supported_bank": "Un-supported Bank"
-  },
-  "property_types": {
-    "apartment": "Apartment",
-    "floors": "Floors",
-    "penthouse": "Penthouse",
-    "townhouse": "Townhouse",
-    "villa": "Villa"
-  },
-  "connection_methods": {
-    "whatsapp": "WhatsApp",
-    "call": "Phone Call"
-  },
-  "employment": {
-    "full_name": "Full Name",
-    "phone": "Phone Number",
-    "experience": "Real Estate Experience",
-    "cv": "CV / Resume",
-    "submit": "Submit Application",
-    "success_title": "Application Sent",
-    "success_description": "Thank you for applying. We will review your application and get back to you.",
-    "error_title": "Submission Failed",
-    "error_description": "An error occurred while sending your application. Please try again."
-  },
-  "experience_levels": {
-    "beginner": "Beginner",
-    "intermidate": "Intermediate",
-    "expert": "Expert"
-  },
-  "documentFileUpload": {
-    "fileSelected": "File selected",
-    "clickToChange": "Click to change file",
-    "dragFiles": "Drag your files or",
-    "browse": "browse",
-    "maxSize": "Files up to {maxSize} are allowed"
-  },
-  "Search country": "Search country...",
-  "No country found": "No country found.",
-  "Unit Description": "Unit Description",
-  "Unit Diagram": "Unit Diagram",
-  "Hemma projects and developments": "Hemma projects and developments",
-  "Hemma news and articles": "Hemma news and articles",
-  "Hemma": "Hemma",
-  "Hemma Methodology": "Hemma Methodology",
-  "Our methodology is based on three pillars quality sustainability and innovation": "Our methodology is based on three pillars: quality, sustainability, and innovation",
-  "methodology_content": "<div>\n  <p>\n    Hemma Real Estate operates with a clear strategic vision aimed at delivering\n    real value in the Saudi real estate market by building an integrated\n    marketing experience that highlights the quality of real estate products and\n    helps clients make accurate and confident decisions.\n  </p>\n  <p>\n    Thanks to God, the company has earned wide trust from its clients, reflected\n    in more than <strong>400 positive reviews</strong> with an average rating of\n    <strong>4.9 out of 5 as of May 2025</strong>.\n  </p>\n  <p>\n    Hemma focuses on showcasing all real estate products — residential units and\n    projects including apartments, villas, lands, townhouses, and penthouses —\n    in a way that reflects their true advantages and meets the aspirations of\n    clients, whether for premium living or long-term investment.\n  </p>\n  <h2><strong>Work Principles</strong></h2>\n  <p>\n    Hemma is guided by a set of principles that shape its operations and define\n    its relationships with clients and partners:\n  </p>\n  <ul>\n    <li>Complete transparency in every interaction</li>\n    <li>High accuracy in execution standards</li>\n    <li>Continuous innovation in marketing methods</li>\n    <li>Ensuring customer satisfaction at every stage of the sales process</li>\n  </ul>\n  <h2><strong>Our Services</strong></h2>\n  <p>Hemma Real Estate offers comprehensive real estate services, including:</p>\n  <ul>\n    <li>\n      Marketing and selling all types of real estate products (commercial and\n      residential units: apartments, villas, townhouses, lands)\n    </li>\n    <li>Marketing off-plan developments</li>\n    <li>\n      Providing specialized real estate consultations for developers and\n      investors\n    </li>\n    <li>\n      Delivering highly accurate feasibility studies and realistic pricing for\n      real estate developers\n    </li>\n  </ul>\n  <h2><strong>Who We Serve</strong></h2>\n  <ul>\n    <li>\n      Individuals seeking a residential property or investment opportunity\n    </li>\n    <li>Investors and companies looking to develop real estate projects</li>\n    <li>Real estate developers seeking a reliable marketing partner</li>\n  </ul>\n  <h2><strong>What Sets Hemma Apart</strong></h2>\n  <ul>\n    <li>\n      Selecting strategic locations in the Central, Western, and Eastern regions\n    </li>\n    <li>A modern marketing infrastructure relying on advanced digital tools</li>\n    <li>\n      Consultants with more than 18 years of experience in the Saudi market\n    </li>\n    <li>Tailored, highly accurate marketing plans for each project</li>\n    <li>Competitive pricing and flexible payment options</li>\n    <li>Operations built on high standards and data-driven methodologies</li>\n  </ul>\n  <h2><strong>Success Stories</strong></h2>\n  <p>\n    Hemma has contributed to marketing prominent projects in Riyadh, Jeddah,\n    Madinah, Dammam, and Khobar, in addition to distinctive off-plan\n    developments, achieving high sales rates in short periods — thanks first to\n    God, and then to the integration of its marketing and consulting teams.\n  </p>\n  <h2><strong>Key Achievements of 2024</strong></h2>\n  <p>\n    Hemma recorded sales exceeding <strong>1.5 billion SAR</strong> during 2024\n    by relying on:\n  </p>\n  <ul>\n    <li>Specialized consulting expertise</li>\n    <li>Precise digital marketing tools</li>\n    <li>Tailored marketing plans designed for each project’s needs</li>\n  </ul>\n  <h2><strong>Company Overview</strong></h2>\n  <ul>\n    <li><strong>Founded:</strong> 2020</li>\n    <li><strong>Headquarters:</strong> Al-Malqa District, Riyadh</li>\n    <li><strong>Employees:</strong> Over 280 team members</li>\n    <li>\n      <strong>Specialties:</strong> Residential and commercial real estate\n      marketing, off-plan projects, developer consulting\n    </li>\n  </ul>\n  <h2><strong>Our Team</strong></h2>\n  <p>\n    Hemma is led by a team of real estate experts, consultants, and digital\n    marketing specialists, with more than 18 years of experience in the Saudi\n    real estate sector.<br />The company believes that competence is the\n    foundation of trust and long-term partnerships.\n  </p>\n  <h2><strong>Our Future Direction</strong></h2>\n  <p>Hemma aims to expand its presence in the Saudi market by:</p>\n  <ul>\n    <li>Strengthening its digital footprint</li>\n    <li>Establishing strategic partnerships with local developers</li>\n    <li>Adopting more innovative and effective marketing solutions</li>\n  </ul>\n  <h2><strong>Client Testimonials</strong></h2>\n  <ul>\n    <li>“Professional service and clear results in a short time.”</li>\n    <li>\n      “A precise marketing plan and evident expertise from the very first\n      visit.”\n    </li>\n    <li>“Their partnership was a key factor in the project’s success.”</li>\n  </ul>\n  <h2><strong>Contact Us</strong></h2>\n  <p>\n    Whether you’re looking for an apartment, villa, floor unit, land, townhouse,\n    or penthouse in Riyadh, Jeddah, Madinah, Makkah, Dammam, or Khobar — or\n    you’re a developer seeking a strong and well-studied marketing partner —\n    <strong>Hemma Real Estate is your ideal choice.</strong>\n  </p>\n  <p></p>\n</div>",
-  "privacy_policy_description": "We are committed to protecting your privacy and ensuring your personal information is handled securely.",
-  "privacy_policy_content": "<div>\n  <h3><strong>First: Introduction</strong></h3>\n  <p>\n    The term <strong>Privacy Policy</strong> refers to the method by which the\n    Hemma Platform collects data and protects the personal information of its\n    users. This policy is of utmost importance.\n  </p>\n  <p>The terms used in this Privacy Policy are defined as follows:</p>\n  <ul>\n    <li>\n      <strong>The Platform, Hemma Platform, or Hemma:</strong> Refers to the\n      electronic platform owned by Hemma Real Estate Company, accessible through\n      the website, Android applications, iPhone applications, or any other\n      electronic applications or websites.\n    </li>\n    <li>\n      The term <strong>platform</strong> does not refer to any specific\n      individual’s personal information. Instead, personal information is\n      collected from individuals who wish to use the platform through various\n      means such as browsing, contacting customer service via phone or email,\n      and other methods. By providing your personal information to the platform,\n      you authorize it to process this information in accordance with the terms\n      and conditions of the Privacy Policy.\n    </li>\n  </ul>\n  <p>\n    The terms of this Privacy Policy may be modified, in whole or in part, at\n    any time. The modified version will be published on the platform and will\n    become effective seven days after its publication. By continuing to use the\n    platform after such publication, you agree to the terms and conditions in\n    the modified version and acknowledge the changes made regarding your\n    personal data that you had previously provided to us.\n  </p>\n  <p>\n    By using the platform, you agree to the terms of the Privacy Policy, which\n    is legally binding. If new features or tools are added to our services, they\n    will also be subject to this policy.\n  </p>\n  <p>\n    We will store your personal information, use it, and disclose it in\n    accordance with applicable laws, regulations, and customs, and as outlined\n    in the platform’s Privacy Policy. Your consent will always be requested\n    before using your personal information for purposes other than those\n    described in the Privacy Policy.\n  </p>\n  <h3><strong>Second: User Information</strong></h3>\n  <p>We collect the following information from users:</p>\n  <ul>\n    <li>\n      <strong>Personal Information:</strong> Your name, ID number or commercial\n      registration number, tax number, address, email, mobile number, and any\n      additional information that we may require.\n    </li>\n    <li>\n      <strong>Device Data:</strong> Files on your device, including photos or\n      other data you allow us to access.\n    </li>\n    <li>\n      <strong>Content Information:</strong> Information you publish on the\n      platform, which is required to verify your identity, contact you, and\n      enable you to use the platform’s services and features.\n    </li>\n  </ul>\n  <p>\n    We also collect data from web pages hosted by the platform that users visit,\n    as well as browsing behavior, device information, browser type, network\n    connection, and IP address. This information is used to improve and enhance\n    your experience with us.\n  </p>\n  <p>\n    Users grant the platform access to their camera, photo library, and location\n    to fully utilize the platform’s services. By using the platform, you\n    authorize us to access your location via your device’s mapping service to\n    provide optimal service.\n  </p>\n  <p>\n    We collect data related to the services offered and performance\n    measurements, including user activity and interactions on the platform.\n  </p>\n  <p>\n    When the platform is installed, we collect device-specific information,\n    including device type, operating system, browser information, IP address,\n    mobile network details, and device identifiers. If location access is\n    permitted, location data is also collected.\n  </p>\n  <h3>\n    <strong>Third: Visitor and Support User Information</strong>\n  </h3>\n  <p>When you install the platform, we collect the following:</p>\n  <ul>\n    <li>\n      <strong>Personal Information:</strong> Name, email, device details,\n      operating system, browser type, network connection, IP address, mobile\n      network details, and device identifiers.\n    </li>\n    <li><strong>Location Data:</strong> If granted access.</li>\n  </ul>\n  <p>\n    We may also collect personal information submitted through support requests\n    or other inquiries to the platform, including chat conversations and phone\n    support interactions, for performance evaluation and quality improvement.\n  </p>\n  <p>\n    Additional data such as reviews, comments, and other content shared on the\n    platform may be collected and used for personalized marketing, either\n    directly or in collaboration with third parties. By agreeing to this policy,\n    users grant permission to use their personal data for marketing,\n    development, or other purposes determined by the platform or its owning\n    company.\n  </p>\n  <h3>\n    <strong>Fourth: Cookies and Tracking Technologies</strong>\n  </h3>\n  <p>\n    Cookies are sent to your browser from the platform and stored on your\n    device. Each device accessing the platform is assigned a unique cookie.\n  </p>\n  <p>Cookies are used to:</p>\n  <ul>\n    <li>Identify your device.</li>\n    <li>Provide personalized services.</li>\n    <li>Display advertisements from Google and other third-party services.</li>\n  </ul>\n</div>",
-  "terms_conditions_description": "Please read these terms and conditions carefully before using our platform.",
-  "terms_conditions_content": "<div>\n  <p>\n    <strong>Welcome to Hemma Real Estate Services Platform</strong><br />By\n    using this website, you agree to abide by the following terms and conditions\n    governing your use of the platform. If you do not agree with any of these\n    terms, please refrain from using the site.\n  </p>\n  <h3><strong>1. Eligibility</strong></h3>\n  <ul>\n    <li>\n      Users must provide accurate and truthful information when registering or\n      using the platform’s services.\n    </li>\n  </ul>\n  <h3><strong>2. Usage</strong></h3>\n  <ul>\n    <li>\n      The platform may not be used for any unlawful or unethical purposes.\n    </li>\n    <li>\n      Users agree not to upload or publish any content that violates\n      intellectual property rights or causes harm to others.\n    </li>\n    <li>\n      Unauthorized access to any part of the site or its servers is strictly\n      prohibited.\n    </li>\n  </ul>\n  <h3>\n    <strong>3. Registration and Accounts</strong>\n  </h3>\n  <ul>\n    <li>\n      Users are responsible for maintaining the confidentiality of their login\n      credentials.\n    </li>\n    <li>\n      The platform reserves the right to suspend or terminate accounts in case\n      of violation of terms or provision of false information.\n    </li>\n  </ul>\n  <h3><strong>4. Privacy</strong></h3>\n  <ul>\n    <li>\n      All personal data will be handled according to the platform’s privacy\n      policy.\n    </li>\n  </ul>\n  <h3><strong>5. Services</strong></h3>\n  <ul>\n    <li>\n      Hemma offers a variety of real estate services, including property\n      listings, brokerage, and property searches.\n    </li>\n    <li>\n      Services may evolve, and new features may be added at the company’s\n      discretion.\n    </li>\n  </ul>\n  <h3><strong>6. Fees and Payments</strong></h3>\n  <ul>\n    <li>\n      Certain services are subject to fees, which are specified and payable as\n      per the platform’s guidelines.\n    </li>\n    <li>\n      Failure to complete payment may result in service suspension or\n      cancellation.\n    </li>\n  </ul>\n  <h3><strong>7. Intellectual Property</strong></h3>\n  <ul>\n    <li>\n      All intellectual property rights related to the website, including texts,\n      images, and logos, belong to Hemma and may not be used without prior\n      permission.\n    </li>\n  </ul>\n  <h3><strong>8. Liability Limitation</strong></h3>\n  <ul>\n    <li>\n      The platform is not liable for any damages resulting from the use of its\n      services, including lost profits or data.\n    </li>\n    <li>\n      The platform is not responsible for the accuracy of listings posted by\n      users.\n    </li>\n  </ul>\n  <h3><strong>9. Termination</strong></h3>\n  <ul>\n    <li>\n      The platform reserves the right to suspend or terminate accounts or\n      services for any reason without prior notice.\n    </li>\n  </ul>\n  <h3><strong>10. Governing Law</strong></h3>\n  <ul>\n    <li>\n      These terms and conditions are governed by the laws of the Kingdom of\n      Saudi Arabia, and disputes will be resolved in Saudi courts.\n    </li>\n  </ul>\n</div>",
-  "Existing file": "Existing file",
-  "statistics": {
-    "title": "We operate according to a clear strategic vision aimed at delivering real value in the Saudi real estate market,",
-    "description": "by building an integrated marketing experience that highlights the quality of the real estate product and helps clients make accurate and confident decisions."
-  },
-  "No developers found": "No developers found",
-  "Hemma for real estate investments and developments": "Hemma for real estate investments and developments",
-  "m²": "m²",
-  "Error fetching project": "Error fetching project",
-  "Units": "Units",
-  "Number of units": "Number of units",
-  "Projects for sale": "Projects for sale",
-  "Projects for rent": "Projects for rent"
+  "breadcrumb": {
+    "home": "Home",
+    "terms": "Terms & Conditions",
+    "wishlist": "Wishlist",
+    "cart": "Cart",
+    "shop": "Shop",
+    "product": "Product Details",
+    "checkout": "Checkout",
+    "about": "About Us",
+    "sustainability": "Sustainability",
+    "sizeGuide": "Size Guide",
+    "contact": "Contact Us"
+  }
 }

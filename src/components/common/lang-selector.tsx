@@ -33,10 +33,11 @@ const LangSelector = ({ className }: { className?: string }) => {
       <DropdownMenuTrigger asChild className={cn(className)}>
         <Button
           variant="ghost"
-          className="text-white"
+          className=" w-18 h-11 text-white hover:!bg-[#313139] hover:text-white"
+          
           startContent={<ChevronDownIcon className="size-6" />}
         >
-          <span className="font-medium text-base">
+          <span className="font-light text-base">
             {locale === "en" ? "EN" : "ع"}
           </span>
         </Button>
