@@ -6,7 +6,6 @@ import React from "react";
 import { useLocale } from "next-intl";
 import Footer from "@/components/common/Footer";
 
-
 const MainLayout = ({ children }: { children: React.ReactNode }) => {
   const pathname = usePathname();
   const locale = useLocale();
