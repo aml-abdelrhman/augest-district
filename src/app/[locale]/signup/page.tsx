@@ -64,7 +64,7 @@ export default function SignUpPage() {
   };
 
   const handleGoogleSignUp = () => {
-    signIn("google", { callbackUrl: `/${params.locale}/dashboard` });
+    signIn("google", { callbackUrl: `/${params.locale}/profile`});
   };
 
   return (

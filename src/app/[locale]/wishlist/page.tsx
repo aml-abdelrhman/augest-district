@@ -9,10 +9,15 @@ import { useEffect, useState } from "react";
 import { api } from "@/lib/api";
 import { useTranslations } from "next-intl";
 import BreadcrumbBar from "@/components/BreadcrumbBar";
+import { usePathname, useParams } from "next/navigation";
+
 
 export default function WishlistPage() {
   const t = useTranslations("wishlist");
-
+const pathname = usePathname();
+  const params = useParams();
+  const locale = params.locale || "en";
+  
   const { items, toggleWishlist, clearWishlist } = useWishlist();
   const { addItem } = useCartContext();
 
@@ -47,8 +52,7 @@ export default function WishlistPage() {
           {t("Your Wishlist is Empty 💔")}
         </h1>
 
-        <Link
-          href="/products"
+        <Link href={`/${locale}/products`}
           className="bg-cyan-500 text-white px-6 py-2 rounded-lg hover:bg-cyan-600 transition"
         >
           {t("Browse Products")}

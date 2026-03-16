@@ -153,7 +153,7 @@ export default function CartPage() {
           </button>
 
           <Link
-        href={`/${locale}/checkout`} // لو عايزة تحافظي على الـlocale الحالي
+        href={`/${locale}/checkout`} 
         className="w-full bg-[#59B1C2] text-white py-3 rounded-3xl font-semibold flex justify-center"
       >
         {t("checkout")}

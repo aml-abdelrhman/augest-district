@@ -35,7 +35,6 @@ export default function LoginPage() {
     resolver: zodResolver(loginSchema),
   });
 
-  // تحميل البريد المحفوظ محليًا
   useEffect(() => {
     const rememberedEmail = localStorage.getItem("rememberEmail") ?? "";
     if (rememberedEmail) {
