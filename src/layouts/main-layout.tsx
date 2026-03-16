@@ -4,8 +4,7 @@ import { cn } from "@/lib/utils";
 import { usePathname } from "next/navigation";
 import React from "react";
 import { useLocale } from "next-intl";
-import Footer from "@/components/common/Footer";
-
+import Footer from "@/components/common/footer";
 
 const MainLayout = ({ children }: { children: React.ReactNode }) => {
   const pathname = usePathname();
